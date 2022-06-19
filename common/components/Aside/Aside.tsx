@@ -1,11 +1,12 @@
 import React from 'react';
-import { Styles } from './Aside.styles'
+import AsideMailList from "../AsideMailLIst/AsideMailList";
+import {S} from './Aside.styles'
 
 const Aside = () => {
   return (
-    <Styles.Wrapper>
-
-    </Styles.Wrapper>
+    <S.Aside>
+      <AsideMailList />
+    </S.Aside>
   );
 };
 
