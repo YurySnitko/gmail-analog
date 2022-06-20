@@ -9,10 +9,10 @@ export const S = {
   ListButton: styled(ListItemButton)`
     border-radius: 0 20px 20px 0;
     padding: 0 0 0 26px;
-    height: 1.5rem;
   `,
 
   ItemTitle: styled(Typography)`
+    line-height: 1.8rem;
     font-size: 0.875rem;
     letter-spacing: .2px;
   `
