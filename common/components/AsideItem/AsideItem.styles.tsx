@@ -21,5 +21,7 @@ export const S = {
     line-height: 2rem;
     font-size: 0.875rem;
     letter-spacing: .2px;
-  `
+  `,
+
+
 }
