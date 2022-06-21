@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 export const S = {
   AsideList: styled(List)`
-    width: 100%;
+    width: 94%;
     gap: 0;
     padding: 0;
   `

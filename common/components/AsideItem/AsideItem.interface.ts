@@ -4,5 +4,6 @@ import {SvgIconTypeMap} from "@mui/material";
 export interface AsideItemProps {
   Image:  OverridableComponent<SvgIconTypeMap<{}, "svg">>,
   title: string,
-  clickHandler?: () => void
+  clickHandler?: () => void,
+  isOpen?: boolean
 }
