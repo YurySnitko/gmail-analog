@@ -6,12 +6,8 @@ const WriteButton: FC<ButtonProps> = ({isOpen}) => {
   return (
     <S.Button>
       <S.WriteButtonWrapper isOpen={isOpen}>
-        {isOpen ? (
-          <>
-            <S.EditIcon />
-            <S.WriteButtonText>Написать</S.WriteButtonText>
-          </>
-        ) : <S.EditIcon />}
+        <S.EditIcon />
+        { isOpen && <S.WriteButtonText>Написать</S.WriteButtonText>}
       </S.WriteButtonWrapper>
     </S.Button>
   );
