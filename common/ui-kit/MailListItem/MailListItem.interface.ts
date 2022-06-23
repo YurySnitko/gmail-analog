@@ -11,3 +11,12 @@ export interface MailListItemGridProps {
   onMouseEnter: () => void;
   onMouseLeave: () => void;
 }
+
+export interface MailListItemProps {
+  id: string;
+  sender: string;
+  title: string;
+  text: string;
+  date: string;
+  isViewed: boolean;
+}

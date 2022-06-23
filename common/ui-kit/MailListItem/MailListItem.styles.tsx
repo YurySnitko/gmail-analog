@@ -11,20 +11,27 @@ export const S = {
   MailListItemGrid: styled(({ isViewed, ...props }: MailListItemGridProps) => (
     <Grid {...props} />
   ))`
+    box-sizing: content-box;
     display: flex;
     width: 100%;
     align-items: center;
     border-top: 1px solid lightgray;
-    border-bottom: 1px solid lightgray;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
     cursor: pointer;
-    transition: 0.3s;
     padding-left: 0.5rem;
     user-select: none;
     position: relative;
     background-color: ${(props) => (props.isViewed ? "#f4f7f7" : "#ffffff")};
 
     &:hover {
-      box-shadow: 1px 2px 3px 1px #9d9d9d;
+      box-shadow: 1px 1px 2px 1px #9d9d9d;
+      border-left: 1px solid lightgray;
+      border-right: 1px solid lightgray;
+    }
+
+    &:last-child {
+      border-bottom: 1px solid lightgray;
     }
   `,
 
@@ -37,7 +44,7 @@ export const S = {
     display: flex;
     align-items: center;
     overflow: hidden;
-    gap: 5px;
+    gap: 2.5rem;
   `,
 
   MessageText: styled(({ isViewed, ...props }: MessageTextProps) => (
@@ -68,5 +75,12 @@ export const S = {
 
   IconWrapper: styled(Grid)`
     display: flex;
+  `,
+
+  TextContentWrapper: styled(Grid)`
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    gap: 5px;
   `,
 };
