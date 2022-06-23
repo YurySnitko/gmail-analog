@@ -7,12 +7,13 @@ import { Typography } from "@mui/material";
 import { FC } from "react";
 import { IconButton } from "../../ui-kit/IconButton/IconButton";
 import { SearchBar } from "../SearchBar/SearchBar";
+import { HeaderProps } from "./Header.interfaces";
 
-export const Header: FC = () => {
+export const Header: FC<HeaderProps> = ({ onHideButtonClick }) => {
   return (
     <S.Header>
       <S.LeftSide>
-        <IconButton size="large">
+        <IconButton size="large" onClick={onHideButtonClick}>
           <DehazeIcon />
         </IconButton>
         <S.Title>
