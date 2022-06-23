@@ -1,15 +1,26 @@
-import React, {FC} from 'react';
-import {S} from './AsideItem.styles'
-import {AsideItemProps} from "./AsideItem.interface";
+import React, { FC } from "react";
+import { S } from "./AsideItem.styles";
+import { AsideItemProps } from "./AsideItem.interface";
+import Link from "next/link";
 
-const AsideItem: FC<AsideItemProps> = ({isOpen, Image, title, clickHandler}) => {
+const AsideItem: FC<AsideItemProps> = ({
+  isOpen,
+  Image,
+  title,
+  href,
+  clickHandler,
+}) => {
   return (
     <S.Item>
       <S.ListButton onClick={clickHandler}>
         <S.ItemButtonIcon>
-          <Image fontSize={'small'}/>
+          <Image fontSize={"small"} />
         </S.ItemButtonIcon>
-        {isOpen && <S.ItemTitle>{title}</S.ItemTitle>}
+        {isOpen && (
+          <S.ItemTitle>
+            {href ? <Link href={href}>{title}</Link> : title}
+          </S.ItemTitle>
+        )}
       </S.ListButton>
     </S.Item>
   );
