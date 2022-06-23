@@ -1,4 +1,6 @@
-export const mails = [
+import { MailListItemProps } from "../common/ui-kit/MailListItem/MailListItem.interface";
+
+export const mails: MailListItemProps[] = [
   {
     id: "1",
     sender: "Atlassian",
