@@ -1,4 +1,4 @@
-import { SearchBar } from "./common/components/SearchBar/SearchBar";
+import { SearchBar } from "./src/common/components/SearchBar/SearchBar";
 import "@mui/material/styles";
 
 declare module "@mui/material/styles" {
