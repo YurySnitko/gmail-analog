@@ -1,10 +1,12 @@
-import {Grid} from "@mui/material";
+import { Grid } from "@mui/material";
 import styled from "@emotion/styled";
-import {AsideStylesProps} from "./Aside.interface";
+import { AsideStylesProps } from "./Aside.interface";
 
 export const S = {
-  Aside: styled(({isOpen, ...props}: AsideStylesProps) => <Grid {...props}/>)`
-    width: ${props => props.isOpen ? '256px' : '72px'};
+  Aside: styled(({ isOpen, ...props }: AsideStylesProps) => (
+    <Grid {...props} />
+  ))`
+    width: ${(props) => (props.isOpen ? "256px" : "72px")};
     display: flex;
     padding-top: 1.5rem;
     flex-direction: column;
@@ -12,4 +14,4 @@ export const S = {
     gap: 1rem;
     box-shadow: 0 0 4px lightgray;
   `,
-}
+};

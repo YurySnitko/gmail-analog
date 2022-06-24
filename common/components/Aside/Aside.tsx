@@ -1,47 +1,33 @@
-import React, {FC, useState} from 'react';
+import React, { FC, useState } from "react";
 import AsideMailList from "../AsideMailLIst/AsideMailList";
-import {S} from './Aside.styles'
-import WriteButton from "../WriteButton/WriteButton";
-import {AsideProps} from "./Aside.interface";
-import {Button} from "@mui/material";
+import { S } from "./Aside.styles";
+import { AsideProps } from "./Aside.interface";
+import WriteButton from "../../ui-kit/WriteButton/WriteButton";
 
-const Aside: FC<AsideProps> = () => {
-  const [isOpen, setIsOpen] = useState(true)
-  const [isHover, setIsHover] = useState(false)
-
-  const hideButtonClickHandler = () => {
-    setIsOpen((prevState) => !prevState)
-  }
+const Aside: FC<AsideProps> = ({ isOpen }) => {
+  const [isHover, setIsHover] = useState(false);
 
   const asideMouseEnderHandler = () => {
     if (!isOpen) {
-      setIsHover(true)
+      setIsHover(true);
     }
-  }
+  };
 
   const asideLeaveEnderHandler = () => {
     if (!isOpen) {
-      setIsHover(false)
+      setIsHover(false);
     }
-  }
+  };
 
   return (
-    <>
-      <Button
-        variant={'contained'}
-        onClick={hideButtonClickHandler}
-      >
-        Hide
-      </Button>
-      <S.Aside
-        isOpen={isOpen || isHover}
-        onMouseEnter={asideMouseEnderHandler}
-        onMouseLeave={asideLeaveEnderHandler}
-      >
-        <WriteButton isOpen={isOpen || isHover} />
-        <AsideMailList isOpen={isOpen || isHover} />
-      </S.Aside>
-    </>
+    <S.Aside
+      isOpen={isOpen || isHover}
+      onMouseEnter={asideMouseEnderHandler}
+      onMouseLeave={asideLeaveEnderHandler}
+    >
+      <WriteButton isOpen={isOpen || isHover} />
+      <AsideMailList isOpen={isOpen || isHover} />
+    </S.Aside>
   );
 };
 
