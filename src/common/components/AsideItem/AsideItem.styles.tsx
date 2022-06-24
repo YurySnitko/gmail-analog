@@ -1,4 +1,9 @@
-import {ListItem, ListItemButton, ListItemIcon, Typography} from "@mui/material";
+import {
+  ListItem,
+  ListItemButton,
+  ListItemIcon,
+  Typography,
+} from "@mui/material";
 import styled from "@emotion/styled";
 
 export const S = {
@@ -20,10 +25,10 @@ export const S = {
   ItemTitle: styled(Typography)`
     line-height: 2rem;
     font-size: 0.875rem;
-    letter-spacing: .2px;
+    letter-spacing: 0.2px;
   `,
 
   ItemButtonIcon: styled(ListItemIcon)`
     min-width: 0;
-  `
-}
+  `,
+};
