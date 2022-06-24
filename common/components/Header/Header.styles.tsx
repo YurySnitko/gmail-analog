@@ -61,4 +61,6 @@ export const Avatar = styled(MuiAvatar)((props) => ({
 export const Title = styled("div")`
   display: flex;
   align-items: flex-end;
+  user-select: none;
+  cursor: pointer;
 `;
