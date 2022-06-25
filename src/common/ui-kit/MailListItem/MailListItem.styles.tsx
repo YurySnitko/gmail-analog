@@ -11,18 +11,22 @@ export const S = {
   MailListItemGrid: styled(({ isViewed, ...props }: MailListItemGridProps) => (
     <Grid {...props} />
   ))`
-    box-sizing: content-box;
-    display: flex;
+    display: grid;
+    grid-template-columns: 35px 35px 10fr 2.5fr;
     width: 100%;
     align-items: center;
     border-top: 1px solid lightgray;
     border-left: 1px solid white;
     border-right: 1px solid white;
     cursor: pointer;
-    padding-left: 0.5rem;
+    padding: 0 0.5rem;
     user-select: none;
     position: relative;
     background-color: ${(props) => (props.isViewed ? "#f4f7f7" : "#ffffff")};
+
+    &:first-of-type {
+      border-top: none;
+    }
 
     &:hover {
       box-shadow: 1px 1px 2px 1px #9d9d9d;
@@ -40,9 +44,8 @@ export const S = {
   `,
 
   TextWrapper: styled.div`
-    width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 80px 1fr;
     overflow: hidden;
     gap: 2.5rem;
   `,
@@ -53,13 +56,10 @@ export const S = {
     font-size: 0.875rem;
     white-space: nowrap;
     overflow: hidden;
+    letter-spacing: normal;
     text-overflow: ellipsis;
     font-weight: ${(props) =>
-      props.isViewed === undefined
-        ? "normal"
-        : props.isViewed
-        ? "normal"
-        : "bold"};
+      props.isViewed === undefined ? "400" : props.isViewed ? "400" : "700"};
   `,
 
   TimeText: styled(Typography)`
@@ -82,5 +82,11 @@ export const S = {
     overflow: hidden;
     align-items: center;
     gap: 5px;
+  `,
+
+  EndLineWrapper: styled(Grid)`
+    justify-self: end;
+    display: flex;
+    align-items: center;
   `,
 };

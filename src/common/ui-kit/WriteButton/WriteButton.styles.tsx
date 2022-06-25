@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import {Typography} from "@mui/material";
+import { Typography } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import {WriteButtonWrapperProps} from "./WriteButton.interface";
+import { WriteButtonWrapperProps } from "./WriteButton.interface";
 
 export const S = {
   Button: styled.button`
@@ -14,16 +14,16 @@ export const S = {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
     margin-left: 0.725rem;
-    
-    &:hover{
+
+    &:hover {
       box-shadow: 1px 2px 4px 1px #9d9d9d;
     }
   `,
 
   WriteButtonWrapper: styled.div<WriteButtonWrapperProps>`
-    padding: ${props => props.isOpen ? '0 10px 0 5px' : '0 5px'};
+    padding: ${(props) => (props.isOpen ? "0 10px 0 5px" : "0 5px")};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,16 +31,14 @@ export const S = {
     min-height: 2.5rem;
   `,
 
-
   WriteButtonText: styled(Typography)`
-    color: red;
-    font-size: .875rem;
-    letter-spacing: .25px;
+    color: #d93025;
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
     line-height: 2.5rem;
   `,
 
   EditIcon: styled(EditIcon)`
-    color: red;
+    color: #d93025;
   `,
-
-}
+};

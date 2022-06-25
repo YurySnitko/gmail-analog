@@ -8,6 +8,7 @@ export const S = {
   ))`
     width: ${(props) => (props.isOpen ? "256px" : "72px")};
     display: flex;
+    flex-shrink: 0;
     padding-top: 1.5rem;
     flex-direction: column;
     align-items: flex-start;

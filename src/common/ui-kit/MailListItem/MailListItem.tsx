@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import { S } from "./MailListItem.styles";
-import { Checkbox, IconButton } from "@mui/material";
+import { Checkbox, IconButton, Tooltip } from "@mui/material";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
@@ -28,23 +28,35 @@ const MailListItem: FC<MailListItemProps> = ({
   const lineEndItems = () => {
     if (isHover) {
       return (
-        <S.IconWrapper>
-          <IconButton>
-            <ArchiveOutlinedIcon fontSize={"small"} />
-          </IconButton>
-          <IconButton>
-            <DeleteOutlinedIcon fontSize={"small"} />
-          </IconButton>
-          <IconButton>
-            <EmailOutlinedIcon fontSize={"small"} />
-          </IconButton>
-          <IconButton>
-            <AccessTimeOutlinedIcon fontSize={"small"} />
-          </IconButton>
-        </S.IconWrapper>
+        <S.EndLineWrapper>
+          <Tooltip title={"Архивировать"}>
+            <IconButton>
+              <ArchiveOutlinedIcon fontSize={"small"} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={"Удалить"}>
+            <IconButton>
+              <DeleteOutlinedIcon fontSize={"small"} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={"Отметить как прочитанное"}>
+            <IconButton>
+              <AccessTimeOutlinedIcon fontSize={"small"} />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={"Отложить"}>
+            <IconButton>
+              <EmailOutlinedIcon fontSize={"small"} />
+            </IconButton>
+          </Tooltip>
+        </S.EndLineWrapper>
       );
     }
-    return <S.TimeText>{date}</S.TimeText>;
+    return (
+      <S.EndLineWrapper>
+        <S.TimeText>{date}</S.TimeText>
+      </S.EndLineWrapper>
+    );
   };
 
   return (
@@ -62,9 +74,12 @@ const MailListItem: FC<MailListItemProps> = ({
       <S.TextWrapper>
         <S.MessageText isViewed={isViewed}>{sender}</S.MessageText>
         <S.TextContentWrapper>
-          <S.MessageText isViewed={isViewed}>{title}</S.MessageText>
-          <S.MessageText>-</S.MessageText>
-          <S.MessageText>{text}</S.MessageText>
+          <S.MessageText>
+            {isViewed ? title : <b>{title}</b>} - {text}
+          </S.MessageText>
+          {/*<S.MessageText isViewed={isViewed}>{title}</S.MessageText>*/}
+          {/*<S.MessageText>-</S.MessageText>*/}
+          {/*<S.MessageText>{text}</S.MessageText>*/}
         </S.TextContentWrapper>
       </S.TextWrapper>
       {lineEndItems()}
