@@ -6,7 +6,7 @@ import {
   MailListItemGridProps,
   MessageTextProps,
 } from "./MailListItem.interface";
-//#f4f7f7
+
 export const S = {
   MailListItemGrid: styled(({ isViewed, ...props }: MailListItemGridProps) => (
     <Grid {...props} />
