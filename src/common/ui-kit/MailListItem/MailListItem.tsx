@@ -77,9 +77,6 @@ const MailListItem: FC<MailListItemProps> = ({
           <S.MessageText>
             {isViewed ? title : <b>{title}</b>} - {text}
           </S.MessageText>
-          {/*<S.MessageText isViewed={isViewed}>{title}</S.MessageText>*/}
-          {/*<S.MessageText>-</S.MessageText>*/}
-          {/*<S.MessageText>{text}</S.MessageText>*/}
         </S.TextContentWrapper>
       </S.TextWrapper>
       {lineEndItems()}

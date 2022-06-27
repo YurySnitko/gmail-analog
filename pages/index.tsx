@@ -5,7 +5,7 @@ import { mails } from "../consts/mails";
 const Home: NextPage = () => {
   return (
     <div>
-      <MailList mailList={mails} />;
+      <MailList mailList={mails} />
     </div>
   );
 };
