@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { Grid, Typography } from "@mui/material";
 import StarRateIcon from "@mui/icons-material/StarRate";
 import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
@@ -15,35 +15,37 @@ export const S = {
     grid-template-columns: 35px 35px 10fr 2.5fr;
     width: 100%;
     align-items: center;
-    border-top: 1px solid lightgray;
-    border-left: 1px solid white;
-    border-right: 1px solid white;
+    border-top: 1px solid ${props => props.theme.palette.divider};
+    border-left: 1px solid ${props => props.theme.palette.common.white};
+    border-right: 1px solid ${props => props.theme.palette.common.white};
     cursor: pointer;
     padding: 0 0.5rem;
     user-select: none;
     position: relative;
-    background-color: ${(props) => (props.isViewed ? "#f4f7f7" : "#ffffff")};
+    background-color: ${(props) => (props.isViewed ? 
+      props.theme.palette.background.mailListItemViewed : 
+      props.theme.palette.common.white)};
 
     &:first-of-type {
       border-top: none;
     }
 
     &:hover {
-      box-shadow: 1px 1px 2px 1px #9d9d9d;
-      border-left: 1px solid lightgray;
-      border-right: 1px solid lightgray;
+      box-shadow: ${props => props.theme.customShadows.mailListItemHover};
+      border-left: 1px solid ${props => props.theme.palette.divider};
+      border-right: 1px solid ${props => props.theme.palette.divider};
     }
 
     &:last-child {
-      border-bottom: 1px solid lightgray;
+      border-bottom: 1px solid ${props => props.theme.palette.divider};
     }
   `,
 
   CheckedStarIcon: styled(StarRateIcon)`
-    color: #f4b400;
+    color: ${props => props.theme.palette.background.starButtonFocused};
   `,
 
-  TextWrapper: styled.div`
+  TextWrapper: styled('div')`
     display: grid;
     grid-template-columns: 80px 1fr;
     overflow: hidden;
@@ -70,7 +72,7 @@ export const S = {
   DragIcon: styled(DragIndicatorIcon)`
     position: absolute;
     left: 2px;
-    color: lightgray;
+    color: ${props => props.theme.palette.grey.A400};
   `,
 
   IconWrapper: styled(Grid)`

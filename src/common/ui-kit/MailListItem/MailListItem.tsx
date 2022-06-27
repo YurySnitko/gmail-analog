@@ -1,6 +1,7 @@
 import React, { FC, useState } from "react";
 import { S } from "./MailListItem.styles";
-import { Checkbox, IconButton, Tooltip } from "@mui/material";
+import { Checkbox, Tooltip } from "@mui/material";
+import { IconButton }  from '../IconButton/IconButton'
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";

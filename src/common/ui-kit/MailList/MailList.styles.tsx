@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
 import { Grid } from "@mui/material";
+import { styled } from "@mui/material/styles";
 
 export const S = {
   MailListGrid: styled(Grid)`

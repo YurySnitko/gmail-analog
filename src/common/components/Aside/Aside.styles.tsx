@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { AsideStylesProps } from "./Aside.interface";
 
 export const S = {
@@ -13,6 +13,6 @@ export const S = {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
-    box-shadow: 0 0 4px lightgray;
+    box-shadow: 1px 0 0 ${props => props.theme.palette.divider};
   `,
 };
