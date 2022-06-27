@@ -15,7 +15,7 @@ import { UrlObject } from "url";
 
 interface LinkItem {
   title: string;
-  Image: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
+  Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
     muiName: string;
   };
   href: string | UrlObject;
@@ -24,27 +24,27 @@ interface LinkItem {
 export const defaultLinkItems: LinkItem[] = [
   {
     title: "Входящие",
-    Image: InboxIcon,
+    Icon: InboxIcon,
     href: "/inbox",
   },
   {
     title: "Помеченные",
-    Image: StarBorderIcon,
+    Icon: StarBorderIcon,
     href: "/starred",
   },
   {
     title: "Отложенные",
-    Image: QueryBuilderIcon,
+    Icon: QueryBuilderIcon,
     href: "/snoozed",
   },
   {
     title: "Отправленные",
-    Image: SendIcon,
+    Icon: SendIcon,
     href: "/sent",
   },
   {
     title: "Черновики",
-    Image: InsertDriveFileIcon,
+    Icon: InsertDriveFileIcon,
     href: "/drafts",
   },
 ];
@@ -52,32 +52,32 @@ export const defaultLinkItems: LinkItem[] = [
 export const moreLinksItems: LinkItem[] = [
   {
     title: "Важные",
-    Image: LabelImportantIcon,
+    Icon: LabelImportantIcon,
     href: "/imp",
   },
   {
     title: "Запланированные",
-    Image: ScheduleSendIcon,
+    Icon: ScheduleSendIcon,
     href: "/scheduled",
   },
   {
     title: "Вся почта",
-    Image: EmailIcon,
+    Icon: EmailIcon,
     href: "/all",
   },
   {
     title: "Спам",
-    Image: ReportGmailerrorredIcon,
+    Icon: ReportGmailerrorredIcon,
     href: "/spam",
   },
   {
     title: "Корзина",
-    Image: DeleteIcon,
+    Icon: DeleteIcon,
     href: "/trash",
   },
   {
     title: "Управление ярлыками",
-    Image: SettingsIcon,
+    Icon: SettingsIcon,
     href: "/settings/labels",
   },
 ];

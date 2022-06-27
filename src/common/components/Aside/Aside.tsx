@@ -7,13 +7,13 @@ import WriteButton from "../../ui-kit/WriteButton/WriteButton";
 const Aside: FC<AsideProps> = ({ isOpen }) => {
   const [isHover, setIsHover] = useState(false);
 
-  const asideMouseEnderHandler = () => {
+  const asideMouseEnderHandler = (): void => {
     if (!isOpen) {
       setIsHover(true);
     }
   };
 
-  const asideLeaveEnderHandler = () => {
+  const asideLeaveEnderHandler = (): void => {
     if (!isOpen) {
       setIsHover(false);
     }
@@ -21,12 +21,12 @@ const Aside: FC<AsideProps> = ({ isOpen }) => {
 
   return (
     <S.Aside
-      isOpen={isOpen || isHover}
+      isOpen={isOpen ?? isHover}
       onMouseEnter={asideMouseEnderHandler}
       onMouseLeave={asideLeaveEnderHandler}
     >
-      <WriteButton isOpen={isOpen || isHover} />
-      <AsideMailList isOpen={isOpen || isHover} />
+      <WriteButton isOpen={isOpen ?? isHover} />
+      <AsideMailList isOpen={isOpen ?? isHover} />
     </S.Aside>
   );
 };

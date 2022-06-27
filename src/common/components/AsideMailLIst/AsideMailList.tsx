@@ -10,16 +10,16 @@ import { AsideMailListProps } from "./AsideMailList.interface";
 const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
   const [isCollapseOpen, setIsCollapseOpen] = useState(false);
 
-  const moreClickHandler = () => {
+  const moreClickHandler = (): void => {
     setIsCollapseOpen((prev) => !prev);
   };
 
   return (
     <S.AsideList>
-      {defaultLinkItems.map(({ title, Image, href }) => (
+      {defaultLinkItems.map(({ title, Icon, href }) => (
         <AsideItem
           isOpen={isOpen}
-          Image={Image}
+          Icon={Icon}
           title={title}
           href={href}
           key={title}
@@ -27,15 +27,15 @@ const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
       ))}
       <AsideItem
         isOpen={isOpen}
-        Image={isCollapseOpen ? KeyboardArrowUpIcon : ExpandMoreIcon}
+        Icon={isCollapseOpen ? KeyboardArrowUpIcon : ExpandMoreIcon}
         title={isCollapseOpen ? "Свернуть" : "Ещё"}
         clickHandler={moreClickHandler}
       />
       <Collapse in={isCollapseOpen} timeout={"auto"} unmountOnExit>
-        {moreLinksItems.map(({ Image, title, href }) => (
+        {moreLinksItems.map(({ Icon, title, href }) => (
           <AsideItem
             isOpen={isOpen}
-            Image={Image}
+            Icon={Icon}
             title={title}
             href={href}
             key={title}

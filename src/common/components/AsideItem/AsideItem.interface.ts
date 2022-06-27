@@ -3,7 +3,7 @@ import { SvgIconTypeMap } from "@mui/material";
 import { UrlObject } from "url";
 
 export interface AsideItemProps {
-  Image: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
+  Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">>;
   title: string;
   clickHandler?: () => void;
   isOpen?: boolean;
