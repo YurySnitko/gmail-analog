@@ -1,13 +1,13 @@
-import React, { FC, useState } from "react";
-import { S } from "./MailListItem.styles";
-import { Checkbox, Tooltip } from "@mui/material";
-import { IconButton }  from '../IconButton/IconButton'
-import StarBorderIcon from "@mui/icons-material/StarBorder";
-import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import { MailListItemProps } from "./MailListItem.interface";
+import React, { FC, useState } from 'react';
+import { S } from './MailListItem.styles';
+import { Checkbox, Tooltip } from '@mui/material';
+import { IconButton } from '../IconButton/IconButton';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
+import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
+import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
+import { MailListItemProps } from './MailListItem.interface';
 
 const MailListItem: FC<MailListItemProps> = ({
   sender,
@@ -18,36 +18,36 @@ const MailListItem: FC<MailListItemProps> = ({
 }) => {
   const [isHover, setIsHover] = useState(false);
 
-  const listItemMouseEnderHandler = () => {
+  const listItemMouseEnderHandler = (): void => {
     setIsHover(true);
   };
 
-  const listItemMouseLeaveHandler = () => {
+  const listItemMouseLeaveHandler = (): void => {
     setIsHover(false);
   };
 
-  const lineEndItems = () => {
+  const lineEndItems = (): React.ReactNode => {
     if (isHover) {
       return (
         <S.EndLineWrapper>
-          <Tooltip title={"Архивировать"}>
+          <Tooltip title={'Архивировать'}>
             <IconButton>
-              <ArchiveOutlinedIcon fontSize={"small"} />
+              <ArchiveOutlinedIcon fontSize={'small'} />
             </IconButton>
           </Tooltip>
-          <Tooltip title={"Удалить"}>
+          <Tooltip title={'Удалить'}>
             <IconButton>
-              <DeleteOutlinedIcon fontSize={"small"} />
+              <DeleteOutlinedIcon fontSize={'small'} />
             </IconButton>
           </Tooltip>
-          <Tooltip title={"Отметить как прочитанное"}>
+          <Tooltip title={'Отметить как прочитанное'}>
             <IconButton>
-              <AccessTimeOutlinedIcon fontSize={"small"} />
+              <AccessTimeOutlinedIcon fontSize={'small'} />
             </IconButton>
           </Tooltip>
-          <Tooltip title={"Отложить"}>
+          <Tooltip title={'Отложить'}>
             <IconButton>
-              <EmailOutlinedIcon fontSize={"small"} />
+              <EmailOutlinedIcon fontSize={'small'} />
             </IconButton>
           </Tooltip>
         </S.EndLineWrapper>
@@ -66,11 +66,11 @@ const MailListItem: FC<MailListItemProps> = ({
       onMouseEnter={listItemMouseEnderHandler}
       onMouseLeave={listItemMouseLeaveHandler}
     >
-      {isHover && <S.DragIcon fontSize={"small"} />}
-      <Checkbox size={"small"} />
+      {isHover && <S.DragIcon fontSize={'small'} />}
+      <Checkbox size={'small'} />
       <Checkbox
-        icon={<StarBorderIcon fontSize={"small"} />}
-        checkedIcon={<S.CheckedStarIcon fontSize={"small"} />}
+        icon={<StarBorderIcon fontSize={'small'} />}
+        checkedIcon={<S.CheckedStarIcon fontSize={'small'} />}
       />
       <S.TextWrapper>
         <S.MessageText isViewed={isViewed}>{sender}</S.MessageText>
