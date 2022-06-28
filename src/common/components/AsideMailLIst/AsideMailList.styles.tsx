@@ -1,5 +1,5 @@
 import { List } from "@mui/material";
-import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 
 export const S = {
   AsideList: styled(List)`
