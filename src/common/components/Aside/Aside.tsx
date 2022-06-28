@@ -1,11 +1,11 @@
-import React, { FC, useState } from "react";
-import AsideMailList from "../AsideMailLIst/AsideMailList";
-import { S } from "./Aside.styles";
-import { AsideProps } from "./Aside.interface";
-import WriteButton from "../../ui-kit/WriteButton/WriteButton";
+import { FC, useState } from 'react';
+import AsideMailList from '../AsideMailLIst/AsideMailList';
+import { S } from './Aside.styles';
+import { AsideProps } from './Aside.interface';
+import WriteButton from '../../ui-kit/WriteButton/WriteButton';
 
 const Aside: FC<AsideProps> = ({ isOpen }) => {
-  const [isHover, setIsHover] = useState(false);
+  const [isHover, setIsHover] = useState<boolean>(false);
 
   const asideMouseEnderHandler = (): void => {
     if (!isOpen) {
@@ -21,12 +21,12 @@ const Aside: FC<AsideProps> = ({ isOpen }) => {
 
   return (
     <S.Aside
-      isOpen={isOpen ?? isHover}
+      isOpen={isOpen || isHover}
       onMouseEnter={asideMouseEnderHandler}
       onMouseLeave={asideLeaveEnderHandler}
     >
-      <WriteButton isOpen={isOpen ?? isHover} />
-      <AsideMailList isOpen={isOpen ?? isHover} />
+      <WriteButton isOpen={isOpen || isHover} />
+      <AsideMailList isOpen={isOpen || isHover} />
     </S.Aside>
   );
 };

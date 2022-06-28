@@ -1,7 +1,6 @@
-import { SearchBar } from "./src/common/components/SearchBar/SearchBar";
-import "@mui/material/styles";
+import '@mui/material/styles';
 
-declare module "@mui/material/styles" {
+declare module '@mui/material/styles' {
   interface TypeBackground {
     iconButton: string;
     searchBar: string;
