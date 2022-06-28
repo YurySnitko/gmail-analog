@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const AsideItem: FC<AsideItemProps> = ({
   isOpen,
-  Image,
+  Icon,
   title,
   href,
   clickHandler,
@@ -14,7 +14,7 @@ const AsideItem: FC<AsideItemProps> = ({
     <S.Item>
       <S.ListButton onClick={clickHandler}>
         <S.ItemButtonIcon>
-          <Image fontSize={"small"} />
+          <Icon fontSize={"small"} />
         </S.ItemButtonIcon>
         {isOpen && (
           <S.ItemTitle>

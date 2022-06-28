@@ -1,7 +1,8 @@
-import { FC } from "react";
-import * as S from "./SearchBar.styles";
-import SearchIcon from "@mui/icons-material/Search";
-import TuneIcon from "@mui/icons-material/Tune";
+import * as S from './SearchBar.styles';
+import SearchIcon from '@mui/icons-material/Search';
+import TuneIcon from '@mui/icons-material/Tune';
+import { FC } from 'react';
+import { SearchBarForm } from '../SearchBarForm/SearchBarForm';
 
 export const SearchBar: FC = () => {
   return (
@@ -9,11 +10,9 @@ export const SearchBar: FC = () => {
       <S.SearchButton>
         <SearchIcon />
       </S.SearchButton>
-      <S.Form>
-        <S.InputBox>
-          <S.Input placeholder="Search" />
-        </S.InputBox>
-      </S.Form>
+      <S.FormContainer>
+        <SearchBarForm />
+      </S.FormContainer>
       <S.SearchParamsButton>
         <TuneIcon />
       </S.SearchParamsButton>

@@ -6,7 +6,7 @@ export const S = {
   Aside: styled(({ isOpen, ...props }: AsideStylesProps) => (
     <Grid {...props} />
   ))`
-    width: ${(props) => (props.isOpen ? "256px" : "72px")};
+    width: ${(props): string => (props.isOpen ? "256px" : "72px")};
     display: flex;
     flex-shrink: 0;
     padding-top: 1.5rem;
