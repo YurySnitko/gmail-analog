@@ -7,5 +7,8 @@ export const S = {
     display: flex;
     align-items: center;
     padding: 0 0.5rem;
-  `
-}
+    border-left: 1px solid white;
+    justify-content: space-between;
+    box-sizing: border-box;
+  `,
+};

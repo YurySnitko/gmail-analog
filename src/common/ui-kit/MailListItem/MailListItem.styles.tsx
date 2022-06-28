@@ -12,7 +12,7 @@ export const S = {
     <Grid {...props} />
   ))`
     display: grid;
-    grid-template-columns: 35px 35px 10fr 2.5fr;
+    grid-template-columns: 38px 35px 10fr 2.5fr;
     width: 100%;
     align-items: center;
     border-top: 1px solid ${(props): string => props.theme.palette.divider};
@@ -28,10 +28,6 @@ export const S = {
       props.isViewed
         ? props.theme.palette.background.mailListItemViewed
         : props.theme.palette.common.white};
-
-    &:first-of-type {
-      border-top: none;
-    }
 
     &:hover {
       box-shadow: ${(props): string =>

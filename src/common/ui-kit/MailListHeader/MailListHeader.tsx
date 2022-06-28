@@ -1,11 +1,13 @@
 import React, { FC } from 'react';
 import { S } from './MailListHeader.styles';
-import { Checkbox } from '@mui/material';
+import PaginationPanel from '../../components/PaginationPanel/PaginationPanel';
+import MailListHeaderIcons from '../../components/MailListHeaderIcons/MailListHeaderIcons';
 
 const MailListHeader: FC = () => {
   return (
     <S.MailListHeaderWrapper>
-      <Checkbox size={'small'} />
+      <MailListHeaderIcons />
+      <PaginationPanel />
     </S.MailListHeaderWrapper>
   );
 };
