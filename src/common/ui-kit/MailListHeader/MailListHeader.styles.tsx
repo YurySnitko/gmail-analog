@@ -6,7 +6,7 @@ export const S = {
     width: 100%;
     display: flex;
     align-items: center;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     border-left: 1px solid white;
     justify-content: space-between;
     box-sizing: border-box;
