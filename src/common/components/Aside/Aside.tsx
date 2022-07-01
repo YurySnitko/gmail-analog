@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import AsideMailList from '../AsideMailLIst/AsideMailList';
 import { S } from './Aside.styles';
-import { AsideProps } from './Aside.interface';
+import { AsideProps } from './Aside.interfaces';
 import WriteButton from '../../ui-kit/WriteButton/WriteButton';
 
 const Aside: FC<AsideProps> = ({ isOpen }) => {

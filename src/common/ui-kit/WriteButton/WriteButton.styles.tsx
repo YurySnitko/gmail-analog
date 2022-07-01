@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles';
 import { Typography } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
-import { WriteButtonWrapperProps } from './WriteButton.interface';
+import { WriteButtonWrapperProps } from './WriteButton.interfaces';
 
 export const S = {
   Button: styled('button')`

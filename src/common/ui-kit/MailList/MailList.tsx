@@ -1,9 +1,13 @@
-import React, { FC } from "react";
-import { S } from "./MailList.styles";
-import { MailListProps } from "./MailList.interface";
-import MailListItem from "../MailListItem/MailListItem";
+import React, { FC } from 'react';
+import { S } from './MailList.styles';
+import { MailListProps } from './MailList.interfaces';
+import MailListItem from '../MailListItem/MailListItem';
 
-const MailList: FC<MailListProps> = ({ mailList }) => {
+const MailList: FC<MailListProps> = ({
+  setSelectedMailsIds,
+  selectedMailsIds,
+  mailList,
+}) => {
   return (
     <S.MailListGrid>
       {mailList.map((mail) => (
@@ -15,6 +19,9 @@ const MailList: FC<MailListProps> = ({ mailList }) => {
           text={mail.text}
           date={mail.date}
           isViewed={mail.isViewed}
+          isChecked={selectedMailsIds.includes(mail.id)}
+          selectedMailsIds={selectedMailsIds}
+          setSelectedMailsIds={setSelectedMailsIds}
         />
       ))}
     </S.MailListGrid>

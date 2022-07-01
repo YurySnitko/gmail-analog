@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { AsideStylesProps } from './Aside.interface';
+import { AsideStylesProps } from './Aside.interfaces';
 
 export const S = {
   Aside: styled(({ isOpen, ...props }: AsideStylesProps) => (

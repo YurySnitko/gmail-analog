@@ -7,14 +7,21 @@ import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
-import { MailListItemProps } from './MailListItem.interface';
+import {
+  MailListItemGridBackgroundEnum,
+  MailListItemProps,
+} from './MailListItem.interfaces';
 
 const MailListItem: FC<MailListItemProps> = ({
+  id,
   sender,
   title,
   text,
   isViewed,
   date,
+  isChecked,
+  selectedMailsIds,
+  setSelectedMailsIds,
 }) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -24,6 +31,14 @@ const MailListItem: FC<MailListItemProps> = ({
 
   const listItemMouseLeaveHandler = (): void => {
     setIsHover(false);
+  };
+
+  const checkboxCheckHandler = () => {
+    setSelectedMailsIds(
+      isChecked
+        ? selectedMailsIds.filter((item) => item !== id)
+        : [...selectedMailsIds, id]
+    );
   };
 
   const lineEndItems = (): React.ReactNode => {
@@ -62,12 +77,22 @@ const MailListItem: FC<MailListItemProps> = ({
 
   return (
     <S.MailListItemGrid
-      isViewed={isViewed}
+      background={
+        isChecked
+          ? MailListItemGridBackgroundEnum.checked
+          : isViewed
+          ? MailListItemGridBackgroundEnum.viewed
+          : MailListItemGridBackgroundEnum.normal
+      }
       onMouseEnter={listItemMouseEnderHandler}
       onMouseLeave={listItemMouseLeaveHandler}
     >
       {isHover && <S.DragIcon fontSize={'small'} />}
-      <Checkbox size={'small'} />
+      <Checkbox
+        size={'small'}
+        checked={isChecked}
+        onChange={checkboxCheckHandler}
+      />
       <Checkbox
         icon={<StarBorderIcon fontSize={'small'} />}
         checkedIcon={<S.CheckedStarIcon fontSize={'small'} />}

@@ -3,14 +3,15 @@ import { Grid, Typography } from '@mui/material';
 import StarRateIcon from '@mui/icons-material/StarRate';
 import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import {
+  MailListItemGridBackgroundEnum,
   MailListItemGridProps,
   MessageTextProps,
-} from './MailListItem.interface';
+} from './MailListItem.interfaces';
 
 export const S = {
-  MailListItemGrid: styled(({ isViewed, ...props }: MailListItemGridProps) => (
-    <Grid {...props} />
-  ))`
+  MailListItemGrid: styled(
+    ({ background, ...props }: MailListItemGridProps) => <Grid {...props} />
+  )`
     display: grid;
     grid-template-columns: 38px 35px 10fr 2.5fr;
     width: 100%;
@@ -25,7 +26,9 @@ export const S = {
     user-select: none;
     position: relative;
     background-color: ${(props): string =>
-      props.isViewed
+      props.background === MailListItemGridBackgroundEnum.checked
+        ? props.theme.palette.primary.light
+        : props.background === MailListItemGridBackgroundEnum.viewed
         ? props.theme.palette.background.mailListItemViewed
         : props.theme.palette.common.white};
 
