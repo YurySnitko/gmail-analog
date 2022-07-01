@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export interface MessageTextProps {
   isViewed?: boolean;
@@ -10,6 +10,7 @@ export interface MailListItemGridProps {
   children: React.ReactNode;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
+  onClick: () => void;
 }
 
 export interface MailListItemProps {
@@ -19,4 +20,5 @@ export interface MailListItemProps {
   text: string;
   date: string;
   isViewed: boolean;
+  onMailListItemClick: () => void;
 }

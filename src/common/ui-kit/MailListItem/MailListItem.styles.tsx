@@ -1,11 +1,11 @@
-import { styled } from "@mui/material/styles";
-import { Grid, Typography } from "@mui/material";
-import StarRateIcon from "@mui/icons-material/StarRate";
-import DragIndicatorIcon from "@mui/icons-material/DragIndicator";
+import { styled } from '@mui/material/styles';
+import { Grid, Typography } from '@mui/material';
+import StarRateIcon from '@mui/icons-material/StarRate';
+import DragIndicatorIcon from '@mui/icons-material/DragIndicator';
 import {
   MailListItemGridProps,
   MessageTextProps,
-} from "./MailListItem.interface";
+} from './MailListItem.interface';
 
 export const S = {
   MailListItemGrid: styled(({ isViewed, ...props }: MailListItemGridProps) => (
@@ -15,34 +15,36 @@ export const S = {
     grid-template-columns: 35px 35px 10fr 2.5fr;
     width: 100%;
     align-items: center;
-    border-top: 1px solid ${props => props.theme.palette.divider};
-    border-left: 1px solid ${props => props.theme.palette.common.white};
-    border-right: 1px solid ${props => props.theme.palette.common.white};
+    border-top: 1px solid ${({ theme }): string => theme.palette.divider};
+    border-left: 1px solid ${({ theme }): string => theme.palette.common.white};
+    border-right: 1px solid ${({ theme }): string => theme.palette.common.white};
     cursor: pointer;
     padding: 0 0.5rem;
     user-select: none;
     position: relative;
-    background-color: ${(props) => (props.isViewed ? 
-      props.theme.palette.background.mailListItemViewed : 
-      props.theme.palette.common.white)};
+    background-color: ${({ theme, isViewed }): string =>
+      isViewed
+        ? theme.palette.background.mailListItemViewed
+        : theme.palette.common.white};
 
     &:first-of-type {
       border-top: none;
     }
 
     &:hover {
-      box-shadow: ${props => props.theme.customShadows.mailListItemHover};
-      border-left: 1px solid ${props => props.theme.palette.divider};
-      border-right: 1px solid ${props => props.theme.palette.divider};
+      box-shadow: ${({ theme }): string =>
+        theme.customShadows.mailListItemHover};
+      border-left: 1px solid ${({ theme }): string => theme.palette.divider};
+      border-right: 1px solid ${({ theme }): string => theme.palette.divider};
     }
 
     &:last-child {
-      border-bottom: 1px solid ${props => props.theme.palette.divider};
+      border-bottom: 1px solid ${({ theme }): string => theme.palette.divider};
     }
   `,
 
   CheckedStarIcon: styled(StarRateIcon)`
-    color: ${props => props.theme.palette.background.starButtonFocused};
+    color: ${({ theme }): string => theme.palette.background.starButtonFocused};
   `,
 
   TextWrapper: styled('div')`
@@ -60,19 +62,14 @@ export const S = {
     overflow: hidden;
     letter-spacing: normal;
     text-overflow: ellipsis;
-    font-weight: ${(props) =>
-      props.isViewed === undefined ? "400" : props.isViewed ? "400" : "700"};
-  `,
-
-  TimeText: styled(Typography)`
-    font-size: 0.875rem;
-    white-space: nowrap;
+    font-weight: ${({ isViewed }): string =>
+      isViewed === undefined ? '400' : isViewed ? '400' : '700'};
   `,
 
   DragIcon: styled(DragIndicatorIcon)`
     position: absolute;
     left: 2px;
-    color: ${props => props.theme.palette.grey.A400};
+    color: ${({ theme }): string => theme.palette.grey.A400};
   `,
 
   IconWrapper: styled(Grid)`
@@ -84,11 +81,5 @@ export const S = {
     overflow: hidden;
     align-items: center;
     gap: 5px;
-  `,
-
-  EndLineWrapper: styled(Grid)`
-    justify-self: end;
-    display: flex;
-    align-items: center;
   `,
 };

@@ -1,4 +1,5 @@
 import '@mui/material/styles';
+import '@mui/material/Typography';
 
 declare module '@mui/material/styles' {
   interface TypeBackground {
@@ -18,6 +19,14 @@ declare module '@mui/material/styles' {
     };
   }
 
+  interface TypographyVariants {
+    body3: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    body3?: React.CSSProperties;
+  }
+
   interface ThemeOptions {
     customShadows: {
       searchBarFocused: string;
@@ -25,5 +34,11 @@ declare module '@mui/material/styles' {
       writeButtonHover: string;
       mailListItemHover: string;
     };
+  }
+}
+
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    body3: true;
   }
 }

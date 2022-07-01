@@ -17,4 +17,18 @@ export const theme = createTheme({
     writeButtonHover: '1px 2px 4px #9d9d9d',
     mailListItemHover: 'inset 0 -1px 0 0 rgb(100 121 143 / 12%)',
   },
+  typography: {
+    subtitle2: {
+      fontWeight: 700,
+      lineHeight: 1.43,
+    },
+    body3: {
+      fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
+      fontWeight: 400,
+      fontSize: '0.75rem',
+      lineHeight: 1.2,
+      letterSpacing: '0.00714em',
+      color: '#555',
+    },
+  },
 });
