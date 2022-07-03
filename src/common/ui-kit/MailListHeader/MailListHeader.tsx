@@ -7,6 +7,8 @@ import { MailListHeaderProps } from './MailListHeader.interfaces';
 const MailListHeader: FC<MailListHeaderProps> = ({
   selectedMailsIds,
   setSelectedMailsIds,
+  currentPage,
+  setCurrentPage,
 }) => {
   return (
     <S.MailListHeaderWrapper>
@@ -14,7 +16,10 @@ const MailListHeader: FC<MailListHeaderProps> = ({
         setSelectedMailsIds={setSelectedMailsIds}
         selectedMailsIds={selectedMailsIds}
       />
-      <PaginationPanel />
+      <PaginationPanel
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+      />
     </S.MailListHeaderWrapper>
   );
 };
