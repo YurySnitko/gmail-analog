@@ -34,4 +34,18 @@ export const S = {
     padding: 0.5rem 3rem;
     line-height: 20px;
   `,
+
+  IconsWrapper: styled(Grid)`
+    display: flex;
+  `,
+
+  MoreIconsWrapper: styled(Grid)`
+    &:last-child {
+      border-right: none;
+    }
+    display: flex;
+    padding: 0 0.5rem;
+    gap: 0.5rem;
+    border-right: 1px solid ${(props): string => props.theme.palette.divider};
+  `,
 };

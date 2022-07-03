@@ -7,6 +7,7 @@ declare module '@mui/material/styles' {
     searchBarFocused: string;
     starButtonFocused: string;
     mailListItemViewed: string;
+    mailListItemChecked: string;
   }
 
   interface Theme {

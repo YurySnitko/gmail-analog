@@ -92,6 +92,7 @@ const MailListItem: FC<MailListItemProps> = ({
         size={'small'}
         checked={isChecked}
         onChange={checkboxCheckHandler}
+        disableTouchRipple
       />
       <Checkbox
         icon={<StarBorderIcon fontSize={'small'} />}
@@ -110,4 +111,4 @@ const MailListItem: FC<MailListItemProps> = ({
   );
 };
 
-export default MailListItem;
+export default React.memo(MailListItem);

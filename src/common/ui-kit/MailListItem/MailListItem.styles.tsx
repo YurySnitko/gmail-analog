@@ -27,7 +27,7 @@ export const S = {
     position: relative;
     background-color: ${(props): string =>
       props.background === MailListItemGridBackgroundEnum.checked
-        ? props.theme.palette.primary.light
+        ? props.theme.palette.background.mailListItemChecked
         : props.background === MailListItemGridBackgroundEnum.viewed
         ? props.theme.palette.background.mailListItemViewed
         : props.theme.palette.common.white};
