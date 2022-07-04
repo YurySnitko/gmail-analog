@@ -10,6 +10,11 @@ declare module '@mui/material/styles' {
     mailListItemViewed: string;
   }
 
+  interface TypeText {
+    headerIconButton: string;
+    mailTitle: string;
+  }
+
   interface Theme {
     customShadows: {
       searchBarFocused: string;

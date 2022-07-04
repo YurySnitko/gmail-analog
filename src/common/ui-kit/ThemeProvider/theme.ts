@@ -9,7 +9,12 @@ export const theme = createTheme({
       starButtonFocused: '#f4b400',
       mailListItemViewed: '#f4f7f7',
     },
+    text: {
+      headerIconButton: '#5f6368',
+      mailTitle: '#202124',
+    },
   },
+
   customShadows: {
     searchBarFocused:
       '0 1px 1px 0 rgb(65 69 73 / 30%), 0 1px 3px 1px rgb(65 69 73 / 15%)',
@@ -17,7 +22,11 @@ export const theme = createTheme({
     writeButtonHover: '1px 2px 4px #9d9d9d',
     mailListItemHover: 'inset 0 -1px 0 0 rgb(100 121 143 / 12%)',
   },
+
   typography: {
+    h5: {
+      fontSize: '1.375rem',
+    },
     subtitle2: {
       fontWeight: 700,
       lineHeight: 1.43,
