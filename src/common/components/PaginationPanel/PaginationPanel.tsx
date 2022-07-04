@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 import { S } from './PaginationPanel.styles';
@@ -10,15 +10,20 @@ const PaginationPanel: FC<PaginationPanelProps> = ({
   currentPage,
   setCurrentPage,
 }) => {
-  const begin = (currentPage - 1) * 10;
-  const end = begin + 10;
+  const [begin, setBegin] = useState<number>(1);
+  const [end, setEnd] = useState<number>(10);
+
+  useEffect(() => {
+    setBegin((currentPage - 1) * 10);
+    setEnd(currentPage * 10);
+  }, [currentPage]);
 
   const prevPageClickHandler = () => {
-    setCurrentPage((prev) => prev - 1);
+    setCurrentPage(currentPage - 1);
   };
 
   const nextPageClickHandler = () => {
-    setCurrentPage((prev) => prev + 1);
+    setCurrentPage(currentPage + 1);
   };
 
   return (
@@ -26,8 +31,8 @@ const PaginationPanel: FC<PaginationPanelProps> = ({
       <S.PageButton>
         {begin + 1}-{end} из 40
       </S.PageButton>
-      <Tooltip title={'Пред.'}>
-        <IconButton onClick={prevPageClickHandler}>
+      <Tooltip open={false} title={'Пред.'}>
+        <IconButton disabled={currentPage === 1} onClick={prevPageClickHandler}>
           <KeyboardArrowLeftIcon fontSize={'medium'} />
         </IconButton>
       </Tooltip>
