@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useState } from 'react';
 import { S } from './MailList.styles';
 import { MailListProps } from './MailList.interfaces';
 import MailListItem from '../MailListItem/MailListItem';
@@ -19,6 +19,14 @@ const MailList: FC<MailListProps> = ({
     setCurrentPageMails(mailList.slice(begin, end));
   }, [currentPage]);
 
+  const checkboxCheckHandler = useCallback((isChecked: boolean, id: string) => {
+    setSelectedMailsIds(
+      isChecked
+        ? selectedMailsIds.filter((item) => item !== id)
+        : [...selectedMailsIds, id]
+    );
+  }, []);
+
   return (
     <S.MailListGrid>
       {currentPageMails.length > 0 &&
@@ -32,8 +40,7 @@ const MailList: FC<MailListProps> = ({
             date={mail.date}
             isViewed={mail.isViewed}
             isChecked={selectedMailsIds.includes(mail.id)}
-            selectedMailsIds={selectedMailsIds}
-            setSelectedMailsIds={setSelectedMailsIds}
+            checkboxCheckHandler={checkboxCheckHandler}
           />
         ))}
     </S.MailListGrid>

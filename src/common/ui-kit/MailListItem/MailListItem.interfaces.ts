@@ -20,8 +20,7 @@ export interface MailListItemProps {
   date: string;
   isViewed: boolean;
   isChecked: boolean;
-  selectedMailsIds: string[];
-  setSelectedMailsIds: (ids: string[]) => void;
+  checkboxCheckHandler: (isChecked: boolean, id: string) => void;
 }
 
 export enum MailListItemGridBackgroundEnum {

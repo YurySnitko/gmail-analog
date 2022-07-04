@@ -20,8 +20,7 @@ const MailListItem: FC<MailListItemProps> = ({
   isViewed,
   date,
   isChecked,
-  selectedMailsIds,
-  setSelectedMailsIds,
+  checkboxCheckHandler,
 }) => {
   const [isHover, setIsHover] = useState(false);
 
@@ -31,14 +30,6 @@ const MailListItem: FC<MailListItemProps> = ({
 
   const listItemMouseLeaveHandler = (): void => {
     setIsHover(false);
-  };
-
-  const checkboxCheckHandler = () => {
-    setSelectedMailsIds(
-      isChecked
-        ? selectedMailsIds.filter((item) => item !== id)
-        : [...selectedMailsIds, id]
-    );
   };
 
   const lineEndItems = (): React.ReactNode => {
@@ -91,7 +82,7 @@ const MailListItem: FC<MailListItemProps> = ({
       <Checkbox
         size={'small'}
         checked={isChecked}
-        onChange={checkboxCheckHandler}
+        onChange={() => checkboxCheckHandler(isChecked, id)}
         disableTouchRipple
       />
       <Checkbox
