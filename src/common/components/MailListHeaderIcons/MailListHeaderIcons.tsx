@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -14,6 +14,7 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import DriveFileMoveOutlinedIcon from '@mui/icons-material/DriveFileMoveOutlined';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
+import { Tooltip } from '@mui/material';
 
 const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   selectedMailsIds,
@@ -22,6 +23,10 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const [checkboxChecked, setCheckboxChecked] = useState<boolean>(false);
+
+  useEffect(() => {
+    setCheckboxChecked(selectedMailsIds.length > 0);
+  }, [selectedMailsIds]);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
@@ -42,47 +47,69 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
         {selectedMailsIds.length > 0 ? (
           <S.IconsWrapper>
             <S.MoreIconsWrapper>
-              <IconButton>
-                <ArchiveOutlinedIcon fontSize={'small'} />
-              </IconButton>
-              <IconButton>
-                <ReportGmailerrorredOutlinedIcon fontSize={'small'} />
-              </IconButton>
-              <IconButton>
-                <DeleteOutlineOutlinedIcon fontSize={'small'} />
-              </IconButton>
+              <Tooltip title={'Архивировать'}>
+                <IconButton>
+                  <ArchiveOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={'В спам!'}>
+                <IconButton>
+                  <ReportGmailerrorredOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={'Удалить'}>
+                <IconButton>
+                  <DeleteOutlineOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
             </S.MoreIconsWrapper>
             <S.MoreIconsWrapper>
-              <IconButton>
-                <DraftsOutlinedIcon fontSize={'small'} />
-              </IconButton>
-              <IconButton>
-                <AccessTimeOutlinedIcon fontSize={'small'} />
-              </IconButton>
-              <IconButton>
-                <AddTaskOutlinedIcon fontSize={'small'} />
-              </IconButton>
+              <Tooltip title={'Отметить как прочитанное'}>
+                <IconButton>
+                  <DraftsOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={'Отложить'}>
+                <IconButton>
+                  <AccessTimeOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={'Добавить в задачи'}>
+                <IconButton>
+                  <AddTaskOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
             </S.MoreIconsWrapper>
             <S.MoreIconsWrapper>
-              <IconButton>
-                <DriveFileMoveOutlinedIcon fontSize={'small'} />
-              </IconButton>
-              <IconButton>
-                <LabelOutlinedIcon fontSize={'small'} />
-              </IconButton>
-              <IconButton>
-                <MoreVertIcon fontSize={'small'} />
-              </IconButton>
+              <Tooltip title={'переместить в'}>
+                <IconButton>
+                  <DriveFileMoveOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={'Ярлыки'}>
+                <IconButton>
+                  <LabelOutlinedIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
+              <Tooltip title={'Еще'}>
+                <IconButton>
+                  <MoreVertIcon fontSize={'small'} />
+                </IconButton>
+              </Tooltip>
             </S.MoreIconsWrapper>
           </S.IconsWrapper>
         ) : (
           <>
-            <IconButton>
-              <RefreshIcon fontSize={'small'} />
-            </IconButton>
-            <IconButton>
-              <MoreVertIcon fontSize={'small'} />
-            </IconButton>
+            <Tooltip title={'Обновить'}>
+              <IconButton>
+                <RefreshIcon fontSize={'small'} />
+              </IconButton>
+            </Tooltip>
+            <Tooltip title={'Еще'}>
+              <IconButton>
+                <MoreVertIcon fontSize={'small'} />
+              </IconButton>
+            </Tooltip>
           </>
         )}
       </>

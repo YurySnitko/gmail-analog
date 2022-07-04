@@ -32,6 +32,10 @@ const MailListItem: FC<MailListItemProps> = ({
     setIsHover(false);
   };
 
+  const checkboxClickHandler = () => {
+    checkboxCheckHandler(isChecked, id);
+  };
+
   const lineEndItems = (): React.ReactNode => {
     if (isHover) {
       return (
@@ -82,7 +86,7 @@ const MailListItem: FC<MailListItemProps> = ({
       <Checkbox
         size={'small'}
         checked={isChecked}
-        onChange={() => checkboxCheckHandler(isChecked, id)}
+        onChange={checkboxClickHandler}
         disableTouchRipple
       />
       <Checkbox

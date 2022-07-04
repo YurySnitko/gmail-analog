@@ -1,4 +1,4 @@
-import React, { FC, useCallback, useEffect, useState } from 'react';
+import React, { FC, useCallback, useEffect, useRef, useState } from 'react';
 import { S } from './MailList.styles';
 import { MailListProps } from './MailList.interfaces';
 import MailListItem from '../MailListItem/MailListItem';
@@ -12,6 +12,11 @@ const MailList: FC<MailListProps> = ({
 }) => {
   const [currentPageMails, setCurrentPageMails] = useState<Mail[]>([]);
   const PAGE_SIZE = 10;
+  const selectedMailsRef = useRef<string[]>([]);
+
+  useEffect(() => {
+    selectedMailsRef.current = selectedMailsIds;
+  }, [selectedMailsIds]);
 
   useEffect(() => {
     const begin = (currentPage - 1) * PAGE_SIZE;
@@ -22,8 +27,8 @@ const MailList: FC<MailListProps> = ({
   const checkboxCheckHandler = useCallback((isChecked: boolean, id: string) => {
     setSelectedMailsIds(
       isChecked
-        ? selectedMailsIds.filter((item) => item !== id)
-        : [...selectedMailsIds, id]
+        ? selectedMailsRef.current.filter((item) => item !== id)
+        : [...selectedMailsRef.current, id]
     );
   }, []);
 
