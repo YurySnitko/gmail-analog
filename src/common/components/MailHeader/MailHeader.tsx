@@ -3,8 +3,13 @@ import { FC } from 'react';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 import * as S from './MailHeader.styles';
 import { MoreVertOutlined, StarOutline } from '@mui/icons-material';
+import { MailHeaderProps } from './MailHeader.interfaces';
 
-export const MailHeader: FC = () => {
+export const MailHeader: FC<MailHeaderProps> = ({
+  senderName,
+  senderEmail,
+  date,
+}) => {
   return (
     <S.Container>
       <Grid container direction="column">
@@ -12,17 +17,17 @@ export const MailHeader: FC = () => {
           <S.SenderInfoGrid item xs container>
             <S.SenderInfoWrapperTypography noWrap>
               <S.SenderInfoTypography variant="subtitle2" component="span">
-                Max Zaitsev
+                {senderName}
               </S.SenderInfoTypography>
               &nbsp;
               <S.SenderInfoTypography variant="body3" component="span">
-                max.zaitsev@innowise-group.com
+                {`<${senderEmail}>`}
               </S.SenderInfoTypography>
             </S.SenderInfoWrapperTypography>
           </S.SenderInfoGrid>
           <S.DateGrid item xs="auto" container alignItems="center">
             <S.DateTypography variant="body3" component="span">
-              22 июн. 2022 г., 00:22
+              {date}
             </S.DateTypography>
             <S.Toolbar>
               <Tooltip title="Не помечено">

@@ -44,7 +44,6 @@ export const AvatarWrapper = styled('div')`
   display: flex;
   align-items: center;
   height: 80px;
-  min-width: 40px;
   padding: 0 16px;
 `;
 

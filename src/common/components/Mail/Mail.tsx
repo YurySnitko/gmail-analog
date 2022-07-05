@@ -11,13 +11,18 @@ import { MailControlsBar } from '../MailControlsBar/MailControlsBar';
 export const Mail: FC<MailProps> = ({ mailData }) => {
   return (
     <S.MainContainer>
-      <MailTitle />
+      <MailTitle title={mailData.title} />
       <S.Container>
         <S.AvatarWrapper>
           <Avatar>{mailData.avatar ?? <PersonIcon />}</Avatar>
         </S.AvatarWrapper>
         <S.MailBodyWrapper>
-          <MailHeader />
+          <MailHeader
+            senderName={mailData.senderName}
+            senderEmail={mailData.senderEmail}
+            date={mailData.date}
+            addressees={mailData.addressees}
+          />
           <MailBody />
         </S.MailBodyWrapper>
       </S.Container>

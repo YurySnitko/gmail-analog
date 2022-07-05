@@ -31,6 +31,9 @@ export const theme = createTheme({
       fontWeight: 700,
       lineHeight: 1.43,
     },
+    button: {
+      textTransform: 'none',
+    },
     body3: {
       fontFamily: 'Roboto, Helvetica, Arial, sans-serif',
       fontWeight: 400,
@@ -38,6 +41,24 @@ export const theme = createTheme({
       lineHeight: 1.2,
       letterSpacing: '0.00714em',
       color: '#555',
+    },
+  },
+
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: ({ ownerState }) => ({
+          ...(ownerState.variant === 'outlined' && {
+            border: 'none',
+            boxShadow: 'inset 0 0 0 1px #dadce0',
+
+            '&:hover': {
+              border: 'none',
+              boxShadow: 'inset 0 0 0 1px #dadce0',
+            },
+          }),
+        }),
+      },
     },
   },
 });

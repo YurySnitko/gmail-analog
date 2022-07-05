@@ -1,6 +1,8 @@
 export interface MailData {
   id: string;
-  sender: string;
+  senderName: string;
+  senderEmail: string;
+  addressees: Addresse[];
   title: string;
   text: string;
   date: string;
@@ -8,85 +10,130 @@ export interface MailData {
   avatar?: string;
 }
 
+export interface Addresse {
+  name: string;
+  email: string;
+}
+
 export const mails: MailData[] = [
   {
     id: '1',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '2',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: true,
   },
   {
     id: '3',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '4',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '5',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '6',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '7',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '8',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: true,
   },
   {
     id: '9',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
   {
     id: '10',
-    sender: 'Atlassian',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
     title: 'Introducing Table Visualization',
     text: `Say hello to dynamic charts, Confluence's new integration`,
-    date: '16 июн.',
+    date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
 ];

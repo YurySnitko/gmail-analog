@@ -3,9 +3,10 @@ import { Tooltip } from '@mui/material';
 import { FC } from 'react';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 import { Tag } from '../../ui-kit/Tag/Tag';
+import { MailTitleProps } from './MailTitle.interfaces';
 import * as S from './MailTitle.styles';
 
-export const MailTitle: FC = () => {
+export const MailTitle: FC<MailTitleProps> = ({ title }) => {
   const openInNewWindow = (): void => {
     window.open(
       document.URL,
@@ -17,7 +18,7 @@ export const MailTitle: FC = () => {
   return (
     <S.Container>
       <S.TitleWithTagsWrapper>
-        <S.TitleTypography variant="h5">Обновление HRM</S.TitleTypography>
+        <S.TitleTypography variant="h5">{title}</S.TitleTypography>
         <Tag>Входящие</Tag>
       </S.TitleWithTagsWrapper>
       <S.Toolbar>

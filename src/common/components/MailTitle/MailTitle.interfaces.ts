@@ -1,3 +1,3 @@
 export interface MailTitleProps {
-  children: React.ReactNode;
+  title: string;
 }

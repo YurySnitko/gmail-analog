@@ -10,6 +10,8 @@ export const Container = styled('div')(({ theme }) => ({
 
 export const TitleWithTagsWrapper = styled('div')`
   line-height: 28px;
+  display: flex;
+  align-items: center;
 `;
 
 export const TitleTypography = styled(Typography)`
