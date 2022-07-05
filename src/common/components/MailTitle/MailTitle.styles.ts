@@ -17,6 +17,7 @@ export const TitleWithTagsWrapper = styled('div')`
 export const TitleTypography = styled(Typography)`
   display: inline-block;
   padding-right: 10px;
+  font-family: 'Mulish', sans-serif;
   word-break: break-word;
 `;
 

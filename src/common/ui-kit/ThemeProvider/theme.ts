@@ -33,6 +33,8 @@ export const theme = createTheme({
     },
     button: {
       textTransform: 'none',
+      fontFamily: 'Mulish, sans-serif',
+      fontWeight: 600,
     },
     body3: {
       fontFamily: 'Roboto, Helvetica, Arial, sans-serif',

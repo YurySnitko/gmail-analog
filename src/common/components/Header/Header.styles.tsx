@@ -10,6 +10,7 @@ export const Header = styled('header')(({ theme }) => ({
   height: '64px',
   padding: '8px',
   borderBottom: `1px solid ${theme.palette.divider}`,
+  fontFamily: "'Mulish', sans-serif",
 }));
 
 export const LeftSide = styled('div')(({ theme }) => ({
