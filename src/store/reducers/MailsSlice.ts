@@ -1,27 +1,35 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 import { Mail } from '../../../consts/mails';
 
 interface MailState {
   mails: Mail[];
   isLoading: boolean;
-  error: string;
 }
 
 const initialState: MailState = {
   mails: [],
   isLoading: false,
-  error: '',
 };
 
 export const mailsSlice = createSlice({
-  name: 'mail',
+  name: 'mails',
   initialState,
   reducers: {
-    addMail(state, action: PayloadAction<Mail>) {
-      state.mails = [...state.mails, action.payload];
+    getMailsFetch: (state) => {
+      state.isLoading = true;
+    },
+
+    getMailsSuccess: (state, action) => {
+      state.mails = action.payload;
+      state.isLoading = false;
+    },
+
+    getMailsFailure: (state) => {
+      state.isLoading = false;
     },
   },
 });
 
 export default mailsSlice.reducer;
-export const { addMail } = mailsSlice.actions;
+export const { getMailsFetch, getMailsFailure, getMailsSuccess } =
+  mailsSlice.actions;

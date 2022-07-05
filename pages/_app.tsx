@@ -5,9 +5,7 @@ import { Layout } from '../src/common/components/Layout/Layout';
 import { theme } from '../src/common/ui-kit/ThemeProvider/theme';
 import { FC } from 'react';
 import { Provider } from 'react-redux';
-import { setupStore } from '../src/store/store';
-
-const store = setupStore();
+import { store } from '../src/store/store';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
