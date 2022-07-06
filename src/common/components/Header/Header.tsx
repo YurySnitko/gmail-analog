@@ -1,15 +1,18 @@
-import * as S from "./Header.styles";
-import DehazeIcon from "@mui/icons-material/Dehaze";
-import SettingsIcon from "@mui/icons-material/Settings";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import GoogleIcon from "@mui/icons-material/Google";
-import { Typography } from "@mui/material";
-import { FC } from "react";
-import { IconButton } from "../../ui-kit/IconButton/IconButton";
-import { SearchBar } from "../SearchBar/SearchBar";
-import { HeaderProps } from "./Header.interfaces";
+import * as S from './Header.styles';
+import DehazeIcon from '@mui/icons-material/Dehaze';
+import SettingsIcon from '@mui/icons-material/Settings';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import GoogleIcon from '@mui/icons-material/Google';
+import { Typography } from '@mui/material';
+import { FC } from 'react';
+import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { SearchBar } from '../SearchBar/SearchBar';
+import { HeaderProps } from './Header.interfaces';
 
-export const Header: FC<HeaderProps> = ({ onHideButtonClick }) => {
+export const Header: FC<HeaderProps> = ({
+  onHideButtonClick,
+  setIsSettingsOpenHandler,
+}) => {
   return (
     <S.Header>
       <S.LeftSide>
@@ -29,7 +32,7 @@ export const Header: FC<HeaderProps> = ({ onHideButtonClick }) => {
           <IconButton>
             <HelpOutlineIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={setIsSettingsOpenHandler}>
             <SettingsIcon />
           </IconButton>
         </S.Toolbar>
