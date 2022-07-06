@@ -1,11 +1,10 @@
-import type { NextPage } from "next";
-import MailList from "../src/common/ui-kit/MailList/MailList";
-import { mails } from "../consts/mails";
+import type { NextPage } from 'next';
+import IncomingMails from '../src/common/components/IncomingMails/IncomingMails';
 
 const Home: NextPage = () => {
   return (
     <div>
-      <MailList mailList={mails} />
+      <IncomingMails />
     </div>
   );
 };
