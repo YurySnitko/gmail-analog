@@ -1,5 +1,5 @@
-import { MailListItemProps } from "../MailListItem/MailListItem.interface";
+import { MailData } from '../../../../consts/mails';
 
 export interface MailListProps {
-  mailList: MailListItemProps[];
+  mailList: MailData[];
 }
