@@ -4,19 +4,19 @@ import { MailListProps } from './MailList.interfaces';
 import MailListItem from '../MailListItem/MailListItem';
 import { Mail } from '../../../../consts/mails';
 import { useEvent } from '../../../hooks/useEvent.hook';
+import { useAppSelector } from '../../../hooks/redux.hook';
 
 const MailList: FC<MailListProps> = ({
   setSelectedMailsIds,
   selectedMailsIds,
   mailList,
-  currentPage,
 }) => {
   const [currentPageMails, setCurrentPageMails] = useState<Mail[]>([]);
-  const PAGE_SIZE = 10;
+  const { currentPage, pageSize } = useAppSelector((state) => state.pagination);
 
   useEffect(() => {
-    const begin = (currentPage - 1) * PAGE_SIZE;
-    const end = begin + PAGE_SIZE;
+    const begin = (currentPage - 1) * pageSize;
+    const end = begin + pageSize;
     setCurrentPageMails(mailList.slice(begin, end));
   }, [currentPage]);
 

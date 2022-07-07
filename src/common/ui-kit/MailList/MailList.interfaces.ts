@@ -4,5 +4,4 @@ export interface MailListProps {
   mailList: Mail[];
   selectedMailsIds: string[];
   setSelectedMailsIds: (ids: string[]) => void;
-  currentPage: number;
 }

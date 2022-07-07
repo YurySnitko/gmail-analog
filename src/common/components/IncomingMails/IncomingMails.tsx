@@ -8,8 +8,7 @@ import { S } from './IncomingMails.styles';
 
 const IncomingMails = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
-  const [currentPage, setCurrentPage] = useState<number>(1);
-  const { mails, isLoading } = useAppSelector((state) => state.mailReducer);
+  const { mails, isLoading } = useAppSelector((state) => state.mail);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -20,29 +19,24 @@ const IncomingMails = () => {
     setSelectedMailsIds(ids);
   };
 
-  const setCurrentPageHandler = (page: number): void => {
-    setCurrentPage(page);
-  };
-
   return (
     <div>
-      <MailListHeader
-        selectedMailsIds={selectedMailsIds}
-        setSelectedMailsIds={setSelectedMailsIdsHandler}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPageHandler}
-      />
       {isLoading ? (
         <S.LoaderWrapper>
           <CircularProgress />
         </S.LoaderWrapper>
       ) : (
-        <MailList
-          mailList={mails}
-          selectedMailsIds={selectedMailsIds}
-          setSelectedMailsIds={setSelectedMailsIdsHandler}
-          currentPage={currentPage}
-        />
+        <>
+          <MailListHeader
+            selectedMailsIds={selectedMailsIds}
+            setSelectedMailsIds={setSelectedMailsIdsHandler}
+          />
+          <MailList
+            mailList={mails}
+            selectedMailsIds={selectedMailsIds}
+            setSelectedMailsIds={setSelectedMailsIdsHandler}
+          />
+        </>
       )}
     </div>
   );
