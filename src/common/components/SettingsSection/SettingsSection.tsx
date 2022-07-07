@@ -19,6 +19,15 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
           Все настройки
         </S.AllSettingsButton>
       </S.SettingsSectionHeader>
+      <S.SettingsSectionContent>
+        <S.SettingsSectionItem>
+          <S.OriginalViewWrapper>
+            <S.OriginalViewWrapperTextContent>
+              <Typography>Включен оригинальный вид Gmail</Typography>
+            </S.OriginalViewWrapperTextContent>
+          </S.OriginalViewWrapper>
+        </S.SettingsSectionItem>
+      </S.SettingsSectionContent>
     </S.SettingsSectionWrapper>
   );
 };
