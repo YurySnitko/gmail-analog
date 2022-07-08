@@ -10,15 +10,17 @@ export interface MailListItemGridProps {
   children: React.ReactNode;
   onMouseEnter: () => void;
   onMouseLeave: () => void;
+  onClick: () => void;
 }
 
 export interface MailListItemProps {
   id: string;
-  sender: string;
+  senderName: string;
   title: string;
   text: string;
   date: string;
   isViewed: boolean;
+  onMailListItemClick: (mailId: string) => void;
   isChecked: boolean;
   checkboxCheckHandler: (isChecked: boolean, id: string) => void;
 }
