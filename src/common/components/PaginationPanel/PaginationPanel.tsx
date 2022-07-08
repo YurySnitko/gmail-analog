@@ -18,11 +18,11 @@ const PaginationPanel: FC<PaginationPanelProps> = ({
     setEnd(currentPage * 10);
   }, [currentPage]);
 
-  const prevPageClickHandler = () => {
+  const prevPageClickHandler = (): void => {
     setCurrentPage(currentPage - 1);
   };
 
-  const nextPageClickHandler = () => {
+  const nextPageClickHandler = (): void => {
     setCurrentPage(currentPage + 1);
   };
 
