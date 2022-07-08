@@ -8,6 +8,7 @@ export const theme = createTheme({
       searchBarFocused: 'rgba(255, 255, 255, 1)',
       starButtonFocused: '#f4b400',
       mailListItemViewed: '#f4f7f7',
+      mailListItemChecked: '#c2dbff',
     },
     text: {
       headerIconButton: '#5f6368',

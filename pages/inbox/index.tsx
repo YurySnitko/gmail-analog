@@ -1,11 +1,10 @@
-import { FC } from "react";
-import { mails } from "../../consts/mails";
-import MailList from "../../src/common/ui-kit/MailList/MailList";
+import { FC } from 'react';
+import IncomingMails from '../../src/common/components/IncomingMails/IncomingMails';
 
 const Inbox: FC = () => {
   return (
     <div>
-      <MailList mailList={mails} />
+      <IncomingMails />
     </div>
   );
 };
