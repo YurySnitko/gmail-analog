@@ -56,12 +56,27 @@ export const S = {
     margin-top: 117px;
 
     &::-webkit-scrollbar {
-      width: 7px;
-      background-color: #f9f9fd;
+      width: 9px;
+      background-color: ${({ theme }): string => theme.palette.common.white};
+    }
+
+    &::-webkit-scrollbar:hover {
+      width: 10px;
+      background-color: ${({ theme }): string => theme.palette.grey.A100};
+      border: 1px solid ${({ theme }): string => theme.palette.grey.A400};
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: lightgray;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.scrollBarThumb};
+      border-left: 1px solid ${({ theme }): string => theme.palette.grey.A400};
+      border-top: 1px solid ${({ theme }): string => theme.palette.grey.A400};
+      border-bottom: 1px solid ${({ theme }): string => theme.palette.grey.A400};
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background-color: ${({ theme }): string =>
+        theme.palette.background.scrollBarThumbHover};
     }
   `,
 
@@ -98,7 +113,7 @@ export const S = {
     &:hover {
       border: none;
       background-color: ${({ theme }): string =>
-        theme.palette.background.TryNewViewButtonHover};
+        theme.palette.background.tryNewViewButtonHover};
     }
   `,
 
@@ -166,18 +181,6 @@ export const S = {
   `,
 
   DefaultViewItemWrapper: styled(Grid)`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  `,
-
-  ViewAreaWrapper: styled(Grid)`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  `,
-
-  ConcatMailsWrapper: styled(Grid)`
     display: flex;
     flex-direction: column;
     gap: 1rem;

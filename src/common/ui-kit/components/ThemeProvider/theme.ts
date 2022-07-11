@@ -9,7 +9,9 @@ export const theme = createTheme({
       starButtonFocused: '#f4b400',
       mailListItemViewed: '#f4f7f7',
       mailListItemChecked: '#c2dbff',
-      TryNewViewButtonHover: '#f6fafe',
+      tryNewViewButtonHover: '#f6fafe',
+      scrollBarThumb: '#c5c5c5',
+      scrollBarThumbHover: '#8b8b8b',
     },
   },
   customShadows: {

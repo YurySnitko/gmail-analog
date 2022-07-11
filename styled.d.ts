@@ -8,7 +8,9 @@ declare module '@mui/material/styles' {
     starButtonFocused: string;
     mailListItemViewed: string;
     mailListItemChecked: string;
-    TryNewViewButtonHover: string;
+    tryNewViewButtonHover: string;
+    scrollBarThumb: string;
+    scrollBarThumbHover: string;
   }
 
   interface Theme {

@@ -185,7 +185,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
           </S.DefaultViewItemWrapper>
         </S.SettingsSectionItem>
         <S.SettingsSectionItem>
-          <S.ViewAreaWrapper>
+          <S.DefaultViewItemWrapper>
             <S.SectionTitle>Область просмотра</S.SectionTitle>
             <S.RadioGroupWrapper>
               <FormControlLabel
@@ -225,10 +225,10 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
             </S.RadioGroupWrapper>
-          </S.ViewAreaWrapper>
+          </S.DefaultViewItemWrapper>
         </S.SettingsSectionItem>
         <S.SettingsSectionItem>
-          <S.ConcatMailsWrapper>
+          <S.DefaultViewItemWrapper>
             <S.SectionTitle>Объединение писем в цепочки</S.SectionTitle>
             <S.ConcatMailsContent>
               <Checkbox size={'small'} />
@@ -242,7 +242,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 <HelpOutlineOutlinedIcon fontSize={'small'} />
               </Tooltip>
             </S.ConcatMailsContent>
-          </S.ConcatMailsWrapper>
+          </S.DefaultViewItemWrapper>
         </S.SettingsSectionItem>
       </S.SettingsSectionContent>
     </S.SettingsSectionWrapper>
