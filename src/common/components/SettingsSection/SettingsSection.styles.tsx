@@ -5,6 +5,7 @@ export const S = {
   SettingsSectionWrapper: styled(Grid)`
     position: relative;
     width: 300px;
+    height: 905px;
     border-left: 1px solid ${({ theme }): string => theme.palette.divider};
     display: flex;
     flex-direction: column;
@@ -22,6 +23,8 @@ export const S = {
     justify-content: space-between;
     align-items: center;
     gap: 0.8rem;
+    z-index: 3;
+    background-color: ${({ theme }): string => theme.palette.common.white};
   `,
 
   SettingsSectionHeaderBarWrapper: styled(Grid)`
@@ -43,6 +46,9 @@ export const S = {
 
   SettingsSectionContent: styled(Grid)`
     width: 97%;
+    height: 100%;
+    z-index: 1;
+    position: static;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -55,7 +61,7 @@ export const S = {
     }
 
     &::-webkit-scrollbar-thumb {
-      background-color: #223c50;
+      background-color: lightgray;
     }
   `,
 
@@ -78,7 +84,7 @@ export const S = {
     width: 50%;
   `,
 
-  TryNewViewButton: styled(Button)`
+  SettingsSectionButton: styled(Button)`
     background-color: ${({ theme }): string => theme.palette.common.white};
     border: none;
     text-transform: none;
@@ -114,32 +120,76 @@ export const S = {
     gap: 0.8rem;
   `,
 
-  InterfaceTitle: styled(Typography)`
+  SectionTitle: styled(Typography)`
     font-size: 0.6875rem;
     font-weight: 500;
     letter-spacing: 0.8px;
     text-transform: uppercase;
   `,
 
-  InterfaceItemContentWrapper: styled(RadioGroup)`
+  RadioGroupWrapper: styled(RadioGroup)`
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.8rem;
   `,
 
-  InterfaceItemText: styled(Typography)`
+  SettingsItemText: styled(Typography)`
     font-size: 0.875rem;
+    word-break: break-word;
+    width: 130px;
   `,
 
-  InterfaceItemContentItem: styled(Grid)`
+  SettingsLabelItem: styled(Grid)`
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1fr 72px;
+    gap: 0.3rem;
     align-items: center;
-    gap: 1.7rem;
   `,
 
   ThemeItemWrapper: styled(Grid)`
     display: flex;
     flex-direction: column;
+    gap: 1.3rem;
+  `,
+
+  ThemeTitleWrapper: styled(Grid)`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  `,
+
+  ThemeImageWrapper: styled(Grid)`
+    width: 54px;
+    height: 36px;
+    border: 2px solid ${({ theme }): string => theme.palette.primary.main};
+    border-radius: 4px;
+  `,
+
+  DefaultViewItemWrapper: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  `,
+
+  ViewAreaWrapper: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  `,
+
+  ConcatMailsWrapper: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  `,
+
+  ConcatMailsContent: styled(Grid)`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  `,
+
+  ConcatMailsContentText: styled(Typography)`
+    font-size: 0.875rem;
   `,
 };

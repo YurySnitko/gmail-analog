@@ -32,7 +32,7 @@ const MailListItem: FC<MailListItemProps> = ({
     setIsHover(false);
   };
 
-  const checkboxClickHandler = () => {
+  const checkboxClickHandler = (): void => {
     checkboxCheckHandler(isChecked, id);
   };
 
