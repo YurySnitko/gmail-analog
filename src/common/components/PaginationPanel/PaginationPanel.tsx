@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { S } from './PaginationPanel.styles';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Tooltip } from '@mui/material';
@@ -18,13 +18,13 @@ const PaginationPanel: FC<PaginationPanelProps> = () => {
   useEffect(() => {
     setBegin((currentPage - 1) * pageSize);
     setEnd(currentPage * pageSize);
-  }, [currentPage]);
+  }, [currentPage, pageSize]);
 
-  const prevPageClickHandler = () => {
+  const prevPageClickHandler = (): void => {
     dispatch(prevPage());
   };
 
-  const nextPageClickHandler = () => {
+  const nextPageClickHandler = (): void => {
     dispatch(nextPage());
   };
 

@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Button, Grid } from '@mui/material';
+import { Button, Grid, RadioGroup, Typography } from '@mui/material';
 
 export const S = {
   SettingsSectionWrapper: styled(Grid)`
@@ -47,7 +47,6 @@ export const S = {
     flex-direction: column;
     align-items: center;
     overflow-y: scroll;
-    padding: 1rem 0 1rem 1rem;
     margin-top: 117px;
 
     &::-webkit-scrollbar {
@@ -62,6 +61,7 @@ export const S = {
 
   SettingsSectionItem: styled(Grid)`
     width: 100%;
+    padding: 1rem 0 1rem 1rem;
     border-bottom: 1px solid ${({ theme }): string => theme.palette.divider};
   `,
 
@@ -70,5 +70,76 @@ export const S = {
     align-items: center;
   `,
 
-  OriginalViewWrapperTextContent: styled(Grid)``,
+  OriginalViewWrapperTextContent: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    width: 50%;
+  `,
+
+  TryNewViewButton: styled(Button)`
+    background-color: ${({ theme }): string => theme.palette.common.white};
+    border: none;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-align: start;
+    letter-spacing: 0.25px;
+    line-height: 1.3rem;
+    padding: 0 0 0 12px;
+
+    &:hover {
+      border: none;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.TryNewViewButtonHover};
+    }
+  `,
+
+  OriginalGmailText: styled(Typography)`
+    font-size: 0.875rem;
+    line-height: 1.2rem;
+  `,
+
+  OriginalViewImageWrapper: styled(Grid)`
+    width: 50%;
+    display: flex;
+    justify-content: center;
+  `,
+
+  InterfaceItemWrapper: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  `,
+
+  InterfaceTitle: styled(Typography)`
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+  `,
+
+  InterfaceItemContentWrapper: styled(RadioGroup)`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  `,
+
+  InterfaceItemText: styled(Typography)`
+    font-size: 0.875rem;
+  `,
+
+  InterfaceItemContentItem: styled(Grid)`
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    align-items: center;
+    gap: 1.7rem;
+  `,
+
+  ThemeItemWrapper: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+  `,
 };

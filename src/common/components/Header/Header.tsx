@@ -5,7 +5,7 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GoogleIcon from '@mui/icons-material/Google';
 import { Typography } from '@mui/material';
 import { FC } from 'react';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { HeaderProps } from './Header.interfaces';
 

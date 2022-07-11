@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Checkbox, Grid, Menu, MenuItem } from '@mui/material';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 
 export const S = {
   MailListHeaderIconsWrapper: styled(Grid)`

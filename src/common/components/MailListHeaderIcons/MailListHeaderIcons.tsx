@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useState } from 'react';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { S } from './MailListHeaderIcons.styles';
@@ -34,23 +34,25 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
 
   const checkboxMenuHandleClick = (
     event: React.MouseEvent<HTMLButtonElement>
-  ) => {
+  ): void => {
     setCheckboxSelectedMenuItem(event.currentTarget);
   };
 
-  const checkboxMenuHandleClose = () => {
+  const checkboxMenuHandleClose = (): void => {
     setCheckboxSelectedMenuItem(null);
   };
 
-  const moreMenuHandleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const moreMenuHandleClick = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ): void => {
     setMoreMenuSelectedItem(event.currentTarget);
   };
 
-  const moreMenuHandleClose = () => {
+  const moreMenuHandleClose = (): void => {
     setMoreMenuSelectedItem(null);
   };
 
-  const checkboxCheckedHandler = () => {
+  const checkboxCheckedHandler = (): void => {
     setSelectedMailsIds(checkboxChecked ? [] : mails.map((mail) => mail.id));
     setCheckboxChecked((prev) => !prev);
   };

@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react';
-import MailListHeader from '../../ui-kit/MailListHeader/MailListHeader';
-import MailList from '../../ui-kit/MailList/MailList';
+import React, { FC, useEffect, useState } from 'react';
+import MailListHeader from '../../ui-kit/components/MailListHeader/MailListHeader';
+import MailList from '../../ui-kit/components/MailList/MailList';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
 import { getMailsFetch } from '../../../store/reducers/MailsSlice';
 import { CircularProgress } from '@mui/material';
 import { S } from './IncomingMails.styles';
 
-const IncomingMails = () => {
+const IncomingMails: FC = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
   const { mails, isLoading } = useAppSelector((state) => state.mail);
   const dispatch = useAppDispatch();
@@ -15,7 +15,7 @@ const IncomingMails = () => {
     dispatch(getMailsFetch());
   }, [dispatch]);
 
-  const setSelectedMailsIdsHandler = (ids: string[]) => {
+  const setSelectedMailsIdsHandler = (ids: string[]): void => {
     setSelectedMailsIds(ids);
   };
 

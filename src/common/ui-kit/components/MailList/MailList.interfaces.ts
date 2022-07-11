@@ -1,4 +1,4 @@
-import { Mail } from '../../../../consts/mails';
+import { Mail } from '../../../../../consts/mails';
 
 export interface MailListProps {
   mailList: Mail[];
