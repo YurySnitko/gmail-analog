@@ -5,7 +5,6 @@ export const S = {
   SettingsSectionWrapper: styled(Grid)`
     position: relative;
     width: 300px;
-    height: 905px;
     border-left: 1px solid ${({ theme }): string => theme.palette.divider};
     display: flex;
     flex-direction: column;
@@ -46,7 +45,7 @@ export const S = {
 
   SettingsSectionContent: styled(Grid)`
     width: 97%;
-    height: 100%;
+    height: 76vh;
     z-index: 1;
     position: static;
     display: flex;

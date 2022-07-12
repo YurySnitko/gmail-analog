@@ -9,7 +9,6 @@ import {
 } from '@mui/material';
 import { SettingsSectionProps } from './SettingsSection.interfaces';
 import CloseIcon from '@mui/icons-material/Close';
-import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import originalGmail from '../../ui-kit/assets/originalGmail.png';
 import defaultInterfaceImage from '../../ui-kit/assets/defaultInterface.png';
 import normalInterfaceImage from '../../ui-kit/assets/normalInterface.png';
@@ -26,6 +25,7 @@ import previewPanelRightImage from '../../ui-kit/assets/previewpaneright.png';
 import previewPanelBottomImage from '../../ui-kit/assets/previewpanebottom.png';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import Image from 'next/image';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 
 const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
   return (
