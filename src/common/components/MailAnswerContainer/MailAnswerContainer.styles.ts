@@ -23,8 +23,3 @@ export const Container = styled('div')`
     border: 1px solid transparent;
   }
 `;
-
-export const ChooseAddresseeContainer = styled('div')`
-  padding: 6px 16px;
-  display: flex;
-`;

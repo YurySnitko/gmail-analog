@@ -8,6 +8,7 @@ export const theme = createTheme({
       searchBarFocused: 'rgba(255, 255, 255, 1)',
       starButtonFocused: '#f4b400',
       mailListItemViewed: '#f4f7f7',
+      mailListItemChecked: '#c2dbff',
     },
     text: {
       headerIconButton: '#5f6368',
@@ -57,6 +58,18 @@ export const theme = createTheme({
             '&:hover': {
               border: 'none',
               boxShadow: 'inset 0 0 0 1px #dadce0',
+            },
+          }),
+          ...(ownerState.variant === 'contained' && {
+            border: 'none',
+            boxShadow: 'none',
+
+            '&:hover': {
+              border: 'none',
+              backgroundColor: '#297be6',
+              outline: '1px solid transparent',
+              boxShadow:
+                '0 1px 2px 0 rgb(26 115 232 / 45%), 0 1px 3px 1px rgb(26 115 232 / 30%)',
             },
           }),
         }),

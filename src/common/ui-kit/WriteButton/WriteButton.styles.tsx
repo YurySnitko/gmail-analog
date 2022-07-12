@@ -1,15 +1,15 @@
-import { styled } from "@mui/material/styles";
-import { Typography } from "@mui/material";
-import EditIcon from "@mui/icons-material/Edit";
-import { WriteButtonWrapperProps } from "./WriteButton.interface";
+import { styled } from '@mui/material/styles';
+import { Typography } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import { WriteButtonWrapperProps } from './WriteButton.interfaces';
 
 export const S = {
   Button: styled('button')`
-    background-color: ${props => props.theme.palette.common.white};
+    background-color: ${(props): string => props.theme.palette.common.white};
     border-radius: 20px;
     outline: none;
     border: none;
-    box-shadow: ${props => props.theme.customShadows.writeButton};
+    box-shadow: ${(props): string => props.theme.customShadows.writeButton};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,14 +18,15 @@ export const S = {
     margin-left: 0.725rem;
 
     &:hover {
-      box-shadow: ${props => props.theme.customShadows.writeButtonHover};
+      box-shadow: ${(props): string =>
+        props.theme.customShadows.writeButtonHover};
     }
   `,
 
-  WriteButtonWrapper: styled(({isOpen, ...props} : WriteButtonWrapperProps) => (
-    <div {...props} />
-  ))`
-    padding: ${(props) => (props.isOpen ? "0 10px 0 5px" : "0 5px")};
+  WriteButtonWrapper: styled(
+    ({ isOpen, ...props }: WriteButtonWrapperProps) => <div {...props} />
+  )`
+    padding: ${(props): string => (props.isOpen ? '0 10px 0 5px' : '0 5px')};
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,6 +42,6 @@ export const S = {
   })),
 
   EditIcon: styled(EditIcon)`
-    color: ${props => props.theme.palette.error.main};
+    color: ${(props): string => props.theme.palette.error.main};
   `,
 };

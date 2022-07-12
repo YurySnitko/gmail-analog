@@ -1,17 +1,23 @@
-import React, { FC, useState } from 'react';
+import React, { FC, MouseEventHandler, useState } from 'react';
 import { S } from './MailListItem.styles';
+import { MailListEndItems } from '../MailListEndItems/MailListEndItems';
 import { Checkbox } from '@mui/material';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { MailListItemProps } from './MailListItem.interface';
-import { MailListEndItems } from '../MailListEndItems/MailListEndItems';
+import {
+  MailListItemGridBackgroundEnum,
+  MailListItemProps,
+} from './MailListItem.interfaces';
 
 const MailListItem: FC<MailListItemProps> = ({
-  sender,
+  id,
+  senderName,
   title,
   text,
   isViewed,
   date,
   onMailListItemClick,
+  isChecked,
+  checkboxCheckHandler,
 }) => {
   const [isHover, setIsHover] = useState<boolean>(false);
 
@@ -23,21 +29,46 @@ const MailListItem: FC<MailListItemProps> = ({
     setIsHover(false);
   };
 
+  const checkboxClickHandler: MouseEventHandler<HTMLButtonElement> = (
+    e
+  ): void => {
+    e.stopPropagation();
+    checkboxCheckHandler(isChecked, id);
+  };
+
+  const starredCheckboxClickHandler: MouseEventHandler<HTMLButtonElement> = (
+    e
+  ) => {
+    e.stopPropagation();
+  };
+
   return (
     <S.MailListItemGrid
-      isViewed={isViewed}
+      background={
+        isChecked
+          ? MailListItemGridBackgroundEnum.checked
+          : isViewed
+          ? MailListItemGridBackgroundEnum.viewed
+          : MailListItemGridBackgroundEnum.normal
+      }
       onMouseEnter={listItemMouseEnderHandler}
       onMouseLeave={listItemMouseLeaveHandler}
-      onClick={onMailListItemClick}
+      onClick={(): void => onMailListItemClick(id)}
     >
       {isHover && <S.DragIcon fontSize={'small'} />}
-      <Checkbox size={'small'} />
       <Checkbox
+        size={'small'}
+        checked={isChecked}
+        onClick={checkboxClickHandler}
+        disableTouchRipple
+      />
+      <Checkbox
+        onClick={starredCheckboxClickHandler}
         icon={<StarBorderIcon fontSize={'small'} />}
         checkedIcon={<S.CheckedStarIcon fontSize={'small'} />}
       />
       <S.TextWrapper>
-        <S.MessageText isViewed={isViewed}>{sender}</S.MessageText>
+        <S.MessageText isViewed={isViewed}>{senderName}</S.MessageText>
         <S.TextContentWrapper>
           <S.MessageText>
             {isViewed ? title : <b>{title}</b>} - {text}
@@ -49,4 +80,4 @@ const MailListItem: FC<MailListItemProps> = ({
   );
 };
 
-export default MailListItem;
+export default React.memo(MailListItem);

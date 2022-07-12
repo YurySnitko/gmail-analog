@@ -1,7 +1,7 @@
-import React, { FC } from "react";
-import { S } from "./AsideItem.styles";
-import { AsideItemProps } from "./AsideItem.interface";
-import Link from "next/link";
+import React, { FC } from 'react';
+import { S } from './AsideItem.styles';
+import { AsideItemProps } from './AsideItem.interfaces';
+import Link from 'next/link';
 
 const AsideItem: FC<AsideItemProps> = ({
   isOpen,
@@ -14,7 +14,7 @@ const AsideItem: FC<AsideItemProps> = ({
     <S.Item>
       <S.ListButton onClick={clickHandler}>
         <S.ItemButtonIcon>
-          <Icon fontSize={"small"} />
+          <Icon fontSize={'small'} />
         </S.ItemButtonIcon>
         {isOpen && (
           <S.ItemTitle>
