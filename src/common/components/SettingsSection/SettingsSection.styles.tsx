@@ -51,7 +51,7 @@ export const S = {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-y: scroll;
+    overflow-y: auto;
     margin-top: 117px;
 
     &::-webkit-scrollbar {

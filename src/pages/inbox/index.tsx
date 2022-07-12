@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import IncomingMails from '../../src/common/components/IncomingMails/IncomingMails';
+import IncomingMails from '../../common/components/IncomingMails/IncomingMails';
 
 const Inbox: FC = () => {
   return (

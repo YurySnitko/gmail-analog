@@ -7,9 +7,9 @@ import { CircularProgress } from '@mui/material';
 import { S } from './IncomingMails.styles';
 
 const IncomingMails: FC = () => {
+  const dispatch = useAppDispatch();
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
   const { mails, isLoading } = useAppSelector((state) => state.mail);
-  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getMailsFetch());
