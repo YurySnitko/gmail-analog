@@ -134,6 +134,30 @@ export const S = {
     gap: 0.8rem;
   `,
 
+  SettingsItemRadioLabelWrapper: styled(Grid)`
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  `,
+
+  SettingsLabelButton: styled(Button)`
+    padding: 0;
+    background-color: ${({ theme }): string => theme.palette.common.white};
+    border: none;
+    text-transform: none;
+    font-weight: 500;
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
+    width: 60%;
+    margin-left: -3px;
+
+    &:hover {
+      border: none;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.tryNewViewButtonHover};
+    }
+  `,
+
   SectionTitle: styled(Typography)`
     font-size: 0.6875rem;
     font-weight: 500;

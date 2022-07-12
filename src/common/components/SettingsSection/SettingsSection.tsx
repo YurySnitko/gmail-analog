@@ -121,7 +121,12 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>По умолчанию</S.SettingsItemText>
+                    <S.SettingsItemRadioLabelWrapper>
+                      <S.SettingsItemText>По умолчанию</S.SettingsItemText>
+                      <S.SettingsLabelButton variant={'outlined'}>
+                        Настроить
+                      </S.SettingsLabelButton>
+                    </S.SettingsItemRadioLabelWrapper>
                     <Image src={defaultViewImage} alt={'Вид по умолчанию'} />
                   </S.SettingsLabelItem>
                 }
@@ -162,7 +167,12 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Приоритетные</S.SettingsItemText>
+                    <S.SettingsItemRadioLabelWrapper>
+                      <S.SettingsItemText>Приоритетные</S.SettingsItemText>
+                      <S.SettingsLabelButton variant={'outlined'}>
+                        Настроить
+                      </S.SettingsLabelButton>
+                    </S.SettingsItemRadioLabelWrapper>
                     <Image src={priorityViewImage} alt={'Приоритетные'} />
                   </S.SettingsLabelItem>
                 }
@@ -171,9 +181,14 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>
-                      Дополнительные папки
-                    </S.SettingsItemText>
+                    <S.SettingsItemRadioLabelWrapper>
+                      <S.SettingsItemText>
+                        Дополнительные папки
+                      </S.SettingsItemText>
+                      <S.SettingsLabelButton variant={'outlined'}>
+                        Настроить
+                      </S.SettingsLabelButton>
+                    </S.SettingsItemRadioLabelWrapper>
                     <Image
                       src={multipleViewImage}
                       alt={'Дополнительные папки'}
