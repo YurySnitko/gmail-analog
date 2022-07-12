@@ -1,13 +1,13 @@
-import * as S from './Header.styles';
-import DehazeIcon from '@mui/icons-material/Dehaze';
-import SettingsIcon from '@mui/icons-material/Settings';
-import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
-import GoogleIcon from '@mui/icons-material/Google';
-import { Typography } from '@mui/material';
-import { FC } from 'react';
-import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
-import { SearchBar } from '../SearchBar/SearchBar';
-import { HeaderProps } from './Header.interfaces';
+import * as S from "./Header.styles";
+import DehazeIcon from "@mui/icons-material/Dehaze";
+import SettingsIcon from "@mui/icons-material/Settings";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import GoogleIcon from "@mui/icons-material/Google";
+import { Tooltip, Typography } from "@mui/material";
+import { FC } from "react";
+import { IconButton } from "../../ui-kit/components/IconButton/IconButton";
+import { SearchBar } from "../SearchBar/SearchBar";
+import { HeaderProps } from "./Header.interfaces";
 
 export const Header: FC<HeaderProps> = ({
   onHideButtonClick,
@@ -16,9 +16,11 @@ export const Header: FC<HeaderProps> = ({
   return (
     <S.Header>
       <S.LeftSide>
-        <IconButton size="large" onClick={onHideButtonClick}>
-          <DehazeIcon />
-        </IconButton>
+        <Tooltip title="Главное меню">
+          <IconButton size="large" onClick={onHideButtonClick}>
+            <DehazeIcon />
+          </IconButton>
+        </Tooltip>
         <S.Title>
           <GoogleIcon fontSize="large" color="error" />
           <Typography variant="h5">mail</Typography>
@@ -38,9 +40,11 @@ export const Header: FC<HeaderProps> = ({
         </S.Toolbar>
       </S.Center>
       <S.RightSide>
-        <IconButton>
-          <S.Avatar>Y</S.Avatar>
-        </IconButton>
+        <Tooltip title="Аккаунт Google">
+          <IconButton>
+            <S.Avatar>Y</S.Avatar>
+          </IconButton>
+        </Tooltip>
       </S.RightSide>
     </S.Header>
   );

@@ -17,7 +17,8 @@ const PaginationPanel: FC<PaginationPanelProps> = () => {
 
   useEffect(() => {
     setBegin((currentPage - 1) * pageSize);
-    setEnd(currentPage * pageSize);
+    const endItem = currentPage * pageSize;
+    setEnd(endItem > mailsLength ? mailsLength : endItem);
   }, [currentPage, pageSize]);
 
   const prevPageClickHandler = (): void => {

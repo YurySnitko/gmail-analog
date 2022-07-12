@@ -16,11 +16,9 @@ export const S = {
     grid-template-columns: 38px 35px 10fr 2.5fr;
     width: 100%;
     align-items: center;
-    border-top: 1px solid ${(props): string => props.theme.palette.divider};
-    border-left: 1px solid
-      ${(props): string => props.theme.palette.common.white};
-    border-right: 1px solid
-      ${(props): string => props.theme.palette.common.white};
+    border-top: 1px solid ${({ theme }): string => theme.palette.divider};
+    border-left: 1px solid ${({ theme }): string => theme.palette.common.white};
+    border-right: 1px solid ${({ theme }): string => theme.palette.common.white};
     cursor: pointer;
     padding: 0 0.5rem;
     user-select: none;
@@ -75,7 +73,7 @@ export const S = {
   DragIcon: styled(DragIndicatorIcon)`
     position: absolute;
     left: 2px;
-    color: ${(props): string => props.theme.palette.grey.A400};
+    color: ${({ theme }): string => theme.palette.grey.A400};
   `,
 
   IconWrapper: styled(Grid)`
@@ -87,11 +85,5 @@ export const S = {
     overflow: hidden;
     align-items: center;
     gap: 5px;
-  `,
-
-  EndLineWrapper: styled(Grid)`
-    justify-self: end;
-    display: flex;
-    align-items: center;
   `,
 };

@@ -2,17 +2,19 @@ import React, { FC, useEffect, useState } from 'react';
 import { S } from './MailList.styles';
 import { MailListProps } from './MailList.interfaces';
 import MailListItem from '../MailListItem/MailListItem';
-import { Mail } from '../../../../../consts/mails';
-import { useEvent } from '../../../../hooks/useEvent.hook';
 import { useAppSelector } from '../../../../hooks/redux.hook';
+import { MailData } from '../../../../../consts/mails';
+import { useEvent } from '../../../../hooks/useEvent.hook';
+import { useRouter } from 'next/router';
 
 const MailList: FC<MailListProps> = ({
   setSelectedMailsIds,
   selectedMailsIds,
   mailList,
 }) => {
-  const [currentPageMails, setCurrentPageMails] = useState<Mail[]>([]);
   const { currentPage, pageSize } = useAppSelector((state) => state.pagination);
+  const [currentPageMails, setCurrentPageMails] = useState<MailData[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const begin = (currentPage - 1) * pageSize;
@@ -28,6 +30,10 @@ const MailList: FC<MailListProps> = ({
     );
   });
 
+  const onMailListItemClick = (mailId: string): void => {
+    router.push(`${router.asPath}/${mailId}`);
+  };
+
   return (
     <S.MailListGrid>
       {currentPageMails.length > 0 &&
@@ -35,13 +41,14 @@ const MailList: FC<MailListProps> = ({
           <MailListItem
             key={mail.id}
             id={mail.id}
-            sender={mail.sender}
+            senderName={mail.senderName}
             title={mail.title}
             text={mail.text}
             date={mail.date}
             isViewed={mail.isViewed}
             isChecked={selectedMailsIds.includes(mail.id)}
             checkboxCheckHandler={checkboxCheckHandler}
+            onMailListItemClick={onMailListItemClick}
           />
         ))}
     </S.MailListGrid>

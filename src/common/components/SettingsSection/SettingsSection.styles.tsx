@@ -4,6 +4,7 @@ import { Button, Grid, RadioGroup, Typography } from '@mui/material';
 export const S = {
   SettingsSectionWrapper: styled(Grid)`
     position: relative;
+    height: 100%;
     width: 300px;
     border-left: 1px solid ${({ theme }): string => theme.palette.divider};
     display: flex;
@@ -13,7 +14,6 @@ export const S = {
   `,
 
   SettingsSectionHeader: styled(Grid)`
-    position: fixed;
     border-bottom: 1px solid ${({ theme }): string => theme.palette.divider};
     padding: 1rem 0 1rem 1rem;
     width: 291px;
@@ -22,12 +22,10 @@ export const S = {
     justify-content: space-between;
     align-items: center;
     gap: 0.8rem;
-    z-index: 3;
     background-color: ${({ theme }): string => theme.palette.common.white};
   `,
 
   SettingsSectionHeaderBarWrapper: styled(Grid)`
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -44,15 +42,13 @@ export const S = {
   `,
 
   SettingsSectionContent: styled(Grid)`
+    height: 50%;
     width: 97%;
-    height: 76vh;
-    z-index: 1;
-    position: static;
     display: flex;
+    flex-basis: auto;
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
-    margin-top: 117px;
 
     &::-webkit-scrollbar {
       width: 9px;
