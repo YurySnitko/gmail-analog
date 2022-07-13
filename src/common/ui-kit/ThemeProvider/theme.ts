@@ -12,6 +12,7 @@ export const theme = createTheme({
       tryNewViewButtonHover: '#f6fafe',
       scrollBarThumb: '#c5c5c5',
       scrollBarThumbHover: '#8b8b8b',
+      settingsButtonBorder: '#dadce0',
     },
     text: {
       headerIconButton: '#5f6368',

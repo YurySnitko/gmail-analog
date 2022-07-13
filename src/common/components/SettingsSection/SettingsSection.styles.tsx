@@ -26,6 +26,7 @@ export const S = {
   `,
 
   SettingsSectionHeaderBarWrapper: styled(Grid)`
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -34,15 +35,22 @@ export const S = {
   AllSettingsButton: styled(Button)`
     width: 100%;
     text-transform: none;
-    border: 1px solid ${({ theme }): string => theme.palette.grey.A400};
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: ${({ theme }): string => theme.palette.primary.light};
+    box-shadow: none;
+    border: 1px solid
+      ${({ theme }): string => theme.palette.background.settingsButtonBorder};
 
     &:hover {
-      border: 1px solid ${({ theme }): string => theme.palette.grey.A400};
+      box-shadow: none;
+      border: 1px solid
+        ${({ theme }): string => theme.palette.background.settingsButtonBorder};
     }
   `,
 
   SettingsSectionContent: styled(Grid)`
-    height: 50%;
+    height: 100%;
     width: 97%;
     display: flex;
     flex-basis: auto;
@@ -97,8 +105,10 @@ export const S = {
   SettingsSectionButton: styled(Button)`
     background-color: ${({ theme }): string => theme.palette.common.white};
     border: none;
+    color: ${({ theme }): string => theme.palette.primary.light};
+    box-shadow: none;
     text-transform: none;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 0.875rem;
     text-align: start;
     letter-spacing: 0.25px;
@@ -107,6 +117,7 @@ export const S = {
 
     &:hover {
       border: none;
+      box-shadow: none;
       background-color: ${({ theme }): string =>
         theme.palette.background.tryNewViewButtonHover};
     }
@@ -140,15 +151,18 @@ export const S = {
     padding: 0;
     background-color: ${({ theme }): string => theme.palette.common.white};
     border: none;
+    box-shadow: none;
     text-transform: none;
-    font-weight: 500;
     font-size: 0.875rem;
     letter-spacing: 0.25px;
     width: 60%;
+    font-weight: 600;
+    color: ${({ theme }): string => theme.palette.primary.light};
     margin-left: -3px;
 
     &:hover {
       border: none;
+      box-shadow: none;
       background-color: ${({ theme }): string =>
         theme.palette.background.tryNewViewButtonHover};
     }

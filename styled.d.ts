@@ -12,6 +12,7 @@ declare module '@mui/material/styles' {
     tryNewViewButtonHover: string;
     scrollBarThumb: string;
     scrollBarThumbHover: string;
+    settingsButtonBorder: string;
   }
 
   interface TypeText {

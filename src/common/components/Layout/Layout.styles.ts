@@ -8,10 +8,12 @@ export const Wrapper = styled('div')`
 `;
 
 export const Container = styled('div')`
+  height: calc(100% - 64px);
   display: flex;
   flex: 1 1 auto;
 `;
 
 export const Main = styled('main')`
+  height: 100%;
   flex: 1 1 auto;
 `;
