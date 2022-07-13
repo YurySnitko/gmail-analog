@@ -1,13 +1,13 @@
-import * as S from "./Header.styles";
-import DehazeIcon from "@mui/icons-material/Dehaze";
-import SettingsIcon from "@mui/icons-material/Settings";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import GoogleIcon from "@mui/icons-material/Google";
-import { Tooltip, Typography } from "@mui/material";
-import { FC } from "react";
-import { IconButton } from "../../ui-kit/components/IconButton/IconButton";
-import { SearchBar } from "../SearchBar/SearchBar";
-import { HeaderProps } from "./Header.interfaces";
+import * as S from './Header.styles';
+import DehazeIcon from '@mui/icons-material/Dehaze';
+import SettingsOutlinedIcon from '@mui/icons-material/Settings';
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
+import GoogleIcon from '@mui/icons-material/Google';
+import { Tooltip, Typography } from '@mui/material';
+import { FC } from 'react';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
+import { SearchBar } from '../SearchBar/SearchBar';
+import { HeaderProps } from './Header.interfaces';
 
 export const Header: FC<HeaderProps> = ({
   onHideButtonClick,
@@ -31,12 +31,16 @@ export const Header: FC<HeaderProps> = ({
           <SearchBar />
         </S.SearchBarWrapper>
         <S.Toolbar>
-          <IconButton>
-            <HelpOutlineIcon />
-          </IconButton>
-          <IconButton onClick={setIsSettingsOpenHandler}>
-            <SettingsIcon />
-          </IconButton>
+          <Tooltip title="Поддержка">
+            <IconButton>
+              <HelpOutlineIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title={'Настройки'}>
+            <IconButton onClick={setIsSettingsOpenHandler}>
+              <SettingsOutlinedIcon />
+            </IconButton>
+          </Tooltip>
         </S.Toolbar>
       </S.Center>
       <S.RightSide>

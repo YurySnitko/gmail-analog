@@ -1,7 +1,7 @@
-import { Mail } from '../../../../../consts/mails';
+import { MailData } from '../../../../mocked/mails';
 
 export interface MailListProps {
-  mailList: Mail[];
+  mailList: MailData[];
   selectedMailsIds: string[];
   setSelectedMailsIds: (ids: string[]) => void;
 }

@@ -3,7 +3,7 @@ import { S } from './MailList.styles';
 import { MailListProps } from './MailList.interfaces';
 import MailListItem from '../MailListItem/MailListItem';
 import { useAppSelector } from '../../../../hooks/redux.hook';
-import { MailData } from '../../../../../consts/mails';
+import { MailData } from '../../../../mocked/mails';
 import { useEvent } from '../../../../hooks/useEvent.hook';
 import { useRouter } from 'next/router';
 

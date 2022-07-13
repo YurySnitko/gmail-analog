@@ -1,12 +1,15 @@
 import type { NextPage } from 'next';
-import IncomingMails from '../common/components/IncomingMails/IncomingMails';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
 
 const Home: NextPage = () => {
-  return (
-    <div>
-      <IncomingMails />
-    </div>
-  );
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push(`${router.asPath}/inbox`);
+  }, [router]);
+
+  return <div>home</div>;
 };
 
 export default Home;

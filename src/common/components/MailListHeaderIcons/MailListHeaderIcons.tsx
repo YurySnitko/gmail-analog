@@ -5,7 +5,7 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { S } from './MailListHeaderIcons.styles';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import { MailListHeaderIconsProps } from './MailListHeaderIcons.interfaces';
-import { mails } from '../../../../consts/mails';
+import { mails } from '../../../mocked/mails';
 import ArchiveOutlinedIcon from '@mui/icons-material/ArchiveOutlined';
 import ReportGmailerrorredOutlinedIcon from '@mui/icons-material/ReportGmailerrorredOutlined';
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined';
