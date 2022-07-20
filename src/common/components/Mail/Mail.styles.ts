@@ -21,7 +21,7 @@ export const MainContainer = styled('div')`
 
   &::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: inset 1px 1px 0px rgb(0 0 0 / 10%),
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%),
       inset 0px -1px 0px rgb(0 0 0 / 7%);
   }
 
@@ -31,7 +31,7 @@ export const MainContainer = styled('div')`
 
   &::-webkit-scrollbar-track:hover {
     background-color: rgba(0, 0, 0, 0.05);
-    box-shadow: inset 1px 1px 0px rgb(0 0 0 / 10%),
+    box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%),
       inset 0px -1px 0px rgb(0 0 0 / 7%);
   }
 `;

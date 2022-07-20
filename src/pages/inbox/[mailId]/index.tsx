@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { FC, useEffect, useState } from 'react';
-import { MailData, mails } from '../../../consts/mails';
-import { Mail } from '../../../src/common/components/Mail/Mail';
+import { MailData, mails } from '../../../mocked/mails';
+import { Mail } from '../../../common/components/Mail/Mail';
 
 const MailPage: FC = () => {
   const [mailData, setMailData] = useState<MailData>();

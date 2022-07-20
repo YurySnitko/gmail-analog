@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Checkbox, Grid, Menu, MenuItem } from '@mui/material';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 
 export const S = {
   MailListHeaderIconsWrapper: styled(Grid)`
@@ -47,5 +47,21 @@ export const S = {
     padding: 0 0.5rem;
     gap: 0.5rem;
     border-right: 1px solid ${(props): string => props.theme.palette.divider};
+  `,
+
+  MoreIconMenuItemWrapper: styled(Grid)`
+    border-top: 1px solid ${({ theme }): string => theme.palette.divider};
+    width: 300px;
+    height: 110px;
+    padding: 0.5rem 3rem;
+  `,
+
+  MoreIconMenuItem: styled('div')`
+    width: 160px;
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    font-style: italic;
+    font-size: 0.875rem;
+    color: black;
   `,
 };

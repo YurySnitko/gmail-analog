@@ -1,6 +1,6 @@
 import { Grid, Tooltip } from '@mui/material';
 import { FC } from 'react';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import * as S from './MailHeader.styles';
 import { MoreVertOutlined, StarOutline } from '@mui/icons-material';
 import { MailHeaderProps } from './MailHeader.interfaces';

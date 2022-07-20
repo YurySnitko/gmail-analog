@@ -9,6 +9,10 @@ declare module '@mui/material/styles' {
     starButtonFocused: string;
     mailListItemViewed: string;
     mailListItemChecked: string;
+    tryNewViewButtonHover: string;
+    scrollBarThumb: string;
+    scrollBarThumbHover: string;
+    settingsButtonBorder: string;
   }
 
   interface TypeText {

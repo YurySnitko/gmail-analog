@@ -1,4 +1,4 @@
-import { MailData } from './../../../../consts/mails';
+import { MailData } from '../../../mocked/mails';
 
 export interface MailProps {
   mailData: MailData;

@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Mail } from '../../../consts/mails';
+import { MailData } from '../../mocked/mails';
 
 interface MailState {
-  mails: Mail[];
+  mails: MailData[];
   isLoading: boolean;
 }
 

@@ -1,19 +1,18 @@
 import { all, call, put, takeLatest } from '@redux-saga/core/effects';
-import { Mail, mails } from '../../../consts/mails';
+import { MailData, mails } from '../../mocked/mails';
 import { getMailsFailure, getMailsSuccess } from '../reducers/MailsSlice';
 
-const getAsyncMails = () => {
-  const promise = new Promise((resolve) => {
+const getAsyncMails = (): Promise<unknown> => {
+  return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mails);
     }, 1000);
   });
-  return promise;
 };
 
-function* workGetMailsFetch() {
+function* workGetMailsFetch(): Generator {
   try {
-    const data: Mail[] = yield call(() => {
+    const data: MailData[] | unknown = yield call(() => {
       return getAsyncMails();
     });
     yield put(getMailsSuccess(data));
@@ -22,7 +21,7 @@ function* workGetMailsFetch() {
   }
 }
 
-function* mailSaga() {
+function* mailSaga(): Generator {
   yield all([takeLatest('mails/getMailsFetch', workGetMailsFetch)]);
 }
 

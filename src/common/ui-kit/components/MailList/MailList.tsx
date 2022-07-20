@@ -2,25 +2,25 @@ import React, { FC, useEffect, useState } from 'react';
 import { S } from './MailList.styles';
 import { MailListProps } from './MailList.interfaces';
 import MailListItem from '../MailListItem/MailListItem';
-import { MailData } from '../../../../consts/mails';
-import { useEvent } from '../../../hooks/useEvent.hook';
+import { useAppSelector } from '../../../../hooks/redux.hook';
+import { MailData } from '../../../../mocked/mails';
+import { useEvent } from '../../../../hooks/useEvent.hook';
 import { useRouter } from 'next/router';
 
 const MailList: FC<MailListProps> = ({
   setSelectedMailsIds,
   selectedMailsIds,
   mailList,
-  currentPage,
 }) => {
+  const { currentPage, pageSize } = useAppSelector((state) => state.pagination);
   const [currentPageMails, setCurrentPageMails] = useState<MailData[]>([]);
-  const PAGE_SIZE = 10;
   const router = useRouter();
 
   useEffect(() => {
-    const begin = (currentPage - 1) * PAGE_SIZE;
-    const end = begin + PAGE_SIZE;
+    const begin = (currentPage - 1) * pageSize;
+    const end = begin + pageSize;
     setCurrentPageMails(mailList.slice(begin, end));
-  }, [currentPage, mailList]);
+  }, [currentPage, mailList, pageSize]);
 
   const checkboxCheckHandler = useEvent((isChecked: boolean, id: string) => {
     setSelectedMailsIds(
