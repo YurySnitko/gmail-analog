@@ -13,6 +13,7 @@ export const theme = createTheme({
       scrollBarThumb: '#c5c5c5',
       scrollBarThumbHover: '#8b8b8b',
       settingsButtonBorder: '#dadce0',
+      headerFilterBorder: 'rgba(0, 0, 0, 0.2)',
     },
     text: {
       headerIconButton: '#5f6368',
@@ -26,6 +27,7 @@ export const theme = createTheme({
     writeButton: '0 1px 3px 0 #9d9d9d',
     writeButtonHover: '1px 2px 4px #9d9d9d',
     mailListItemHover: 'inset 0 -1px 0 0 rgb(100 121 143 / 12%)',
+    headerFilter: '0 2px 4px rgb(0 0 0 / 20%)',
   },
 
   typography: {

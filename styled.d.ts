@@ -13,6 +13,7 @@ declare module '@mui/material/styles' {
     scrollBarThumb: string;
     scrollBarThumbHover: string;
     settingsButtonBorder: string;
+    headerFilterBorder: string;
   }
 
   interface TypeText {
@@ -26,6 +27,7 @@ declare module '@mui/material/styles' {
       writeButton: string;
       writeButtonHover: string;
       mailListItemHover: string;
+      headerFilter: string;
     };
   }
 
@@ -43,6 +45,7 @@ declare module '@mui/material/styles' {
       writeButton: string;
       writeButtonHover: string;
       mailListItemHover: string;
+      headerFilter: string;
     };
   }
 }

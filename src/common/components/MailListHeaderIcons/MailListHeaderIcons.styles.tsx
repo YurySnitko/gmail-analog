@@ -62,6 +62,5 @@ export const S = {
     white-space: pre-wrap;
     font-style: italic;
     font-size: 0.875rem;
-    color: black;
   `,
 };
