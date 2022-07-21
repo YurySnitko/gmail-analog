@@ -1,3 +1,3 @@
 export interface MailControlsBarProps {
-  onAnswerClick: () => void;
+  toogleAnswerMode: () => void;
 }

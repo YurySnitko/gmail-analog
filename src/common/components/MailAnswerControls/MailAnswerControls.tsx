@@ -10,12 +10,15 @@ import {
   MoreVertRounded,
   TextFormatRounded,
 } from '@mui/icons-material';
-import { Tooltip } from '@mui/material';
 import { FC } from 'react';
 import { ButtonWithOptions } from '../../ui-kit/ButtonWithOptions/ButtonWithOptions';
+import { Tooltip } from '../../ui-kit/Tooltip/Tooltip';
+import { MailAnswerControlsProps } from './MailAnswerControls.interfaces';
 import * as S from './MailAnswerControls.styles';
 
-export const MailAnswerControls: FC = () => {
+export const MailAnswerControls: FC<MailAnswerControlsProps> = ({
+  toogleAnswerMode,
+}) => {
   return (
     <S.Container>
       <ButtonWithOptions />
@@ -67,7 +70,7 @@ export const MailAnswerControls: FC = () => {
             <MoreVertRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
-        <Tooltip title="Удалить черновик">
+        <Tooltip title="Удалить черновик" onClick={toogleAnswerMode}>
           <S.IconButtonStld size="small" shape="square">
             <DeleteRounded fontSize="small" />
           </S.IconButtonStld>

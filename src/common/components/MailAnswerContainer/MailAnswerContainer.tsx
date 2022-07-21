@@ -3,9 +3,12 @@ import { FC, useState } from 'react';
 import { ChooseAddressee } from '../ChooseAddresse/ChooseAddressee';
 import { MailAnswerBody } from '../MailAnswerBody/MailAnswerBody';
 import { MailAnswerControls } from '../MailAnswerControls/MailAnswerControls';
+import { MailAnswerContainerProps } from './MailAnswerContainer.interfaces';
 import * as S from './MailAnswerContainer.styles';
 
-export const MailAnswerContainer: FC = () => {
+export const MailAnswerContainer: FC<MailAnswerContainerProps> = ({
+  toogleAnswerMode,
+}) => {
   const [isChooseAddresseeInEditMode, setIsChooseAddresseeInEditMode] =
     useState<boolean>(false);
 
@@ -28,7 +31,7 @@ export const MailAnswerContainer: FC = () => {
           onClick={onChooseAddresseClick}
         />
         <MailAnswerBody onClick={onMailAnswerBodyClick} />
-        <MailAnswerControls />
+        <MailAnswerControls toogleAnswerMode={toogleAnswerMode} />
       </S.Container>
     </S.MainContainer>
   );

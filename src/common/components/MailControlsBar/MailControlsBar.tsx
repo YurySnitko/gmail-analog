@@ -5,12 +5,12 @@ import { MailControlsBarProps } from './MailControlsBar.interfaces';
 import * as S from './MailControlsBar.styles';
 
 export const MailControlsBar: FC<MailControlsBarProps> = ({
-  onAnswerClick,
+  toogleAnswerMode,
 }) => {
   return (
     <S.Container>
       <Button
-        onClick={onAnswerClick}
+        onClick={toogleAnswerMode}
         variant="outlined"
         color="inherit"
         startIcon={<S.ShortcutOutlinedLeft />}

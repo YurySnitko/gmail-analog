@@ -4,6 +4,7 @@ export const theme = createTheme({
   palette: {
     background: {
       iconButton: 'rgba(60, 64, 67, 0.08)',
+      IconButtonHover: 'rgba(60, 64, 67, 0.2)',
       searchBar: '#f1f3f4',
       searchBarFocused: 'rgba(255, 255, 255, 1)',
       starButtonFocused: '#f4b400',

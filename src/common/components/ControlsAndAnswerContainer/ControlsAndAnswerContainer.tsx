@@ -6,16 +6,16 @@ import * as S from './ControlsAndAnswerContainer.styles';
 export const ControlsAndAnswerContainer: FC = () => {
   const [isAnswerOpen, setIsAnswerOpen] = useState<boolean>(false);
 
-  const onAnswerClick = (): void => {
-    setIsAnswerOpen(true);
+  const toogleAnswerMode = (): void => {
+    setIsAnswerOpen((prev) => !prev);
   };
 
   return (
     <S.Container>
       {isAnswerOpen ? (
-        <MailAnswerContainer />
+        <MailAnswerContainer toogleAnswerMode={toogleAnswerMode} />
       ) : (
-        <MailControlsBar onAnswerClick={onAnswerClick} />
+        <MailControlsBar toogleAnswerMode={toogleAnswerMode} />
       )}
     </S.Container>
   );

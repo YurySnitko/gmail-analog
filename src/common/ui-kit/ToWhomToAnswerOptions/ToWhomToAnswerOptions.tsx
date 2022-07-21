@@ -1,6 +1,7 @@
 import { ArrowDropDown, ShortcutOutlined } from '@mui/icons-material';
-import { Divider, MenuItem, Tooltip } from '@mui/material';
+import { Divider, MenuItem } from '@mui/material';
 import { FC, MouseEvent, useState } from 'react';
+import { Tooltip } from '../Tooltip/Tooltip';
 import * as S from './ToWhomToAnswerOptions.styles';
 
 export const ToWhomToAnswerOptions: FC = () => {

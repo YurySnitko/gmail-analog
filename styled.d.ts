@@ -4,6 +4,7 @@ import '@mui/material/Typography';
 declare module '@mui/material/styles' {
   interface TypeBackground {
     iconButton: string;
+    IconButtonHover: string;
     searchBar: string;
     searchBarFocused: string;
     starButtonFocused: string;
