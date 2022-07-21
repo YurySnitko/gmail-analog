@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Grid } from '@mui/material';
+import { Button, Grid, Typography } from '@mui/material';
 
 export const S = {
   HeaderFilterWrapper: styled(Grid)`
@@ -20,5 +20,57 @@ export const S = {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+  `,
+
+  HeaderFilterSelectItem: styled('div')`
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+  `,
+
+  HeaderFilterSelectItemText: styled(Typography)`
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+  `,
+
+  HeaderFilterDatePickerWrapper: styled('div')`
+    display: grid;
+    grid-template-columns: 2fr 2.6fr;
+    gap: 0.5rem;
+    align-items: center;
+  `,
+
+  HeaderFilterSelectWrapper: styled('div')`
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+  `,
+
+  CheckboxWrapper: styled('div')`
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  `,
+
+  CheckboxLabel: styled(Typography)`
+    font-size: 0.875rem;
+  `,
+
+  FormControls: styled('div')`
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+  `,
+
+  CreateFilterButton: styled(Button)`
+    box-shadow: none;
+    color: lightgray;
+
+    &.Mui-disabled {
+      border: none;
+      box-shadow: none;
+      color: lightgray;
+    }
   `,
 };

@@ -1,21 +1,16 @@
 import { styled } from '@mui/material/styles';
-import { Input, Typography } from '@mui/material';
+import { Typography } from '@mui/material';
 
 export const S = {
   HeaderFilterItemWrapper: styled('div')`
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     align-items: center;
     width: 100%;
-    gap: 1rem;
+    user-select: none;
   `,
 
   HeaderFilterItemText: styled(Typography)`
     font-size: 0.875rem;
-    margin: 0;
-  `,
-
-  HeaderFilterItemInput: styled(Input)`
-    width: 100%;
   `,
 };
