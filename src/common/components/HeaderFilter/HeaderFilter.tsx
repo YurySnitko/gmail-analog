@@ -19,8 +19,12 @@ const HeaderFilter: FC = React.forwardRef(() => {
           <S.HeaderFilterSelectItemText>Размер</S.HeaderFilterSelectItemText>
           <S.HeaderFilterSelectWrapper>
             <FilterSelect defaultValue={'больше'}>
-              <MenuItem value={'больше'}>больше</MenuItem>
-              <MenuItem value={'меньше'}>меньше</MenuItem>
+              <MenuItem id={'1'} value={'больше'}>
+                больше
+              </MenuItem>
+              <MenuItem id={'2'} value={'меньше'}>
+                меньше
+              </MenuItem>
             </FilterSelect>
             <FilterInput />
             <FilterSelect defaultValue={'МБ'}>
@@ -48,8 +52,8 @@ const HeaderFilter: FC = React.forwardRef(() => {
         </S.HeaderFilterSelectItem>
         <S.HeaderFilterSelectItem>
           <S.HeaderFilterSelectItemText>Поиск</S.HeaderFilterSelectItemText>
-          <FilterSelect defaultValue={'1 день'}>
-            <MenuItem value={'1 день'}>1 день</MenuItem>
+          <FilterSelect defaultValue={'Вся почта'}>
+            <MenuItem value={'Вся почта'}>Вся почта</MenuItem>
             <MenuItem value={'3 дня'}>3 дня</MenuItem>
             <MenuItem value={'1 неделя'}>1 неделя</MenuItem>
             <MenuItem value={'2 недели'}>2 недели</MenuItem>

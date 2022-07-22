@@ -25,7 +25,10 @@ export const SearchBar: FC = () => {
       <S.FormContainer>
         <SearchBarForm />
       </S.FormContainer>
-      <ClickAwayListener onClickAway={clickAwayHandler}>
+      <ClickAwayListener
+        mouseEvent={'onMouseUp'}
+        onClickAway={clickAwayHandler}
+      >
         <div>
           {!isFilterFormOpen && (
             <Tooltip

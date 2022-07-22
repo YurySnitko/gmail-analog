@@ -9,14 +9,31 @@ export const S = {
   `,
 
   DatePickerTextField: styled(TextField)`
-    & .MuiTextField-root {
-      padding: 0;
+    & .MuiInput-root,
+    .MuiInput-input {
       font-size: 0.875rem;
-      color: red;
+      padding: 0;
+    }
 
-      & > input {
-        padding: 0;
-      }
+    & .MuiInput-root:hover:not(.Mui-disabled):before {
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
+    }
+
+    & .MuiInput-root:after {
+      transition: none;
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterFocusBorder};
+    }
+
+    & .MuiInput-underline:before {
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
+    }
+
+    & .MuiInput-underline:hover:before {
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
     }
   `,
 };

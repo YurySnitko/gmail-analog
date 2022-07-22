@@ -6,25 +6,43 @@ export const S = {
     height: 28px;
     align-items: center;
     padding: 3px 3px 5px 3px;
-
-    &:hover {
-      background-color: #f2f2f2;
-      border-radius: 4px;
-    }
   `,
 
   FilterSelect: styled(Select)`
     font-size: 0.875rem;
-    transition: 0.15s ease-out;
     width: 100%;
     height: 100%;
 
+    & .MuiSelect-root {
+      transition: 0.15s ease-out;
+    }
+
+    & .MuiSelect-select:focus {
+      border-radius: 4px;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.filterSelectHover};
+    }
+
+    & .MuiSelect-select:hover {
+      border-radius: 4px;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.filterSelectHover};
+    }
+
     &:hover:not(.Mui-disabled):before {
-      border-bottom: white;
+      border-bottom: ${({ theme }): string => theme.palette.common.white};
     }
 
     &:before {
-      border-bottom: 1px solid lightgray;
+      transition: none;
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
+    }
+
+    &:after {
+      transition: none;
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
     }
 
     &:hover {

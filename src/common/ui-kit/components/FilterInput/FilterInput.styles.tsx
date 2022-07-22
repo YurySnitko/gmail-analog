@@ -3,19 +3,26 @@ import { Input } from '@mui/material';
 
 export const S = {
   FilterItemInput: styled(Input)`
-    width: 100%;
     font-size: 0.875rem;
 
-    &:hover:not(.Mui-disabled):before {
-      border-bottom: 1px solid lightgray;
-    }
-
-    &:before {
-      border-bottom: 1px solid lightgray;
-    }
-
-    & > input {
+    & .MuiInput-input {
       padding: 0;
+    }
+
+    &.MuiInput-root:after {
+      transition: none;
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterFocusBorder};
+    }
+
+    &.MuiInput-root:not(.Mui-disabled):before {
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
+    }
+
+    &.MuiInput-root:hover:not(.Mui-disabled):before {
+      border-bottom: ${({ theme }): string =>
+        theme.customShadows.headerFilterInputBorder};
     }
   `,
 };

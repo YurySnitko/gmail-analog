@@ -4,7 +4,6 @@ import { TextFieldProps } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-//import FilterInput from '../FilterInput/FilterInput';
 
 const FilterDatePicker: FC = () => {
   const [date, setDate] = useState<Date | null>(null);
@@ -16,7 +15,7 @@ const FilterDatePicker: FC = () => {
   const datePickerRenderInput = (
     params: TextFieldProps
   ): React.ReactElement => {
-    return <S.DatePickerTextField {...params} />;
+    return <S.DatePickerTextField variant={'standard'} {...params} />;
   };
 
   return (

@@ -43,6 +43,7 @@ export const S = {
     &:last-child {
       border-right: none;
     }
+
     display: flex;
     padding: 0 0.5rem;
     gap: 0.5rem;
