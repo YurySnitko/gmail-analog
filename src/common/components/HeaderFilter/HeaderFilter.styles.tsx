@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Button, Grid, Typography } from '@mui/material';
+import { Button, Grid, MenuItem, Typography } from '@mui/material';
 
 export const S = {
   HeaderFilterWrapper: styled(Grid)`
@@ -72,5 +72,17 @@ export const S = {
       box-shadow: none;
       color: lightgray;
     }
+  `,
+
+  FilterMenuItem: styled(MenuItem)`
+    font-size: 0.875rem;
+    width: 200px;
+  `,
+
+  FilterTopBorderMenuItem: styled(MenuItem)`
+    font-size: 0.875rem;
+    width: 200px;
+    border-top: ${({ theme }): string =>
+      theme.customShadows.headerFilterInputBorder};
   `,
 };

@@ -19,18 +19,18 @@ const HeaderFilter: FC = React.forwardRef(() => {
           <S.HeaderFilterSelectItemText>Размер</S.HeaderFilterSelectItemText>
           <S.HeaderFilterSelectWrapper>
             <FilterSelect defaultValue={'больше'}>
-              <MenuItem id={'1'} value={'больше'}>
+              <S.FilterMenuItem id={'1'} value={'больше'}>
                 больше
-              </MenuItem>
+              </S.FilterMenuItem>
               <MenuItem id={'2'} value={'меньше'}>
                 меньше
               </MenuItem>
             </FilterSelect>
             <FilterInput />
             <FilterSelect defaultValue={'МБ'}>
-              <MenuItem value={'МБ'}>МБ</MenuItem>
-              <MenuItem value={'КБ'}>КБ</MenuItem>
-              <MenuItem value={'Б'}>Б</MenuItem>
+              <S.FilterMenuItem value={'МБ'}>МБ</S.FilterMenuItem>
+              <S.FilterMenuItem value={'КБ'}>КБ</S.FilterMenuItem>
+              <S.FilterMenuItem value={'Б'}>Б</S.FilterMenuItem>
             </FilterSelect>
           </S.HeaderFilterSelectWrapper>
         </S.HeaderFilterSelectItem>
@@ -38,14 +38,14 @@ const HeaderFilter: FC = React.forwardRef(() => {
           <S.HeaderFilterSelectItemText>Дата</S.HeaderFilterSelectItemText>
           <S.HeaderFilterDatePickerWrapper>
             <FilterSelect defaultValue={'1 день'}>
-              <MenuItem value={'1 день'}>1 день</MenuItem>
-              <MenuItem value={'3 дня'}>3 дня</MenuItem>
-              <MenuItem value={'1 неделя'}>1 неделя</MenuItem>
-              <MenuItem value={'2 недели'}>2 недели</MenuItem>
-              <MenuItem value={'1 месяц'}>1 месяц</MenuItem>
-              <MenuItem value={'2 месяца'}>2 месяца</MenuItem>
-              <MenuItem value={'6 месяцев'}>2 месяцев</MenuItem>
-              <MenuItem value={'1 год'}>1 год</MenuItem>
+              <S.FilterMenuItem value={'1 день'}>1 день</S.FilterMenuItem>
+              <S.FilterMenuItem value={'3 дня'}>3 дня</S.FilterMenuItem>
+              <S.FilterMenuItem value={'1 неделя'}>1 неделя</S.FilterMenuItem>
+              <S.FilterMenuItem value={'2 недели'}>2 недели</S.FilterMenuItem>
+              <S.FilterMenuItem value={'1 месяц'}>1 месяц</S.FilterMenuItem>
+              <S.FilterMenuItem value={'2 месяца'}>2 месяца</S.FilterMenuItem>
+              <S.FilterMenuItem value={'6 месяцев'}>2 месяцев</S.FilterMenuItem>
+              <S.FilterMenuItem value={'1 год'}>1 год</S.FilterMenuItem>
             </FilterSelect>
             <FilterDatePicker />
           </S.HeaderFilterDatePickerWrapper>
@@ -53,14 +53,31 @@ const HeaderFilter: FC = React.forwardRef(() => {
         <S.HeaderFilterSelectItem>
           <S.HeaderFilterSelectItemText>Поиск</S.HeaderFilterSelectItemText>
           <FilterSelect defaultValue={'Вся почта'}>
-            <MenuItem value={'Вся почта'}>Вся почта</MenuItem>
-            <MenuItem value={'3 дня'}>3 дня</MenuItem>
-            <MenuItem value={'1 неделя'}>1 неделя</MenuItem>
-            <MenuItem value={'2 недели'}>2 недели</MenuItem>
-            <MenuItem value={'1 месяц'}>1 месяц</MenuItem>
-            <MenuItem value={'2 месяца'}>2 месяца</MenuItem>
-            <MenuItem value={'6 месяцев'}>2 месяцев</MenuItem>
-            <MenuItem value={'1 год'}>1 год</MenuItem>
+            <S.FilterMenuItem value={'Вся почта'}>Вся почта</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Входящие'}>Входящие</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Помеченные'}>Помеченные</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Отправленные'}>
+              Отправленные
+            </S.FilterMenuItem>
+            <S.FilterMenuItem value={'Черновики'}>Черновики</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Чаты'}>Чаты</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Спам'}>Спам</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Корзина'}>Корзина</S.FilterMenuItem>
+            <S.FilterTopBorderMenuItem value={'Письма, спам и корзина'}>
+              Письма, спам и корзина
+            </S.FilterTopBorderMenuItem>
+            <S.FilterTopBorderMenuItem value={'Прочитанные письма'}>
+              Прочитанные письма
+            </S.FilterTopBorderMenuItem>
+            <S.FilterMenuItem value={'Не прочитанные письма'}>
+              Не прочитанные письма
+            </S.FilterMenuItem>
+            <S.FilterTopBorderMenuItem value={'Соцсети'}>
+              Соцсети
+            </S.FilterTopBorderMenuItem>
+            <S.FilterMenuItem value={'Оповещения'}>Оповещения</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Форумы'}>Форумы</S.FilterMenuItem>
+            <S.FilterMenuItem value={'Промоакции'}>Промоакции</S.FilterMenuItem>
           </FilterSelect>
         </S.HeaderFilterSelectItem>
         <S.CheckboxWrapper>
