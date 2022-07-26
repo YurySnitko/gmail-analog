@@ -99,6 +99,10 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
     setSizeValue(event.target.value);
   };
 
+  const setIsAttachedHandler = (): void => {
+    setIsAttachedFiles((prev) => !prev);
+  };
+
   const clickAwayHandler = (): void => {
     dispatch(
       addData({
@@ -252,7 +256,11 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
               </FilterSelect>
             </S.HeaderFilterSelectItem>
             <S.CheckboxWrapper>
-              <Checkbox size={'small'} value={isAttachedFiles} />
+              <Checkbox
+                size={'small'}
+                checked={isAttachedFiles}
+                onChange={setIsAttachedHandler}
+              />
               <S.CheckboxLabel>Есть прикрепленные файлы</S.CheckboxLabel>
             </S.CheckboxWrapper>
             <S.FormControls>
