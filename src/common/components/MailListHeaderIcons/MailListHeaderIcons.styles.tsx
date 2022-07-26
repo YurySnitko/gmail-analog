@@ -43,6 +43,7 @@ export const S = {
     &:last-child {
       border-right: none;
     }
+
     display: flex;
     padding: 0 0.5rem;
     gap: 0.5rem;
@@ -62,6 +63,5 @@ export const S = {
     white-space: pre-wrap;
     font-style: italic;
     font-size: 0.875rem;
-    color: black;
   `,
 };
