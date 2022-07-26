@@ -1,17 +1,15 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
 import { S } from './FilterDatePicker.styles';
 import { TextFieldProps } from '@mui/material';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { FilterDatePickerProps } from './FilterDatePicker.interfaces';
 
-const FilterDatePicker: FC = () => {
-  const [date, setDate] = useState<Date | null>(null);
-
-  const changeDateHandler = (newValue: unknown): void => {
-    setDate(newValue as Date);
-  };
-
+const FilterDatePicker: FC<FilterDatePickerProps> = ({
+  value,
+  changeHandler,
+}) => {
   const datePickerRenderInput = (
     params: TextFieldProps
   ): React.ReactElement => {
@@ -21,8 +19,8 @@ const FilterDatePicker: FC = () => {
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
-        value={date}
-        onChange={changeDateHandler}
+        value={value}
+        onChange={changeHandler}
         renderInput={datePickerRenderInput}
       />
     </LocalizationProvider>

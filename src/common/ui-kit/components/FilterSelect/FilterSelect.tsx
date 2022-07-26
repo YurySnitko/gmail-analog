@@ -2,7 +2,11 @@ import React, { FC, useEffect, useRef, useState } from 'react';
 import { S } from './FilterSelect.styles';
 import { FilterSelectProps } from './FilterSelect.interfaces';
 
-const FilterSelect: FC<FilterSelectProps> = ({ children, defaultValue }) => {
+const FilterSelect: FC<FilterSelectProps> = ({
+  children,
+  defaultValue,
+  changeHandler,
+}) => {
   const selectComponent = useRef<HTMLInputElement>(null);
   const [position, setPosition] = useState<number>(0);
 
@@ -18,6 +22,7 @@ const FilterSelect: FC<FilterSelectProps> = ({ children, defaultValue }) => {
     <S.FilterWrapper>
       <S.FilterSelect
         ref={selectComponent}
+        onChange={changeHandler}
         MenuProps={{
           PaperProps: {
             sx: {

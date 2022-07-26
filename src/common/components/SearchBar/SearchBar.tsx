@@ -3,18 +3,18 @@ import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 import { FC, useState } from 'react';
 import { SearchBarForm } from '../SearchBarForm/SearchBarForm';
+import { Tooltip } from '@mui/material';
 import HeaderFilter from '../HeaderFilter/HeaderFilter';
-import { ClickAwayListener, Tooltip } from '@mui/material';
 
 export const SearchBar: FC = () => {
   const [isFilterFormOpen, setIsFilterFormOpen] = useState(false);
 
-  const filterButtonClickHandler = (): void => {
-    setIsFilterFormOpen((prev) => !prev);
+  const setIsFilterFormOpenHandler = (flag: boolean): void => {
+    setIsFilterFormOpen(flag);
   };
 
-  const clickAwayHandler = (): void => {
-    setIsFilterFormOpen(false);
+  const filterButtonClickHandler = (): void => {
+    setIsFilterFormOpen((prev) => !prev);
   };
 
   return (
@@ -25,24 +25,19 @@ export const SearchBar: FC = () => {
       <S.FormContainer>
         <SearchBarForm />
       </S.FormContainer>
-      <ClickAwayListener
-        mouseEvent={'onMouseUp'}
-        onClickAway={clickAwayHandler}
-      >
-        <div>
-          {!isFilterFormOpen && (
-            <Tooltip
-              onClick={filterButtonClickHandler}
-              title={'Показать параметры поиска'}
-            >
-              <S.SearchParamsButton>
-                <TuneIcon />
-              </S.SearchParamsButton>
-            </Tooltip>
-          )}
-          {isFilterFormOpen && <HeaderFilter />}
-        </div>
-      </ClickAwayListener>
+      {!isFilterFormOpen && (
+        <Tooltip
+          onClick={filterButtonClickHandler}
+          title={'Показать параметры поиска'}
+        >
+          <S.SearchParamsButton>
+            <TuneIcon />
+          </S.SearchParamsButton>
+        </Tooltip>
+      )}
+      {isFilterFormOpen && (
+        <HeaderFilter setIsFilterForm={setIsFilterFormOpenHandler} />
+      )}
     </S.Container>
   );
 };

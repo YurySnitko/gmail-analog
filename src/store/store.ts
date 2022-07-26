@@ -3,10 +3,12 @@ import mailReducer from './reducers/MailsSlice';
 import createSagaMiddleware from '@redux-saga/core';
 import { rootSaga } from './sagas/rootSaga';
 import paginationReducer from './reducers/PaginationSlice';
+import filterValueReducer from './reducers/FilterValuesSlice';
 
 const rootReducer = combineReducers({
   mail: mailReducer,
   pagination: paginationReducer,
+  filters: filterValueReducer,
 });
 
 const saga = createSagaMiddleware();
