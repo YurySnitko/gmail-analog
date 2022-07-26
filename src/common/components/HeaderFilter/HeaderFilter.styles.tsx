@@ -9,7 +9,7 @@ export const S = {
     width: 100%;
     padding: 24px;
     background-color: ${({ theme }): string => theme.palette.common.white};
-    z-index: 3;
+    z-index: 1;
     border: 1px solid
       ${({ theme }): string => theme.palette.background.headerFilterBorder};
     box-shadow: ${({ theme }): string => theme.customShadows.headerFilter};

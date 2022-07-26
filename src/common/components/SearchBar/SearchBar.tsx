@@ -40,7 +40,7 @@ export const SearchBar: FC = () => {
               </S.SearchParamsButton>
             </Tooltip>
           )}
-          {isFilterFormOpen ? <HeaderFilter /> : null}
+          {isFilterFormOpen && <HeaderFilter />}
         </div>
       </ClickAwayListener>
     </S.Container>
