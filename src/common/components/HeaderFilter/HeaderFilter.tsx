@@ -10,14 +10,16 @@ import {
 import FilterInput from '../../ui-kit/components/FilterInput/FilterInput';
 import FilterSelect from '../../ui-kit/components/FilterSelect/FilterSelect';
 import FilterDatePicker from '../../ui-kit/components/FilterDatePicker/FilterDatePicker';
-import { HeaderFilterProps } from './HeaderFilter.interfaces';
-import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
-import { addData } from '../../../store/reducers/FilterValuesSlice';
+import { FilterValues, HeaderFilterProps } from './HeaderFilter.interfaces';
+import { useAppSelector } from '../../../hooks/redux.hook';
+//import { addData } from '../../../store/reducers/FilterValuesSlice';
+import { SubmitHandler, useForm } from 'react-hook-form';
 
 const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
   const filters = useAppSelector((state) => state.filters);
+  const { register, handleSubmit } = useForm<FilterValues>();
 
-  const [sender, setSender] = useState<string>(filters.sender);
+  // const [sender, setSender] = useState<string>(filters.sender);
   const [address, setAddress] = useState<string>(filters.address);
   const [topic, setTopic] = useState<string>(filters.topic);
   const [searchedWords, setSearchedWords] = useState<string>(
@@ -35,7 +37,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
     filters.isAttachedFiles
   );
   const [sizeValue, setSizeValue] = useState<string>(filters.sizeValue);
-  const dispatch = useAppDispatch();
+  // const dispatch = useAppDispatch();
 
   const setSizeHandler = (event: SelectChangeEvent<unknown>): void => {
     setSize(event.target.value as string);
@@ -63,11 +65,11 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
     setIsAttachedFiles((prev) => !prev);
   };
 
-  const setSenderHandler = (
-    event: React.ChangeEvent<HTMLInputElement>
-  ): void => {
-    setSender(event.target.value);
-  };
+  // const setSenderHandler = (
+  //   event: React.ChangeEvent<HTMLInputElement>
+  // ): void => {
+  //   setSender(event.target.value);
+  // };
 
   const setAddressHandler = (
     event: React.ChangeEvent<HTMLInputElement>
@@ -104,37 +106,37 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
   };
 
   const clickAwayHandler = (): void => {
-    dispatch(
-      addData({
-        address: address,
-        date: date,
-        datePeriod: datePeriod,
-        isAttachedFiles: isAttachedFiles,
-        noWords: noWords,
-        searchedWords: searchedWords,
-        searchingPlace: searchingPlace,
-        sender: sender,
-        size: size,
-        sizeUnit: sizeUnit,
-        sizeValue: sizeValue,
-        topic: topic,
-      })
-    );
+    // dispatch(
+    //   addData({
+    //     address: address,
+    //     date: date,
+    //     datePeriod: datePeriod,
+    //     isAttachedFiles: isAttachedFiles,
+    //     noWords: noWords,
+    //     searchedWords: searchedWords,
+    //     searchingPlace: searchingPlace,
+    //     sender: sender,
+    //     size: size,
+    //     sizeUnit: sizeUnit,
+    //     sizeValue: sizeValue,
+    //     topic: topic,
+    //   })
+    // );
     setIsFilterForm(false);
   };
 
-  const formSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
-    e.preventDefault();
+  const formSubmit: SubmitHandler<FilterValues> = (data) => {
+    console.log(data);
   };
 
   return (
     <ClickAwayListener mouseEvent={'onMouseUp'} onClickAway={clickAwayHandler}>
       <div>
         <S.HeaderFilterWrapper>
-          <S.HeaderFilterForm onSubmit={formSubmit}>
+          <S.HeaderFilterForm onSubmit={handleSubmit(formSubmit)}>
             <S.HeaderFilterItemWrapper>
               <S.HeaderFilterItemText>От</S.HeaderFilterItemText>
-              <FilterInput value={sender} changeHandler={setSenderHandler} />
+              <FilterInput value={filters.sender} {...register('sender')} />
             </S.HeaderFilterItemWrapper>
             <S.HeaderFilterItemWrapper>
               <S.HeaderFilterItemText>Кому</S.HeaderFilterItemText>
