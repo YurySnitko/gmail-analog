@@ -13,7 +13,7 @@ export const Layout: FC<LayoutProps> = ({ children }) => {
     setIsAsideOpen((prev) => !prev);
   };
 
-  const setIsSettingsOpenHandler = () => {
+  const setIsSettingsOpenHandler = (): void => {
     setIsSettingsOpen((prev) => !prev);
   };
 
