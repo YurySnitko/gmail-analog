@@ -3,8 +3,8 @@ import { S } from './FilterSelect.styles';
 import { FilterSelectProps } from './FilterSelect.interfaces';
 
 const FilterSelect: FC<FilterSelectProps> = ({
+  value,
   children,
-  defaultValue,
   changeHandler,
 }) => {
   const selectComponent = useRef<HTMLInputElement>(null);
@@ -31,8 +31,8 @@ const FilterSelect: FC<FilterSelectProps> = ({
             },
           },
         }}
-        value={defaultValue}
         variant={'standard'}
+        value={value}
       >
         {children}
       </S.FilterSelect>
