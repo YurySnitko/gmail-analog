@@ -17,8 +17,12 @@ import { MailAnswerControlsProps } from './MailAnswerControls.interfaces';
 import * as S from './MailAnswerControls.styles';
 
 export const MailAnswerControls: FC<MailAnswerControlsProps> = ({
-  toogleAnswerMode,
+  toogleAnswerContainerMode,
 }) => {
+  const onDeleteDraftsButtonClick = (): void => {
+    toogleAnswerContainerMode(false);
+  };
+
   return (
     <S.Container>
       <ButtonWithOptions />
@@ -70,7 +74,7 @@ export const MailAnswerControls: FC<MailAnswerControlsProps> = ({
             <MoreVertRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
-        <Tooltip title="Удалить черновик" onClick={toogleAnswerMode}>
+        <Tooltip title="Удалить черновик" onClick={onDeleteDraftsButtonClick}>
           <S.IconButtonStld size="small" shape="square">
             <DeleteRounded fontSize="small" />
           </S.IconButtonStld>

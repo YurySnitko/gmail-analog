@@ -14,7 +14,8 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import DriveFileMoveOutlinedIcon from '@mui/icons-material/DriveFileMoveOutlined';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
-import { Tooltip } from '@mui/material';
+import { MenuItem, Tooltip } from '@mui/material';
+import { Menu } from '../../ui-kit/Menu/Menu.styles';
 
 const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   selectedMailsIds,
@@ -28,15 +29,15 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
     setCheckboxChecked(selectedMailsIds.length > 0);
   }, [selectedMailsIds]);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>): void => {
     setAnchorEl(event.currentTarget);
   };
 
-  const handleClose = () => {
+  const handleClose = (): void => {
     setAnchorEl(null);
   };
 
-  const checkboxCheckedHandler = () => {
+  const checkboxCheckedHandler = (): void => {
     setSelectedMailsIds(checkboxChecked ? [] : mails.map((mail) => mail.id));
     setCheckboxChecked((prev) => !prev);
   };
@@ -132,14 +133,14 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
           <ArrowDropDownIcon fontSize={'small'} />
         </S.CheckboxArrowButton>
       </S.CheckBoxWrapper>
-      <S.Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <S.MenuItem onClick={handleClose}>Все</S.MenuItem>
-        <S.MenuItem onClick={handleClose}>Ни одного</S.MenuItem>
-        <S.MenuItem onClick={handleClose}>Прочитанные</S.MenuItem>
-        <S.MenuItem onClick={handleClose}>Непрочитанные</S.MenuItem>
-        <S.MenuItem onClick={handleClose}>Помеченные</S.MenuItem>
-        <S.MenuItem onClick={handleClose}>Без пометок</S.MenuItem>
-      </S.Menu>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+        <MenuItem onClick={handleClose}>Все</MenuItem>
+        <MenuItem onClick={handleClose}>Ни одного</MenuItem>
+        <MenuItem onClick={handleClose}>Прочитанные</MenuItem>
+        <MenuItem onClick={handleClose}>Непрочитанные</MenuItem>
+        <MenuItem onClick={handleClose}>Помеченные</MenuItem>
+        <MenuItem onClick={handleClose}>Без пометок</MenuItem>
+      </Menu>
       {moreIcons()}
     </S.MailListHeaderIconsWrapper>
   );

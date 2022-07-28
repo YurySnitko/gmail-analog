@@ -28,10 +28,12 @@ declare module '@mui/material/styles' {
 
   interface TypographyVariants {
     body3: React.CSSProperties;
+    message: React.CSSProperties;
   }
 
   interface TypographyVariantsOptions {
     body3?: React.CSSProperties;
+    message?: React.CSSProperties;
   }
 
   interface ThemeOptions {
@@ -47,5 +49,6 @@ declare module '@mui/material/styles' {
 declare module '@mui/material/Typography' {
   interface TypographyPropsVariantOverrides {
     body3: true;
+    message: true;
   }
 }

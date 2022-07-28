@@ -1,21 +1,35 @@
 import { FC, useState } from 'react';
 import { MailAnswerContainer } from '../MailAnswerContainer/MailAnswerContainer';
 import { MailControlsBar } from '../MailControlsBar/MailControlsBar';
+import { AnswerMode } from './ControlsAndAnswerContainer.interfaces';
 import * as S from './ControlsAndAnswerContainer.styles';
 
 export const ControlsAndAnswerContainer: FC = () => {
-  const [isAnswerOpen, setIsAnswerOpen] = useState<boolean>(false);
+  const [isAnswerContainerOpen, setIsAnswerContainerOpen] =
+    useState<boolean>(false);
+  const [answerMode, setAnswerMode] = useState<AnswerMode>('reply');
 
-  const toogleAnswerMode = (): void => {
-    setIsAnswerOpen((prev) => !prev);
+  const toogleAnswerContainerMode = (isOpen: boolean): void => {
+    setIsAnswerContainerOpen(isOpen);
+  };
+
+  const toogleAnswerMode = (mode: AnswerMode): void => {
+    setAnswerMode(mode);
   };
 
   return (
     <S.Container>
-      {isAnswerOpen ? (
-        <MailAnswerContainer toogleAnswerMode={toogleAnswerMode} />
+      {isAnswerContainerOpen ? (
+        <MailAnswerContainer
+          answerMode={answerMode}
+          toogleAnswerMode={toogleAnswerMode}
+          toogleAnswerContainerMode={toogleAnswerContainerMode}
+        />
       ) : (
-        <MailControlsBar toogleAnswerMode={toogleAnswerMode} />
+        <MailControlsBar
+          toogleAnswerContainerMode={toogleAnswerContainerMode}
+          toogleAnswerMode={toogleAnswerMode}
+        />
       )}
     </S.Container>
   );

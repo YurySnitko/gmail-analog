@@ -46,6 +46,13 @@ export const theme = createTheme({
       letterSpacing: '0.00714em',
       color: '#555',
     },
+    message: {
+      fontFamily: 'Arial, Helvetica, Arial, sans-serif',
+      fontWeight: 400,
+      fontSize: 'small',
+      lineHeight: 1.5,
+      color: '#222',
+    },
   },
 
   components: {

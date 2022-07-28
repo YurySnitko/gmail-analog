@@ -1,10 +1,15 @@
 import { ArrowDropDown, ShortcutOutlined } from '@mui/icons-material';
 import { Divider, MenuItem } from '@mui/material';
 import { FC, MouseEvent, useState } from 'react';
+import { Menu } from '../Menu/Menu.styles';
 import { Tooltip } from '../Tooltip/Tooltip';
+import { ToWhomToAnswerOptionsProps } from './ToWhomToAnswerOptions.interfaces';
 import * as S from './ToWhomToAnswerOptions.styles';
 
-export const ToWhomToAnswerOptions: FC = () => {
+export const ToWhomToAnswerOptions: FC<ToWhomToAnswerOptionsProps> = ({
+  answerMode,
+  toogleAnswerMode,
+}) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -14,28 +19,40 @@ export const ToWhomToAnswerOptions: FC = () => {
   const handleClose = (): void => {
     setAnchorEl(null);
   };
+  const onReplyClick = (): void => {
+    setAnchorEl(null);
+    toogleAnswerMode('reply');
+  };
+  const onForwardClick = (): void => {
+    setAnchorEl(null);
+    toogleAnswerMode('forward');
+  };
 
   return (
     <>
       <Tooltip title="Кому ответить">
         <S.Button onClick={handleClick}>
-          <S.ShortcutOutlinedLeft fontSize="small" />
+          {answerMode === 'reply' ? (
+            <S.ShortcutOutlinedLeft fontSize="small" />
+          ) : (
+            <ShortcutOutlined fontSize="small" />
+          )}
           <ArrowDropDown fontSize="small" />
         </S.Button>
       </Tooltip>
-      <S.Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
-        <MenuItem onClick={handleClose}>
+      <Menu anchorEl={anchorEl} open={open} onClose={handleClose}>
+        <MenuItem onClick={onReplyClick}>
           <S.ShortcutOutlinedLeft />
           Ответить
         </MenuItem>
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={onForwardClick}>
           <ShortcutOutlined />
           Переслать
         </MenuItem>
         <Divider />
         <MenuItem onClick={handleClose}>Изменить тему</MenuItem>
         <MenuItem onClick={handleClose}>Развернуть ответ</MenuItem>
-      </S.Menu>
+      </Menu>
     </>
   );
 };

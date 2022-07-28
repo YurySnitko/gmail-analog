@@ -1,3 +1,7 @@
+import { AnswerMode } from '../ControlsAndAnswerContainer/ControlsAndAnswerContainer.interfaces';
+
 export interface MailAnswerContainerProps {
-  toogleAnswerMode: () => void;
+  answerMode: AnswerMode;
+  toogleAnswerContainerMode: (isOpen: boolean) => void;
+  toogleAnswerMode: (mode: AnswerMode) => void;
 }

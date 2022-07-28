@@ -22,7 +22,7 @@ export const Mail: FC<MailProps> = ({ mailData }) => {
             date={mailData.date}
             addressees={mailData.addressees}
           />
-          <MailBody />
+          <MailBody text={mailData.text} />
         </S.MailBodyWrapper>
       </S.Container>
       <ControlsAndAnswerContainer />

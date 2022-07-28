@@ -1,9 +1,10 @@
-import { Grid, Tooltip } from '@mui/material';
+import { Grid } from '@mui/material';
 import { FC } from 'react';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 import * as S from './MailHeader.styles';
 import { MoreVertOutlined, StarOutline } from '@mui/icons-material';
 import { MailHeaderProps } from './MailHeader.interfaces';
+import { Tooltip } from '../../ui-kit/Tooltip/Tooltip';
 
 export const MailHeader: FC<MailHeaderProps> = ({
   senderName,

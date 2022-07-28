@@ -1,3 +1,3 @@
 export interface MailAnswerControlsProps {
-  toogleAnswerMode: () => void;
+  toogleAnswerContainerMode: (isOpen: boolean) => void;
 }

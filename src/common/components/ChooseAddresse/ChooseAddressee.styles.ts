@@ -1,10 +1,12 @@
-import { Input as MuiInput } from '@mui/material';
+import { Input as MuiInput, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 
 export const Container = styled('div')`
   padding: 6px 16px;
   display: flex;
+  position: sticky;
+  top: 0;
 `;
 
 export const AddressersWrapper = styled('div')`
@@ -30,5 +32,13 @@ export const Input = styled(MuiInput)`
   & .MuiInput-input {
     line-height: 20px;
     padding: 0;
+  }
+`;
+
+export const ToWhomTypography = styled(Typography)`
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
   }
 `;

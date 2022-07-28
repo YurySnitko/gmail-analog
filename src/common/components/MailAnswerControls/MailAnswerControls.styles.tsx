@@ -1,11 +1,16 @@
 import { styled } from '@mui/material/styles';
 import { IconButton } from '../../ui-kit/IconButton/IconButton';
 
-export const Container = styled('div')`
-  display: flex;
-  padding: 12px 16px 16px;
-  align-items: center;
-`;
+export const Container = styled('div')(({ theme }) => ({
+  display: 'flex',
+  alignItems: 'center',
+  position: 'sticky',
+  bottom: '0',
+  padding: '12px 16px 16px',
+  backgroundColor: theme.palette.common.white,
+  border: '1px solid transparent',
+  borderRadius: ' 0 0 8px 8px',
+}));
 
 export const MainControls = styled('div')`
   display: flex;

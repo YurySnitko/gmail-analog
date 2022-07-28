@@ -1,3 +1,6 @@
+import { AnswerMode } from '../ControlsAndAnswerContainer/ControlsAndAnswerContainer.interfaces';
+
 export interface MailAnswerBodyProps {
-  onClick: () => void;
+  toogleChooseAddresseeEditMode: (isEditMode: boolean) => void;
+  answerMode: AnswerMode;
 }

@@ -9,12 +9,21 @@ import * as S from './ChooseAddressee.styles';
 
 export const ChooseAddressee: FC<ChooseAddresseeProps> = ({
   isEditMode,
-  onClick,
+  answerMode,
+  toogleChooseAddresseeEditMode,
+  toogleAnswerMode,
 }) => {
+  const onAddressersWrapperClick = (): void => {
+    toogleChooseAddresseeEditMode(true);
+  };
+
   return (
     <S.Container>
-      <ToWhomToAnswerOptions />
-      <S.AddressersWrapper onClick={onClick}>
+      <ToWhomToAnswerOptions
+        answerMode={answerMode}
+        toogleAnswerMode={toogleAnswerMode}
+      />
+      <S.AddressersWrapper onClick={onAddressersWrapperClick}>
         {!isEditMode ? (
           <Typography variant="body2" noWrap>
             Confluence confluence@innowise-group.atlassian.net
@@ -22,7 +31,7 @@ export const ChooseAddressee: FC<ChooseAddresseeProps> = ({
         ) : (
           <Box sx={{ display: 'flex', gap: '5px' }}>
             <Tooltip title="Выбрать контакты">
-              <Typography variant="body2">Кому</Typography>
+              <S.ToWhomTypography variant="body2">Кому</S.ToWhomTypography>
             </Tooltip>
             <AddresseTag>Notification Innowise</AddresseTag>
             <S.Input fullWidth autoFocus disableUnderline />
