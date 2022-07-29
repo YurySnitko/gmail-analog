@@ -1,26 +1,25 @@
 import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
 import * as S from './SearchBarForm.styles';
 import ClearIcon from '@mui/icons-material/Clear';
+import { SearchBarFormProps } from './SearchBarForm.interfaces';
 
-export const SearchBarForm: FC = () => {
-  const [searchValue, setSearchValue] = useState<string>('');
+export const SearchBarForm: FC<SearchBarFormProps> = ({
+  searchValue,
+  setSearchValueHandler,
+}) => {
   const [showClearButton, setShowClearButton] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (searchValue.length > 0) {
-      setShowClearButton(true);
-    } else {
-      setShowClearButton(false);
-    }
+    setShowClearButton(searchValue.length > 0);
   }, [searchValue]);
 
   const onSearchValueChange = (e: ChangeEvent<HTMLInputElement>): void => {
-    setSearchValue(e.target.value);
+    setSearchValueHandler(e.target.value);
   };
 
   const onClearButtonClick = (): void => {
-    setSearchValue('');
+    setSearchValueHandler('');
     inputRef.current?.focus();
   };
   return (

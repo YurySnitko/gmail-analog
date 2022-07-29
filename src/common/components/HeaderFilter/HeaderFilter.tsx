@@ -5,27 +5,50 @@ import FilterInput from '../../ui-kit/components/FilterInput/FilterInput';
 import FilterSelect from '../../ui-kit/components/FilterSelect/FilterSelect';
 import FilterDatePicker from '../../ui-kit/components/FilterDatePicker/FilterDatePicker';
 import { FilterValues, HeaderFilterProps } from './HeaderFilter.interfaces';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
 import { addData } from '../../../store/reducers/FilterValuesSlice';
-import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 
-const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
+const HeaderFilter: FC<HeaderFilterProps> = ({
+  setIsFilterForm,
+  searchedValue,
+}) => {
   const filters = useAppSelector((state) => state.filters);
   const { handleSubmit, control, watch } = useForm<FilterValues>();
-  const watchSender = watch('sender');
+  const dispatch = useAppDispatch();
   const [filterDisabled, setFilterDisabled] = useState<boolean>(true);
+  const watchSender = watch('sender');
+  const watchAddress = watch('address');
+  const watchTopic = watch('topic');
+  const watchSearchingWords = watch('searchedWords');
+  const watchNoWords = watch('noWords');
+  const watchSizeValue = watch('sizeValue');
+  const watchSearchingPlace = watch('searchingPlace');
 
   useEffect(() => {
-    if (watchSender && watchSender?.length > 0) {
+    if (
+      watchSender?.length ||
+      watchAddress?.length ||
+      watchTopic?.length ||
+      watchSearchingWords?.length ||
+      watchNoWords?.length ||
+      watchSizeValue?.length ||
+      watchSearchingPlace !== 'Вся почта'
+    ) {
       setFilterDisabled(false);
-    } else if (!filterDisabled && watchSender?.length === 0) {
+    } else if (!filterDisabled) {
       setFilterDisabled(true);
     }
-  }, [watchSender]);
-
-  console.log(filterDisabled, watchSender);
-
-  const dispatch = useAppDispatch();
+  }, [
+    watchSender,
+    watchAddress,
+    watchTopic,
+    watchSearchingWords,
+    watchNoWords,
+    watchSizeValue,
+    watchSearchingPlace,
+    filterDisabled,
+  ]);
 
   const clickAwayHandler = (): void => {
     dispatch(addData(watch()));
@@ -85,7 +108,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
               <Controller
                 name={'searchedWords'}
                 control={control}
-                defaultValue={filters.searchedWords}
+                defaultValue={searchedValue || filters.searchedWords}
                 render={({
                   field: { onChange, value },
                 }): React.ReactElement => (

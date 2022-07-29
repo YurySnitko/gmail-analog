@@ -65,12 +65,20 @@ export const S = {
 
   CreateFilterButton: styled(Button)`
     box-shadow: none;
-    color: lightgray;
+    border: none;
+    color: ${({ theme }): string => theme.palette.text.createFilter};
 
     &.Mui-disabled {
       border: none;
       box-shadow: none;
-      color: lightgray;
+      color: ${({ theme }): string => theme.palette.text.createFilterDisabled};
+    }
+
+    &.MuiButton-root:hover {
+      border: none;
+      box-shadow: none;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.createFilter};
     }
   `,
 

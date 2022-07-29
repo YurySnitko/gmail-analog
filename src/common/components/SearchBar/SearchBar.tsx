@@ -8,6 +8,7 @@ import HeaderFilter from '../HeaderFilter/HeaderFilter';
 
 export const SearchBar: FC = () => {
   const [isFilterFormOpen, setIsFilterFormOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState<string>('');
 
   const setIsFilterFormOpenHandler = (flag: boolean): void => {
     setIsFilterFormOpen(flag);
@@ -17,13 +18,20 @@ export const SearchBar: FC = () => {
     setIsFilterFormOpen((prev) => !prev);
   };
 
+  const setSearchValueHandler = (value: string): void => {
+    setSearchValue(value);
+  };
+
   return (
     <S.Container>
       <S.SearchButton>
         <SearchIcon />
       </S.SearchButton>
       <S.FormContainer>
-        <SearchBarForm />
+        <SearchBarForm
+          searchValue={searchValue}
+          setSearchValueHandler={setSearchValueHandler}
+        />
       </S.FormContainer>
       {!isFilterFormOpen && (
         <Tooltip
@@ -36,7 +44,10 @@ export const SearchBar: FC = () => {
         </Tooltip>
       )}
       {isFilterFormOpen && (
-        <HeaderFilter setIsFilterForm={setIsFilterFormOpenHandler} />
+        <HeaderFilter
+          searchedValue={searchValue}
+          setIsFilterForm={setIsFilterFormOpenHandler}
+        />
       )}
     </S.Container>
   );

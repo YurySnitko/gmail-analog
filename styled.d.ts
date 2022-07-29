@@ -15,11 +15,14 @@ declare module '@mui/material/styles' {
     settingsButtonBorder: string;
     headerFilterBorder: string;
     filterSelectHover: string;
+    createFilter: string;
   }
 
   interface TypeText {
     headerIconButton: string;
     mailTitle: string;
+    createFilterDisabled: string;
+    createFilter: string;
   }
 
   interface Theme {
