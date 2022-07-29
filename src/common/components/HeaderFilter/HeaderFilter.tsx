@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { S } from './HeaderFilter.styles';
 import { Button, Checkbox, ClickAwayListener, MenuItem } from '@mui/material';
 import FilterInput from '../../ui-kit/components/FilterInput/FilterInput';
@@ -12,6 +12,19 @@ import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
   const filters = useAppSelector((state) => state.filters);
   const { handleSubmit, control, watch } = useForm<FilterValues>();
+  const watchSender = watch('sender');
+  const [filterDisabled, setFilterDisabled] = useState<boolean>(true);
+
+  useEffect(() => {
+    if (watchSender && watchSender?.length > 0) {
+      setFilterDisabled(false);
+    } else if (!filterDisabled && watchSender?.length === 0) {
+      setFilterDisabled(true);
+    }
+  }, [watchSender]);
+
+  console.log(filterDisabled, watchSender);
+
   const dispatch = useAppDispatch();
 
   const clickAwayHandler = (): void => {
@@ -258,7 +271,10 @@ const HeaderFilter: FC<HeaderFilterProps> = ({ setIsFilterForm }) => {
               <S.CheckboxLabel>Есть прикрепленные файлы</S.CheckboxLabel>
             </S.CheckboxWrapper>
             <S.FormControls>
-              <S.CreateFilterButton disabled variant={'outlined'}>
+              <S.CreateFilterButton
+                disabled={filterDisabled}
+                variant={'outlined'}
+              >
                 Создать фильтр
               </S.CreateFilterButton>
               <Button variant={'contained'} type={'submit'}>
