@@ -10,18 +10,18 @@ import * as S from './ChooseAddressee.styles';
 export const ChooseAddressee: FC<ChooseAddresseeProps> = ({
   isEditMode,
   answerMode,
-  toogleChooseAddresseeEditMode,
-  toogleAnswerMode,
+  toggleChooseAddresseeEditMode,
+  toggleAnswerMode,
 }) => {
   const onAddressersWrapperClick = (): void => {
-    toogleChooseAddresseeEditMode(true);
+    toggleChooseAddresseeEditMode(true);
   };
 
   return (
     <S.Container>
       <ToWhomToAnswerOptions
         answerMode={answerMode}
-        toogleAnswerMode={toogleAnswerMode}
+        toggleAnswerMode={toggleAnswerMode}
       />
       <S.AddressersWrapper onClick={onAddressersWrapperClick}>
         {!isEditMode ? (

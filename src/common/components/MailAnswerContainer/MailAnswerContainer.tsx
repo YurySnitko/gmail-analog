@@ -6,14 +6,14 @@ import { MailAnswerContainerProps } from './MailAnswerContainer.interfaces';
 import * as S from './MailAnswerContainer.styles';
 
 export const MailAnswerContainer: FC<MailAnswerContainerProps> = ({
-  toogleAnswerContainerMode,
-  toogleAnswerMode,
+  toggleAnswerContainerMode,
+  toggleAnswerMode,
   answerMode,
 }) => {
   const [isChooseAddresseeInEditMode, setIsChooseAddresseeInEditMode] =
     useState<boolean>(false);
 
-  const toogleChooseAddresseeEditMode = (isEditMode: boolean): void => {
+  const toggleChooseAddresseeEditMode = (isEditMode: boolean): void => {
     setIsChooseAddresseeInEditMode(isEditMode);
   };
 
@@ -26,15 +26,15 @@ export const MailAnswerContainer: FC<MailAnswerContainerProps> = ({
         <ChooseAddressee
           answerMode={answerMode}
           isEditMode={isChooseAddresseeInEditMode}
-          toogleChooseAddresseeEditMode={toogleChooseAddresseeEditMode}
-          toogleAnswerMode={toogleAnswerMode}
+          toggleChooseAddresseeEditMode={toggleChooseAddresseeEditMode}
+          toggleAnswerMode={toggleAnswerMode}
         />
         <MailAnswerBody
           answerMode={answerMode}
-          toogleChooseAddresseeEditMode={toogleChooseAddresseeEditMode}
+          toggleChooseAddresseeEditMode={toggleChooseAddresseeEditMode}
         />
         <MailAnswerControls
-          toogleAnswerContainerMode={toogleAnswerContainerMode}
+          toggleAnswerContainerMode={toggleAnswerContainerMode}
         />
       </S.Container>
     </S.MainContainer>

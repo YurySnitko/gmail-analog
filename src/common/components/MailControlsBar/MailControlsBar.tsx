@@ -5,17 +5,17 @@ import { MailControlsBarProps } from './MailControlsBar.interfaces';
 import * as S from './MailControlsBar.styles';
 
 export const MailControlsBar: FC<MailControlsBarProps> = ({
-  toogleAnswerContainerMode,
-  toogleAnswerMode,
+  toggleAnswerContainerMode,
+  toggleAnswerMode,
 }) => {
   const onReplyButtonClick = (): void => {
-    toogleAnswerContainerMode(true);
-    toogleAnswerMode('reply');
+    toggleAnswerContainerMode(true);
+    toggleAnswerMode('reply');
   };
 
   const onForwardButtonClick = (): void => {
-    toogleAnswerContainerMode(true);
-    toogleAnswerMode('forward');
+    toggleAnswerContainerMode(true);
+    toggleAnswerMode('forward');
   };
 
   return (

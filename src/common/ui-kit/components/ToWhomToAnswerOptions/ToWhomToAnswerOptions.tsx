@@ -8,7 +8,7 @@ import * as S from './ToWhomToAnswerOptions.styles';
 
 export const ToWhomToAnswerOptions: FC<ToWhomToAnswerOptionsProps> = ({
   answerMode,
-  toogleAnswerMode,
+  toggleAnswerMode,
 }) => {
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
@@ -21,11 +21,11 @@ export const ToWhomToAnswerOptions: FC<ToWhomToAnswerOptionsProps> = ({
   };
   const onReplyClick = (): void => {
     setAnchorEl(null);
-    toogleAnswerMode('reply');
+    toggleAnswerMode('reply');
   };
   const onForwardClick = (): void => {
     setAnchorEl(null);
-    toogleAnswerMode('forward');
+    toggleAnswerMode('forward');
   };
 
   return (

@@ -2,5 +2,5 @@ import { AnswerMode } from '../../../components/ControlsAndAnswerContainer/Contr
 
 export interface ToWhomToAnswerOptionsProps {
   answerMode: AnswerMode;
-  toogleAnswerMode: (mode: AnswerMode) => void;
+  toggleAnswerMode: (mode: AnswerMode) => void;
 }

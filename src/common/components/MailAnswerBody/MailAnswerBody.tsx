@@ -7,7 +7,7 @@ import * as S from './MailAnswerBody.styles';
 
 export const MailAnswerBody: FC<MailAnswerBodyProps> = ({
   answerMode,
-  toogleChooseAddresseeEditMode,
+  toggleChooseAddresseeEditMode,
 }) => {
   const [isMessageOpen, setIsMessageOpen] = useState<boolean>(false);
 
@@ -19,7 +19,7 @@ export const MailAnswerBody: FC<MailAnswerBodyProps> = ({
   };
 
   const onContainerClick = (): void => {
-    toogleChooseAddresseeEditMode(false);
+    toggleChooseAddresseeEditMode(false);
   };
 
   return (

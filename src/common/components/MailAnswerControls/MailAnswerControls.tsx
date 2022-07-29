@@ -17,10 +17,10 @@ import { MailAnswerControlsProps } from './MailAnswerControls.interfaces';
 import * as S from './MailAnswerControls.styles';
 
 export const MailAnswerControls: FC<MailAnswerControlsProps> = ({
-  toogleAnswerContainerMode,
+  toggleAnswerContainerMode,
 }) => {
   const onDeleteDraftsButtonClick = (): void => {
-    toogleAnswerContainerMode(false);
+    toggleAnswerContainerMode(false);
   };
 
   return (

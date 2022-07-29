@@ -9,11 +9,11 @@ export const ControlsAndAnswerContainer: FC = () => {
     useState<boolean>(false);
   const [answerMode, setAnswerMode] = useState<AnswerMode>('reply');
 
-  const toogleAnswerContainerMode = (isOpen: boolean): void => {
+  const toggleAnswerContainerMode = (isOpen: boolean): void => {
     setIsAnswerContainerOpen(isOpen);
   };
 
-  const toogleAnswerMode = (mode: AnswerMode): void => {
+  const toggleAnswerMode = (mode: AnswerMode): void => {
     setAnswerMode(mode);
   };
 
@@ -22,13 +22,13 @@ export const ControlsAndAnswerContainer: FC = () => {
       {isAnswerContainerOpen ? (
         <MailAnswerContainer
           answerMode={answerMode}
-          toogleAnswerMode={toogleAnswerMode}
-          toogleAnswerContainerMode={toogleAnswerContainerMode}
+          toggleAnswerMode={toggleAnswerMode}
+          toggleAnswerContainerMode={toggleAnswerContainerMode}
         />
       ) : (
         <MailControlsBar
-          toogleAnswerContainerMode={toogleAnswerContainerMode}
-          toogleAnswerMode={toogleAnswerMode}
+          toggleAnswerContainerMode={toggleAnswerContainerMode}
+          toggleAnswerMode={toggleAnswerMode}
         />
       )}
     </S.Container>

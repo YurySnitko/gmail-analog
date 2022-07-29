@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react';
-import MailListHeader from '../../ui-kit/components/MailListHeader/MailListHeader';
-import MailList from '../../ui-kit/components/MailList/MailList';
+import MailListHeader from '../MailListHeader/MailListHeader';
+import MailList from '../MailList/MailList';
 import { getMailsFetch } from '../../../store/reducers/MailsSlice';
 import { CircularProgress } from '@mui/material';
 import { S } from './IncomingMails.styles';
