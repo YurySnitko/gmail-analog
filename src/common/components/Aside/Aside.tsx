@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 import AsideMailList from '../AsideMailLIst/AsideMailList';
 import { S } from './Aside.styles';
 import { AsideProps } from './Aside.interfaces';
-import WriteButton from '../../ui-kit/WriteButton/WriteButton';
+import WriteButton from '../../ui-kit/components/WriteButton/WriteButton';
 
 const Aside: FC<AsideProps> = ({ isOpen }) => {
   const [isHover, setIsHover] = useState<boolean>(false);

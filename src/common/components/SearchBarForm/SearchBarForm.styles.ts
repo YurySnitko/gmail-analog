@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 
 export const InputBox = styled('div')`
   margin-left: 56px;

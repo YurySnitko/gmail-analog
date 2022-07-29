@@ -1,9 +1,9 @@
 import { OpenInNewOutlined } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
-import { AddresseTag } from '../../ui-kit/AddresseeTag/AddresseeTag';
-import { Tooltip } from '../../ui-kit/Tooltip/Tooltip';
-import { ToWhomToAnswerOptions } from '../../ui-kit/ToWhomToAnswerOptions/ToWhomToAnswerOptions';
+import { AddresseTag } from '../../ui-kit/components/AddresseeTag/AddresseeTag';
+import { Tooltip } from '../../ui-kit/components/Tooltip/Tooltip';
+import { ToWhomToAnswerOptions } from '../../ui-kit/components/ToWhomToAnswerOptions/ToWhomToAnswerOptions';
 import { ChooseAddresseeProps } from './ChooseAddressee.interfaces';
 import * as S from './ChooseAddressee.styles';
 

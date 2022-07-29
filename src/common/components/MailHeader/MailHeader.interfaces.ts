@@ -1,4 +1,4 @@
-import { Addresse } from '../../../../consts/mails';
+import { Addresse } from '../../../mocked/mails';
 
 export interface MailHeaderProps {
   senderName: string;

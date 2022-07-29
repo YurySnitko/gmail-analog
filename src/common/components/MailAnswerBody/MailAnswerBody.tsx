@@ -1,7 +1,7 @@
 import { MoreHorizRounded } from '@mui/icons-material';
 import { Box, Typography } from '@mui/material';
 import { FC, useState } from 'react';
-import { Tooltip } from '../../ui-kit/Tooltip/Tooltip';
+import { Tooltip } from '../../ui-kit/components/Tooltip/Tooltip';
 import { MailAnswerBodyProps } from './MailAnswerBody.interfaces';
 import * as S from './MailAnswerBody.styles';
 

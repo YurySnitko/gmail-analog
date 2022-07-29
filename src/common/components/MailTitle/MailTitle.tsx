@@ -1,8 +1,8 @@
 import { LocalPrintshop, OpenInNewOutlined } from '@mui/icons-material';
 import { FC } from 'react';
-import { IconButton } from '../../ui-kit/IconButton/IconButton';
-import { Tag } from '../../ui-kit/Tag/Tag';
-import { Tooltip } from '../../ui-kit/Tooltip/Tooltip';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
+import { Tag } from '../../ui-kit/components/Tag/Tag';
+import { Tooltip } from '../../ui-kit/components/Tooltip/Tooltip';
 import { MailTitleProps } from './MailTitle.interfaces';
 import * as S from './MailTitle.styles';
 

@@ -11,8 +11,8 @@ import {
   TextFormatRounded,
 } from '@mui/icons-material';
 import { FC } from 'react';
-import { ButtonWithOptions } from '../../ui-kit/ButtonWithOptions/ButtonWithOptions';
-import { Tooltip } from '../../ui-kit/Tooltip/Tooltip';
+import { ButtonWithOptions } from '../../ui-kit/components/ButtonWithOptions/ButtonWithOptions';
+import { Tooltip } from '../../ui-kit/components/Tooltip/Tooltip';
 import { MailAnswerControlsProps } from './MailAnswerControls.interfaces';
 import * as S from './MailAnswerControls.styles';
 
