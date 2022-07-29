@@ -1,4 +1,4 @@
-import { MailData } from '../../../../mocked/mails';
+import { MailData } from '../../../mocked/mails';
 
 export interface MailListProps {
   mailList: MailData[];

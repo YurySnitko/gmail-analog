@@ -1,5 +1,5 @@
-import { Tooltip } from '@mui/material';
 import { FC } from 'react';
+import { Tooltip } from '../Tooltip/Tooltip';
 import { TagProps } from './Tag.interfaces';
 import * as S from './Tag.styles';
 

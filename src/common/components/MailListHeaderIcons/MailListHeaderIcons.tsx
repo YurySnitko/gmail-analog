@@ -14,7 +14,8 @@ import AccessTimeOutlinedIcon from '@mui/icons-material/AccessTimeOutlined';
 import AddTaskOutlinedIcon from '@mui/icons-material/AddTaskOutlined';
 import DriveFileMoveOutlinedIcon from '@mui/icons-material/DriveFileMoveOutlined';
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
-import { Tooltip } from '@mui/material';
+import { MenuItem, Tooltip } from '@mui/material';
+import { Menu } from '../../ui-kit/components/Menu/Menu.styles';
 
 const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   selectedMailsIds,
@@ -112,33 +113,31 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
                   <MoreVertIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <S.Menu
+              <Menu
                 anchorEl={moreMenuSelectedItem}
                 open={isMoreMenuOpen}
                 onClose={moreMenuHandleClose}
               >
-                <S.MenuItem onClick={moreMenuHandleClose}>
+                <MenuItem onClick={moreMenuHandleClose}>
                   Отметить как прочитанное
-                </S.MenuItem>
-                <S.MenuItem onClick={moreMenuHandleClose}>
+                </MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>
                   Отметить как непрочитанное
-                </S.MenuItem>
-                <S.MenuItem onClick={moreMenuHandleClose}>
+                </MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>
                   Пометить как неважное
-                </S.MenuItem>
-                <S.MenuItem onClick={moreMenuHandleClose}>
+                </MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>
                   Добавить пометку
-                </S.MenuItem>
-                <S.MenuItem onClick={moreMenuHandleClose}>
+                </MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>
                   Фильтровать прохожие письма
-                </S.MenuItem>
-                <S.MenuItem onClick={moreMenuHandleClose}>
-                  Игнорировать
-                </S.MenuItem>
-                <S.MenuItem onClick={moreMenuHandleClose}>
+                </MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>Игнорировать</MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>
                   Переслать как прикрепленный файл
-                </S.MenuItem>
-              </S.Menu>
+                </MenuItem>
+              </Menu>
             </S.MoreIconsWrapper>
           </S.IconsWrapper>
         ) : (
@@ -153,21 +152,21 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
                 <MoreVertIcon fontSize={'small'} />
               </IconButton>
             </Tooltip>
-            <S.Menu
+            <Menu
               anchorEl={moreMenuSelectedItem}
               open={isMoreMenuOpen}
               onClose={moreMenuHandleClose}
             >
-              <S.MenuItem onClick={checkboxMenuHandleClose}>
+              <MenuItem onClick={checkboxMenuHandleClose}>
                 Отметить все как прочитанные
-              </S.MenuItem>
+              </MenuItem>
               <S.MoreIconMenuItemWrapper>
                 <S.MoreIconMenuItem>
                   Выберите несколько сообщений, чтобы увидеть дополнительные
                   действия
                 </S.MoreIconMenuItem>
               </S.MoreIconMenuItemWrapper>
-            </S.Menu>
+            </Menu>
           </>
         )}
       </>
@@ -190,18 +189,18 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
           <ArrowDropDownIcon fontSize={'small'} />
         </S.CheckboxArrowButton>
       </S.CheckBoxWrapper>
-      <S.Menu
+      <Menu
         anchorEl={checkboxSelectedMenuItem}
         open={isCheckboxMenuOpen}
         onClose={checkboxMenuHandleClose}
       >
-        <S.MenuItem onClick={checkboxMenuHandleClose}>Все</S.MenuItem>
-        <S.MenuItem onClick={checkboxMenuHandleClose}>Ни одного</S.MenuItem>
-        <S.MenuItem onClick={checkboxMenuHandleClose}>Прочитанные</S.MenuItem>
-        <S.MenuItem onClick={checkboxMenuHandleClose}>Непрочитанные</S.MenuItem>
-        <S.MenuItem onClick={checkboxMenuHandleClose}>Помеченные</S.MenuItem>
-        <S.MenuItem onClick={checkboxMenuHandleClose}>Без пометок</S.MenuItem>
-      </S.Menu>
+        <MenuItem onClick={checkboxMenuHandleClose}>Все</MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>Ни одного</MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>Прочитанные</MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>Непрочитанные</MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>Помеченные</MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>Без пометок</MenuItem>
+      </Menu>
       {moreIcons()}
     </S.MailListHeaderIconsWrapper>
   );
