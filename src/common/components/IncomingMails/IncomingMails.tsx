@@ -5,6 +5,7 @@ import { getMailsFetch } from '../../../store/reducers/MailsSlice';
 import { CircularProgress } from '@mui/material';
 import { S } from './IncomingMails.styles';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
+import SplitPane, { Pane } from 'react-split-pane';
 
 const IncomingMails: FC = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
@@ -31,11 +32,21 @@ const IncomingMails: FC = () => {
             selectedMailsIds={selectedMailsIds}
             setSelectedMailsIds={setSelectedMailsIdsHandler}
           />
-          <MailList
-            mailList={mails}
-            selectedMailsIds={selectedMailsIds}
-            setSelectedMailsIds={setSelectedMailsIdsHandler}
-          />
+          <S.SplitWrapper
+            split={'vertical'}
+            defaultSize={'50%'}
+            minSize={'20%'}
+            maxSize={'80%'}
+          >
+            <MailList
+              mailList={mails}
+              selectedMailsIds={selectedMailsIds}
+              setSelectedMailsIds={setSelectedMailsIdsHandler}
+            />
+            <div>
+              <h1>test</h1>
+            </div>
+          </S.SplitWrapper>
         </>
       )}
     </div>
