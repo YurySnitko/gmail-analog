@@ -9,7 +9,7 @@ export const S = {
     width: 100%;
     padding: 24px;
     background-color: ${({ theme }): string => theme.palette.common.white};
-    z-index: 1;
+    z-index: 2;
     border: 1px solid
       ${({ theme }): string => theme.palette.background.headerFilterBorder};
     box-shadow: ${({ theme }): string => theme.customShadows.headerFilter};
@@ -65,12 +65,20 @@ export const S = {
 
   CreateFilterButton: styled(Button)`
     box-shadow: none;
-    color: lightgray;
+    border: none;
+    color: ${({ theme }): string => theme.palette.text.createFilter};
 
     &.Mui-disabled {
       border: none;
       box-shadow: none;
-      color: lightgray;
+      color: ${({ theme }): string => theme.palette.text.createFilterDisabled};
+    }
+
+    &.MuiButton-root:hover {
+      border: none;
+      box-shadow: none;
+      background-color: ${({ theme }): string =>
+        theme.palette.background.createFilter};
     }
   `,
 
@@ -84,5 +92,17 @@ export const S = {
     width: 200px;
     border-top: ${({ theme }): string =>
       theme.customShadows.headerFilterInputBorder};
+  `,
+
+  HeaderFilterItemWrapper: styled('div')`
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    align-items: center;
+    width: 100%;
+    user-select: none;
+  `,
+
+  HeaderFilterItemText: styled(Typography)`
+    font-size: 0.875rem;
   `,
 };

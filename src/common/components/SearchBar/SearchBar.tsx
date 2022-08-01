@@ -3,18 +3,23 @@ import SearchIcon from '@mui/icons-material/Search';
 import TuneIcon from '@mui/icons-material/Tune';
 import { FC, useState } from 'react';
 import { SearchBarForm } from '../SearchBarForm/SearchBarForm';
+import { Tooltip } from '@mui/material';
 import HeaderFilter from '../HeaderFilter/HeaderFilter';
-import { ClickAwayListener, Tooltip } from '@mui/material';
 
 export const SearchBar: FC = () => {
   const [isFilterFormOpen, setIsFilterFormOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState<string>('');
+
+  const setIsFilterFormOpenHandler = (flag: boolean): void => {
+    setIsFilterFormOpen(flag);
+  };
 
   const filterButtonClickHandler = (): void => {
     setIsFilterFormOpen((prev) => !prev);
   };
 
-  const clickAwayHandler = (): void => {
-    setIsFilterFormOpen(false);
+  const setSearchValueHandler = (value: string): void => {
+    setSearchValue(value);
   };
 
   return (
@@ -23,26 +28,27 @@ export const SearchBar: FC = () => {
         <SearchIcon />
       </S.SearchButton>
       <S.FormContainer>
-        <SearchBarForm />
+        <SearchBarForm
+          searchValue={searchValue}
+          setSearchValueHandler={setSearchValueHandler}
+        />
       </S.FormContainer>
-      <ClickAwayListener
-        mouseEvent={'onMouseUp'}
-        onClickAway={clickAwayHandler}
-      >
-        <div>
-          {!isFilterFormOpen && (
-            <Tooltip
-              onClick={filterButtonClickHandler}
-              title={'Показать параметры поиска'}
-            >
-              <S.SearchParamsButton>
-                <TuneIcon />
-              </S.SearchParamsButton>
-            </Tooltip>
-          )}
-          {isFilterFormOpen && <HeaderFilter />}
-        </div>
-      </ClickAwayListener>
+      {!isFilterFormOpen && (
+        <Tooltip
+          onClick={filterButtonClickHandler}
+          title={'Показать параметры поиска'}
+        >
+          <S.SearchParamsButton>
+            <TuneIcon />
+          </S.SearchParamsButton>
+        </Tooltip>
+      )}
+      {isFilterFormOpen && (
+        <HeaderFilter
+          searchedValue={searchValue}
+          setIsFilterForm={setIsFilterFormOpenHandler}
+        />
+      )}
     </S.Container>
   );
 };

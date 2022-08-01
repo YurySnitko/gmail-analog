@@ -16,10 +16,13 @@ export const theme = createTheme({
       settingsButtonBorder: '#dadce0',
       headerFilterBorder: 'rgba(0, 0, 0, 0.2)',
       filterSelectHover: '#f2f2f2',
+      createFilter: '#e5e5e5',
     },
     text: {
       headerIconButton: '#5f6368',
       mailTitle: '#202124',
+      createFilterDisabled: '#c3c4c5',
+      createFilter: '#72757a',
     },
   },
 
