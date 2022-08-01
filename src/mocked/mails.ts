@@ -184,4 +184,16 @@ export const mails: MailData[] = [
     date: '22 июн. 2022 г., 00:22',
     isViewed: false,
   },
+  {
+    id: '14',
+    senderName: 'Notification Innowise',
+    senderEmail: 'notification@innowise-group.com',
+    addressees: [
+      { name: 'Yury Snitko', email: 'yury.snitko@innowise-group.com' },
+    ],
+    title: 'Introducing Table Visualization',
+    text: `Say hello to dynamic charts, Confluence's new integration`,
+    date: '22 июн. 2022 г., 00:22',
+    isViewed: false,
+  },
 ];
