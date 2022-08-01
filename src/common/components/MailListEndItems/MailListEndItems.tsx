@@ -1,6 +1,6 @@
 import { Tooltip } from '@mui/material';
 import { FC } from 'react';
-import { IconButton } from '../IconButton/IconButton';
+import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { MailListEndItemsProps } from './MailListEndItems.interfaces';
 import * as S from './MailListEndItems.styles';
 import {

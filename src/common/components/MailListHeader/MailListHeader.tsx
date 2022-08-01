@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { S } from './MailListHeader.styles';
-import PaginationPanel from '../../../components/PaginationPanel/PaginationPanel';
-import MailListHeaderIcons from '../../../components/MailListHeaderIcons/MailListHeaderIcons';
+import PaginationPanel from '../PaginationPanel/PaginationPanel';
+import MailListHeaderIcons from '../MailListHeaderIcons/MailListHeaderIcons';
 import { MailListHeaderProps } from './MailListHeader.interfaces';
 
 const MailListHeader: FC<MailListHeaderProps> = ({

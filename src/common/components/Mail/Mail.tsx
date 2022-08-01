@@ -3,10 +3,9 @@ import { FC } from 'react';
 import { MailTitle } from '../MailTitle/MailTitle';
 import { MailProps } from './Mail.interfaces';
 import * as S from './Mail.styles';
-import PersonIcon from '@mui/icons-material/Person';
 import { MailHeader } from '../MailHeader/MailHeader';
 import { MailBody } from '../MailBody/MailBody';
-import { MailControlsBar } from '../MailControlsBar/MailControlsBar';
+import { ControlsAndAnswerContainer } from '../ControlsAndAnswerContainer/ControlsAndAnswerContainer';
 
 export const Mail: FC<MailProps> = ({ mailData }) => {
   return (
@@ -14,7 +13,7 @@ export const Mail: FC<MailProps> = ({ mailData }) => {
       <MailTitle title={mailData.title} />
       <S.Container>
         <S.AvatarWrapper>
-          <Avatar>{mailData.avatar ?? <PersonIcon />}</Avatar>
+          <Avatar src={mailData.avatar} />
         </S.AvatarWrapper>
         <S.MailBodyWrapper>
           <MailHeader
@@ -23,10 +22,10 @@ export const Mail: FC<MailProps> = ({ mailData }) => {
             date={mailData.date}
             addressees={mailData.addressees}
           />
-          <MailBody />
+          <MailBody text={mailData.text} />
         </S.MailBodyWrapper>
       </S.Container>
-      <MailControlsBar />
+      <ControlsAndAnswerContainer />
     </S.MainContainer>
   );
 };

@@ -4,6 +4,7 @@ export const theme = createTheme({
   palette: {
     background: {
       iconButton: 'rgba(60, 64, 67, 0.08)',
+      IconButtonHover: 'rgba(60, 64, 67, 0.2)',
       searchBar: '#f1f3f4',
       searchBarFocused: 'rgba(255, 255, 255, 1)',
       starButtonFocused: '#f4b400',
@@ -57,6 +58,13 @@ export const theme = createTheme({
       letterSpacing: '0.00714em',
       color: '#555',
     },
+    message: {
+      fontFamily: 'Arial, Helvetica, Arial, sans-serif',
+      fontWeight: 400,
+      fontSize: 'small',
+      lineHeight: 1.5,
+      color: '#222',
+    },
   },
 
   components: {
@@ -70,6 +78,18 @@ export const theme = createTheme({
             '&:hover': {
               border: 'none',
               boxShadow: 'inset 0 0 0 1px #dadce0',
+            },
+          }),
+          ...(ownerState.variant === 'contained' && {
+            border: 'none',
+            boxShadow: 'none',
+
+            '&:hover': {
+              border: 'none',
+              backgroundColor: '#297be6',
+              outline: '1px solid transparent',
+              boxShadow:
+                '0 1px 2px 0 rgb(26 115 232 / 45%), 0 1px 3px 1px rgb(26 115 232 / 30%)',
             },
           }),
         }),
