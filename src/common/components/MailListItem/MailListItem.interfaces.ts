@@ -1,6 +1,7 @@
+import { TypographyProps } from '@mui/material';
 import React from 'react';
 
-export interface MessageTextProps {
+export interface MessageTextProps extends TypographyProps {
   isViewed?: boolean;
   children: React.ReactNode;
 }
@@ -14,7 +15,7 @@ export interface MailListItemGridProps {
 }
 
 export interface MailListItemProps {
-  id: string;
+  _id: string;
   senderName: string;
   title: string;
   text: string;

@@ -39,14 +39,14 @@ const MailList: FC<MailListProps> = ({
       {currentPageMails.length > 0 &&
         currentPageMails.map((mail) => (
           <MailListItem
-            key={mail.id}
-            id={mail.id}
+            key={mail._id}
+            _id={mail._id}
             senderName={mail.senderName}
             title={mail.title}
             text={mail.text}
             date={mail.date}
             isViewed={mail.isViewed}
-            isChecked={selectedMailsIds.includes(mail.id)}
+            isChecked={selectedMailsIds.includes(mail._id)}
             checkboxCheckHandler={checkboxCheckHandler}
             onMailListItemClick={onMailListItemClick}
           />

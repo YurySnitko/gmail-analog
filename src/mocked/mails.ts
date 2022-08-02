@@ -1,5 +1,5 @@
 export interface MailData {
-  id: string;
+  _id: string;
   senderName: string;
   senderEmail: string;
   addressees: Addresse[];
@@ -17,7 +17,7 @@ export interface Addresse {
 
 export const mails: MailData[] = [
   {
-    id: '1',
+    _id: '1',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -29,7 +29,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '2',
+    _id: '2',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -41,7 +41,7 @@ export const mails: MailData[] = [
     isViewed: true,
   },
   {
-    id: '3',
+    _id: '3',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -53,7 +53,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '4',
+    _id: '4',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -65,7 +65,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '5',
+    _id: '5',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -77,7 +77,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '6',
+    _id: '6',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -89,7 +89,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '7',
+    _id: '7',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -101,7 +101,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '8',
+    _id: '8',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -113,7 +113,7 @@ export const mails: MailData[] = [
     isViewed: true,
   },
   {
-    id: '9',
+    _id: '9',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -125,7 +125,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '10',
+    _id: '10',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -137,7 +137,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '11',
+    _id: '11',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -149,7 +149,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '12',
+    _id: '12',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -161,7 +161,7 @@ export const mails: MailData[] = [
     isViewed: true,
   },
   {
-    id: '13',
+    _id: '13',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
@@ -173,7 +173,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '14',
+    _id: '14',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [

@@ -48,19 +48,16 @@ export const S = {
 
   TextWrapper: styled('div')`
     display: grid;
-    grid-template-columns: 80px 1fr;
+    grid-template-columns: 168px 1fr;
     overflow: hidden;
-    gap: 2.5rem;
+    gap: 32px;
   `,
 
   MessageText: styled(({ isViewed, ...props }: MessageTextProps) => (
     <Typography {...props} />
   ))`
     font-size: 0.875rem;
-    white-space: nowrap;
-    overflow: hidden;
     letter-spacing: normal;
-    text-overflow: ellipsis;
     font-weight: ${(props): string =>
       props.isViewed === undefined ? '400' : props.isViewed ? '400' : '700'};
   `,

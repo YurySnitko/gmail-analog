@@ -54,7 +54,7 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   };
 
   const checkboxCheckedHandler = (): void => {
-    setSelectedMailsIds(checkboxChecked ? [] : mails.map((mail) => mail.id));
+    setSelectedMailsIds(checkboxChecked ? [] : mails.map((mail) => mail._id));
     setCheckboxChecked((prev) => !prev);
   };
 

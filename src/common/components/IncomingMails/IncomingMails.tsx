@@ -2,9 +2,8 @@ import React, { FC, useEffect, useState } from 'react';
 import MailListHeader from '../MailListHeader/MailListHeader';
 import MailList from '../MailList/MailList';
 import { getMailsFetch } from '../../../store/reducers/MailsSlice';
-import { CircularProgress } from '@mui/material';
-import { S } from './IncomingMails.styles';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
+import { Loader } from '../../ui-kit/components/Loader/Loader';
 
 const IncomingMails: FC = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
@@ -22,9 +21,7 @@ const IncomingMails: FC = () => {
   return (
     <div>
       {isLoading ? (
-        <S.LoaderWrapper>
-          <CircularProgress />
-        </S.LoaderWrapper>
+        <Loader />
       ) : (
         <>
           <MailListHeader
