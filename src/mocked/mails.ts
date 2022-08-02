@@ -185,7 +185,7 @@ export const mails: MailData[] = [
     isViewed: false,
   },
   {
-    id: '14',
+    _id: '14',
     senderName: 'Notification Innowise',
     senderEmail: 'notification@innowise-group.com',
     addressees: [
