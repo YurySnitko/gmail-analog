@@ -11,6 +11,7 @@ const MailList: FC<MailListProps> = ({
   setSelectedMailsIds,
   selectedMailsIds,
   mailList,
+  setClickedItemHandler,
 }) => {
   const { currentPage, pageSize } = useAppSelector((state) => state.pagination);
   const [currentPageMails, setCurrentPageMails] = useState<MailData[]>([]);
@@ -31,7 +32,11 @@ const MailList: FC<MailListProps> = ({
   });
 
   const onMailListItemClick = (mailId: string): void => {
-    router.push(`${router.asPath}/${mailId}`);
+    if (setClickedItemHandler) {
+      setClickedItemHandler(mailId);
+    } else {
+      router.push(`${router.asPath}/${mailId}`);
+    }
   };
 
   return (

@@ -4,4 +4,5 @@ export interface MailListProps {
   mailList: MailData[];
   selectedMailsIds: string[];
   setSelectedMailsIds: (ids: string[]) => void;
+  setClickedItemHandler?: (id: string) => void;
 }

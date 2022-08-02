@@ -16,9 +16,8 @@ export const S = {
     grid-template-columns: 38px 35px 10fr 2.5fr;
     width: 100%;
     align-items: center;
-    border-top: 1px solid ${({ theme }): string => theme.palette.divider};
+    border-bottom: 1px solid ${({ theme }): string => theme.palette.divider};
     border-left: 1px solid ${({ theme }): string => theme.palette.common.white};
-    border-right: 1px solid ${({ theme }): string => theme.palette.common.white};
     cursor: pointer;
     padding: 0 0.5rem;
     user-select: none;
@@ -35,10 +34,6 @@ export const S = {
         props.theme.customShadows.mailListItemHover};
       border-left: 1px solid ${(props): string => props.theme.palette.divider};
       border-right: 1px solid ${(props): string => props.theme.palette.divider};
-    }
-
-    &:last-child {
-      border-bottom: 1px solid ${(props): string => props.theme.palette.divider};
     }
   `,
 

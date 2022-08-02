@@ -12,6 +12,37 @@ export const S = {
 
   SplitWrapper: styled(SplitPane)`
     position: static !important;
+    height: 100% !important;
+
+    & .Pane {
+      overflow-y: auto;
+      position: static !important;
+
+      &::-webkit-scrollbar {
+        width: 12px;
+        height: 12px;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background-color: transparent;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.2);
+        box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%),
+          inset 0px -1px 0px rgb(0 0 0 / 7%);
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.4);
+      }
+
+      &::-webkit-scrollbar-track:hover {
+        background-color: rgba(0, 0, 0, 0.05);
+        box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%),
+          inset 0px -1px 0px rgb(0 0 0 / 7%);
+      }
+    }
 
     & .Resizer {
       background: #000;

@@ -4,11 +4,13 @@ import createSagaMiddleware from '@redux-saga/core';
 import { rootSaga } from './sagas/rootSaga';
 import paginationReducer from './reducers/PaginationSlice';
 import filterValueReducer from './reducers/FilterValuesSlice';
+import settingsReducer from './reducers/SettingsSlice';
 
 const rootReducer = combineReducers({
   mail: mailReducer,
   pagination: paginationReducer,
   filters: filterValueReducer,
+  settings: settingsReducer,
 });
 
 const saga = createSagaMiddleware();
