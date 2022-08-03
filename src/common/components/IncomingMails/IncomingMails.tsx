@@ -9,6 +9,7 @@ import { Mail } from '../Mail/Mail';
 import { MailData } from '../../../mocked/mails';
 import { ReflexContainer, ReflexElement } from 'react-reflex';
 import 'react-reflex/styles.css';
+import { getSplit } from '../../../store/reducers/SettingsSlice';
 
 const IncomingMails: FC = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
@@ -18,6 +19,7 @@ const IncomingMails: FC = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+    dispatch(getSplit());
     dispatch(getMailsFetch());
   }, [dispatch]);
 
@@ -57,7 +59,11 @@ const IncomingMails: FC = () => {
             />
           </ReflexElement>
           <S.Splitter />
-          <ReflexElement flex={0.5} minSize={400}>
+          <ReflexElement
+            flex={0.5}
+            minSize={400}
+            style={{ overflowY: 'hidden' }}
+          >
             {clickedItem ? (
               <Mail mailData={clickedItem} />
             ) : (

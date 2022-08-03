@@ -14,9 +14,14 @@ export const settingsSlice = createSlice({
   reducers: {
     changeSplit: (state, action) => {
       state.split = action.payload;
+      localStorage.setItem('split', action.payload);
+    },
+    getSplit: (state) => {
+      let storageSplit = localStorage.getItem('split');
+      state.split = storageSplit ? storageSplit : 'noSplit';
     },
   },
 });
 
 export default settingsSlice.reducer;
-export const { changeSplit } = settingsSlice.actions;
+export const { changeSplit, getSplit } = settingsSlice.actions;
