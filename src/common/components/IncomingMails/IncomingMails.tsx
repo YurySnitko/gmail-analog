@@ -7,6 +7,8 @@ import { S } from './IncomingMails.styles';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
 import { Mail } from '../Mail/Mail';
 import { MailData } from '../../../mocked/mails';
+import { ReflexContainer, ReflexElement } from 'react-reflex';
+import 'react-reflex/styles.css';
 
 const IncomingMails: FC = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
@@ -40,24 +42,29 @@ const IncomingMails: FC = () => {
       );
     } else {
       return (
-        <S.SplitWrapper
-          split={split === 'splitRight' ? 'vertical' : 'horizontal'}
-          defaultSize={'50%'}
-          minSize={split === 'splitRight' ? 300 : 100}
-          maxSize={split === 'splitRight' ? 900 : 500}
+        <ReflexContainer
+          orientation={split === 'splitRight' ? 'vertical' : 'horizontal'}
         >
-          <MailList
-            mailList={mails}
-            selectedMailsIds={selectedMailsIds}
-            setSelectedMailsIds={setSelectedMailsIdsHandler}
-            setClickedItemHandler={setClickedItemHandler}
-          />
-          {clickedItem ? (
-            <Mail mailData={clickedItem} />
-          ) : (
-            <div>Loading...</div>
-          )}
-        </S.SplitWrapper>
+          <ReflexElement
+            flex={0.5}
+            minSize={split === 'splitRight' ? 400 : 100}
+          >
+            <MailList
+              mailList={mails}
+              selectedMailsIds={selectedMailsIds}
+              setSelectedMailsIds={setSelectedMailsIdsHandler}
+              setClickedItemHandler={setClickedItemHandler}
+            />
+          </ReflexElement>
+          <S.Splitter />
+          <ReflexElement flex={0.5} minSize={400}>
+            {clickedItem ? (
+              <Mail mailData={clickedItem} />
+            ) : (
+              <div>Цепочки не выбраны</div>
+            )}
+          </ReflexElement>
+        </ReflexContainer>
       );
     }
   };

@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
 import { Grid } from '@mui/material';
-import SplitPane from 'react-split-pane';
+import { ReflexSplitter } from 'react-reflex';
 
 export const S = {
   LoaderWrapper: styled(Grid)`
@@ -10,88 +10,7 @@ export const S = {
     justify-content: center;
   `,
 
-  SplitWrapper: styled(SplitPane)`
-    position: static !important;
-    height: 100% !important;
-
-    & .Pane {
-      overflow-y: auto;
-      position: static !important;
-
-      &::-webkit-scrollbar {
-        width: 12px;
-        height: 12px;
-      }
-
-      &::-webkit-scrollbar-corner {
-        background-color: transparent;
-      }
-
-      &::-webkit-scrollbar-thumb {
-        background-color: rgba(0, 0, 0, 0.2);
-        box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%),
-          inset 0px -1px 0px rgb(0 0 0 / 7%);
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        background-color: rgba(0, 0, 0, 0.4);
-      }
-
-      &::-webkit-scrollbar-track:hover {
-        background-color: rgba(0, 0, 0, 0.05);
-        box-shadow: inset 1px 1px 0 rgb(0 0 0 / 10%),
-          inset 0px -1px 0px rgb(0 0 0 / 7%);
-      }
-    }
-
-    & .Resizer {
-      background: #000;
-      opacity: 0.2;
-      z-index: 1;
-      -moz-box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      -moz-background-clip: padding;
-      -webkit-background-clip: padding;
-      background-clip: padding-box;
-    }
-
-    .Resizer:hover {
-      -webkit-transition: all 2s ease;
-      transition: all 2s ease;
-    }
-
-    .Resizer.horizontal {
-      height: 11px;
-      margin: -5px 0;
-      border-top: 5px solid rgba(255, 255, 255, 0);
-      border-bottom: 5px solid rgba(255, 255, 255, 0);
-      cursor: row-resize;
-      width: 100%;
-    }
-
-    .Resizer.horizontal:hover {
-      border-top: 5px solid rgba(0, 0, 0, 0.5);
-      border-bottom: 5px solid rgba(0, 0, 0, 0.5);
-    }
-
-    .Resizer.vertical {
-      width: 11px;
-      margin: 0 -5px;
-      border-left: 5px solid rgba(255, 255, 255, 0);
-      border-right: 5px solid rgba(255, 255, 255, 0);
-      cursor: col-resize;
-    }
-
-    .Resizer.vertical:hover {
-      border-left: 5px solid rgba(0, 0, 0, 0.5);
-      border-right: 5px solid rgba(0, 0, 0, 0.5);
-    }
-    .Resizer.disabled {
-      cursor: not-allowed;
-    }
-    .Resizer.disabled:hover {
-      border-color: transparent;
-    }
+  Splitter: styled(ReflexSplitter)`
+    height: 4px;
   `,
 };
