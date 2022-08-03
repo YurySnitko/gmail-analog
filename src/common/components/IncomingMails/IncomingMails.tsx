@@ -67,7 +67,9 @@ const IncomingMails: FC = () => {
             {clickedItem ? (
               <Mail mailData={clickedItem} />
             ) : (
-              <div>Цепочки не выбраны</div>
+              <S.SecondPanelWrapper>
+                <S.SecondPanelTitle>Цепочки не выбраны</S.SecondPanelTitle>
+              </S.SecondPanelWrapper>
             )}
           </ReflexElement>
         </ReflexContainer>
