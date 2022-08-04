@@ -9,7 +9,7 @@ import {
 } from './MailListItem.interfaces';
 
 const MailListItem: FC<MailListItemProps> = ({
-  id,
+  _id,
   senderName,
   title,
   text,
@@ -33,7 +33,7 @@ const MailListItem: FC<MailListItemProps> = ({
     e
   ): void => {
     e.stopPropagation();
-    checkboxCheckHandler(isChecked, id);
+    checkboxCheckHandler(isChecked, _id);
   };
 
   const starredCheckboxClickHandler: MouseEventHandler<HTMLButtonElement> = (
@@ -53,7 +53,7 @@ const MailListItem: FC<MailListItemProps> = ({
       }
       onMouseEnter={listItemMouseEnderHandler}
       onMouseLeave={listItemMouseLeaveHandler}
-      onClick={(): void => onMailListItemClick(id)}
+      onClick={(): void => onMailListItemClick(_id)}
     >
       {isHover && <S.DragIcon fontSize={'small'} />}
       <Checkbox
@@ -68,9 +68,11 @@ const MailListItem: FC<MailListItemProps> = ({
         checkedIcon={<S.CheckedStarIcon fontSize={'small'} />}
       />
       <S.TextWrapper>
-        <S.MessageText isViewed={isViewed}>{senderName}</S.MessageText>
+        <S.MessageText isViewed={isViewed} sx={{ whiteSpace: 'nowrap' }}>
+          {senderName}
+        </S.MessageText>
         <S.TextContentWrapper>
-          <S.MessageText>
+          <S.MessageText noWrap>
             {isViewed ? title : <b>{title}</b>} - {text}
           </S.MessageText>
         </S.TextContentWrapper>

@@ -1,13 +1,11 @@
 import { all, call, put, takeLatest } from '@redux-saga/core/effects';
-import { MailData, mails } from '../../mocked/mails';
+import { MailData } from '../../mocked/mails';
 import { getMailsFailure, getMailsSuccess } from '../reducers/MailsSlice';
 
-const getAsyncMails = (): Promise<unknown> => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(mails);
-    }, 1000);
-  });
+const getAsyncMails = async (): Promise<MailData[]> => {
+  const response = await fetch(`${window.location.origin}/api/mails`);
+  const data: MailData[] = await response.json();
+  return data.map((mail) => ({ ...mail, _id: mail._id.toString() }));
 };
 
 function* workGetMailsFetch(): Generator {
