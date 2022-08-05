@@ -14,4 +14,5 @@ export const enUS: Locales = {
   labels: 'Manage labels',
   less: 'Less',
   more: 'More',
+  write: 'Compose',
 };

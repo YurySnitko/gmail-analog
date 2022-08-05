@@ -14,4 +14,5 @@ export const ru: Locales = {
   labels: 'Управление ярлыками',
   less: 'Свернуть',
   more: 'Еще',
+  write: 'Написать',
 };

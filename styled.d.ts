@@ -17,6 +17,7 @@ declare module '@mui/material/styles' {
     headerFilterBorder: string;
     filterSelectHover: string;
     createFilter: string;
+    localizationSelectBorder: string;
   }
 
   interface TypeText {
