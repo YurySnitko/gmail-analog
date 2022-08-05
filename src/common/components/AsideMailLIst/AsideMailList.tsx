@@ -6,9 +6,15 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { defaultLinkItems, moreLinksItems } from '../../../mocked/routes';
 import { AsideMailListProps } from './AsideMailList.interfaces';
+import { ru } from '../../../locales/ru/translation';
+import { enUS } from '../../../locales/en/translation';
+import { useRouter } from 'next/router';
 
 const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
   const [isCollapseOpen, setIsCollapseOpen] = useState(false);
+  const { locale } = useRouter();
+
+  const t = locale === 'en-US' ? enUS : ru;
 
   const moreClickHandler = (): void => {
     setIsCollapseOpen((prev) => !prev);
@@ -20,7 +26,7 @@ const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
         <AsideItem
           isOpen={isOpen}
           Icon={Icon}
-          title={title}
+          title={t[title]}
           href={href}
           key={title}
         />
@@ -28,7 +34,7 @@ const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
       <AsideItem
         isOpen={isOpen}
         Icon={isCollapseOpen ? KeyboardArrowUpIcon : ExpandMoreIcon}
-        title={isCollapseOpen ? 'Свернуть' : 'Ещё'}
+        title={isCollapseOpen ? t.less : t.more}
         clickHandler={moreClickHandler}
       />
       <Collapse in={isCollapseOpen} timeout={'auto'} unmountOnExit>
@@ -36,7 +42,7 @@ const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
           <AsideItem
             isOpen={isOpen}
             Icon={Icon}
-            title={title}
+            title={t[title]}
             href={href}
             key={title}
           />

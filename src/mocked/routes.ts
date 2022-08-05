@@ -23,27 +23,27 @@ interface LinkItem {
 
 export const defaultLinkItems: LinkItem[] = [
   {
-    title: 'Входящие',
+    title: 'inbox',
     Icon: InboxIcon,
     href: '/inbox',
   },
   {
-    title: 'Помеченные',
+    title: 'starred',
     Icon: StarBorderIcon,
     href: '/starred',
   },
   {
-    title: 'Отложенные',
+    title: 'snoozed',
     Icon: QueryBuilderIcon,
     href: '/snoozed',
   },
   {
-    title: 'Отправленные',
+    title: 'sent',
     Icon: SendIcon,
     href: '/sent',
   },
   {
-    title: 'Черновики',
+    title: 'drafts',
     Icon: InsertDriveFileIcon,
     href: '/drafts',
   },
@@ -51,32 +51,32 @@ export const defaultLinkItems: LinkItem[] = [
 
 export const moreLinksItems: LinkItem[] = [
   {
-    title: 'Важные',
+    title: 'important',
     Icon: LabelImportantIcon,
     href: '/imp',
   },
   {
-    title: 'Запланированные',
+    title: 'scheduled',
     Icon: ScheduleSendIcon,
     href: '/scheduled',
   },
   {
-    title: 'Вся почта',
+    title: 'all',
     Icon: EmailIcon,
     href: '/all',
   },
   {
-    title: 'Спам',
+    title: 'spam',
     Icon: ReportGmailerrorredIcon,
     href: '/spam',
   },
   {
-    title: 'Корзина',
+    title: 'trash',
     Icon: DeleteIcon,
     href: '/trash',
   },
   {
-    title: 'Управление ярлыками',
+    title: 'labels',
     Icon: SettingsIcon,
     href: '/settings/labels',
   },

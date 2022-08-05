@@ -5,8 +5,7 @@ import { MailAnswerControls } from '../MailAnswerControls/MailAnswerControls';
 import { MailAnswerContainerProps } from './MailAnswerContainer.interfaces';
 import * as S from './MailAnswerContainer.styles';
 
-export const MailAnswerContainer: FC<MailAnswerContainerProps> = ({
-  toggleAnswerContainerMode,
+export const MailAnswerContainer: FC<MailAnswerContainerProps> = ({ toggleAnswerContainerMode,
   toggleAnswerMode,
   answerMode,
 }) => {
