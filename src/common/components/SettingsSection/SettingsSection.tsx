@@ -26,8 +26,17 @@ import previewPanelBottomImage from '../../ui-kit/assets/previewpanebottom.png';
 import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
 import Image from 'next/image';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
+import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
+import { changeSplit } from '../../../store/reducers/SettingsSlice';
 
 const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
+  const { split } = useAppSelector((state) => state.settings);
+  const dispatch = useAppDispatch();
+
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(changeSplit((event.target as HTMLInputElement).value));
+  };
+
   return (
     <S.SettingsSectionWrapper>
       <S.SettingsSectionHeader>
@@ -202,9 +211,9 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
         <S.SettingsSectionItem>
           <S.DefaultViewItemWrapper>
             <S.SectionTitle>Область просмотра</S.SectionTitle>
-            <S.RadioGroupWrapper>
+            <S.RadioGroupWrapper value={split} onChange={changeHandler}>
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<Radio size={'small'} value={'noSplit'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>Не разделять</S.SettingsItemText>
@@ -217,6 +226,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
               />
               <FormControlLabel
                 control={<Radio size={'small'} />}
+                value={'splitRight'}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>Справа</S.SettingsItemText>
@@ -229,6 +239,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
               />
               <FormControlLabel
                 control={<Radio size={'small'} />}
+                value={'splitBottom'}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>Снизу</S.SettingsItemText>

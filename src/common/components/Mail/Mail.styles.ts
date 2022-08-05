@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
 
 export const MainContainer = styled('div')`
-  overflow-y: scroll;
-  height: 602px;
+  overflow-y: auto;
+  height: calc(100% - 40px);
 
   &::-webkit-scrollbar {
     width: 12px;
