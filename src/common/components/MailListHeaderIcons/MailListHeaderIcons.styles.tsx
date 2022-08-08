@@ -43,7 +43,6 @@ export const S = {
   MoreIconMenuItemWrapper: styled(Grid)`
     border-top: 1px solid ${({ theme }): string => theme.palette.divider};
     width: 300px;
-    height: 110px;
     padding: 0.5rem 3rem;
   `,
 

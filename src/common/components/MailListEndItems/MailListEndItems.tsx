@@ -1,5 +1,5 @@
 import { Tooltip } from '@mui/material';
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { MailListEndItemsProps } from './MailListEndItems.interfaces';
 import * as S from './MailListEndItems.styles';
@@ -9,30 +9,33 @@ import {
   DeleteOutlined,
   EmailOutlined,
 } from '@mui/icons-material';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 export const MailListEndItems: FC<MailListEndItemsProps> = ({
   isHover,
   date,
 }) => {
+  const t = useContext(LocalizationContext);
+
   if (isHover) {
     return (
       <S.EndLineWrapper>
-        <Tooltip title={'Архивировать'}>
+        <Tooltip title={t.mailsArchiveTooltip}>
           <IconButton>
             <ArchiveOutlined fontSize={'small'} />
           </IconButton>
         </Tooltip>
-        <Tooltip title={'Удалить'}>
+        <Tooltip title={t.mailsDeleteTooltip}>
           <IconButton>
             <DeleteOutlined fontSize={'small'} />
           </IconButton>
         </Tooltip>
-        <Tooltip title={'Отметить как прочитанное'}>
+        <Tooltip title={t.mailsDeleteMarkAsRead}>
           <IconButton>
             <AccessTimeOutlined fontSize={'small'} />
           </IconButton>
         </Tooltip>
-        <Tooltip title={'Отложить'}>
+        <Tooltip title={t.mailsSnoozeTooltip}>
           <IconButton>
             <EmailOutlined fontSize={'small'} />
           </IconButton>

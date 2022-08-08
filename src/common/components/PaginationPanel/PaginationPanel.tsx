@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { S } from './PaginationPanel.styles';
@@ -7,6 +7,7 @@ import { Tooltip } from '@mui/material';
 import { PaginationPanelProps } from './PaginationPanel.interfaces';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
 import { nextPage, prevPage } from '../../../store/reducers/PaginationSlice';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 const PaginationPanel: FC<PaginationPanelProps> = () => {
   const { currentPage, pageSize } = useAppSelector((state) => state.pagination);
@@ -14,6 +15,7 @@ const PaginationPanel: FC<PaginationPanelProps> = () => {
   const [begin, setBegin] = useState<number>(1);
   const [end, setEnd] = useState<number>(pageSize);
   const dispatch = useAppDispatch();
+  const t = useContext(LocalizationContext);
 
   useEffect(() => {
     setBegin((currentPage - 1) * pageSize);
@@ -34,12 +36,17 @@ const PaginationPanel: FC<PaginationPanelProps> = () => {
       <S.PageButton>
         {begin + 1}-{end} из {mailsLength}
       </S.PageButton>
-      <Tooltip open={false} title={'Пред.'}>
-        <IconButton disabled={currentPage === 1} onClick={prevPageClickHandler}>
-          <KeyboardArrowLeftIcon fontSize={'medium'} />
-        </IconButton>
+      <Tooltip title={t.mailsPaginationNewerTooltip}>
+        <div>
+          <IconButton
+            disabled={currentPage === 1}
+            onClick={prevPageClickHandler}
+          >
+            <KeyboardArrowLeftIcon fontSize={'medium'} />
+          </IconButton>
+        </div>
       </Tooltip>
-      <Tooltip title={'След.'}>
+      <Tooltip title={t.mailsPaginationOlderTooltip}>
         <IconButton
           disabled={currentPage === Math.ceil(mailsLength / pageSize)}
           onClick={nextPageClickHandler}

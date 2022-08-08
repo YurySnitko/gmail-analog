@@ -9,18 +9,20 @@ import {
   Tooltip,
   Typography,
 } from '@mui/material';
-import { FC, useState } from 'react';
+import { FC, useContext, useState } from 'react';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { HeaderProps } from './Header.interfaces';
 import LocalizationSelect from '../../ui-kit/components/LocalizationSelect/LocalizationSelect';
 import { useRouter } from 'next/router';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 export const Header: FC<HeaderProps> = ({
   onHideButtonClick,
   setIsSettingsOpenHandler,
 }) => {
   const router = useRouter();
+  const t = useContext(LocalizationContext);
   const [localization, setLocalization] = useState<string>(
     router.locale ? router.locale : 'ru'
   );
@@ -37,7 +39,7 @@ export const Header: FC<HeaderProps> = ({
   return (
     <S.Header>
       <S.LeftSide>
-        <Tooltip title="Главное меню">
+        <Tooltip title={t.headerMainMenuTooltip}>
           <IconButton size="large" onClick={onHideButtonClick}>
             <DehazeIcon />
           </IconButton>
@@ -59,12 +61,12 @@ export const Header: FC<HeaderProps> = ({
             <MenuItem value={'ru'}>ru</MenuItem>
             <MenuItem value={'en-US'}>en</MenuItem>
           </LocalizationSelect>
-          <Tooltip title="Поддержка">
+          <Tooltip title={t.headerSupportTooltip}>
             <IconButton>
               <HelpOutlineIcon />
             </IconButton>
           </Tooltip>
-          <Tooltip title={'Настройки'}>
+          <Tooltip title={t.headerSettingsTooltip}>
             <IconButton onClick={setIsSettingsOpenHandler}>
               <SettingsOutlinedIcon />
             </IconButton>

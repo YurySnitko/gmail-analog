@@ -18,14 +18,14 @@ interface FilterValuesState {
 const initialState: FilterValuesState = {
   address: '',
   date: null,
-  datePeriod: '1 день',
+  datePeriod: 'headerFilterSelectDateOneDay',
   isAttachedFiles: false,
   noWords: '',
   searchedWords: '',
-  searchingPlace: 'Вся почта',
+  searchingPlace: 'headerFilterSelectAllMail',
   sender: '',
-  size: 'больше',
-  sizeUnit: 'МБ',
+  size: 'headerFilterSelectGreater',
+  sizeUnit: 'headerFilterSelectSizeUnitMB',
   sizeValue: '',
   topic: '',
 };

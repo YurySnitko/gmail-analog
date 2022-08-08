@@ -1,7 +1,15 @@
-import { ChangeEvent, FC, useEffect, useRef, useState } from 'react';
+import {
+  ChangeEvent,
+  FC,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import * as S from './SearchBarForm.styles';
 import ClearIcon from '@mui/icons-material/Clear';
 import { SearchBarFormProps } from './SearchBarForm.interfaces';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 export const SearchBarForm: FC<SearchBarFormProps> = ({
   searchValue,
@@ -9,6 +17,7 @@ export const SearchBarForm: FC<SearchBarFormProps> = ({
 }) => {
   const [showClearButton, setShowClearButton] = useState<boolean>(false);
   const inputRef = useRef<HTMLInputElement>(null);
+  const t = useContext(LocalizationContext);
 
   useEffect(() => {
     setShowClearButton(searchValue.length > 0);
@@ -22,13 +31,14 @@ export const SearchBarForm: FC<SearchBarFormProps> = ({
     setSearchValueHandler('');
     inputRef.current?.focus();
   };
+
   return (
     <>
       <form>
         <S.InputBox>
           <S.Input
             ref={inputRef}
-            placeholder="Search"
+            placeholder={t.searchPlaceholder}
             onChange={onSearchValueChange}
             value={searchValue}
           />

@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useContext, useState } from 'react';
 import AsideItem from '../AsideItem/AsideItem';
 import { S } from './AsideMailList.styles';
 import { Collapse } from '@mui/material';
@@ -6,15 +6,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { defaultLinkItems, moreLinksItems } from '../../../mocked/routes';
 import { AsideMailListProps } from './AsideMailList.interfaces';
-import { ru } from '../../../locales/ru/translation';
-import { enUS } from '../../../locales/en/translation';
-import { useRouter } from 'next/router';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 const AsideMailList: FC<AsideMailListProps> = ({ isOpen }) => {
   const [isCollapseOpen, setIsCollapseOpen] = useState(false);
-  const { locale } = useRouter();
-
-  const t = locale === 'en-US' ? enUS : ru;
+  const t = useContext(LocalizationContext);
 
   const moreClickHandler = (): void => {
     setIsCollapseOpen((prev) => !prev);
