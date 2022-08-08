@@ -30,12 +30,12 @@ export const MailListEndItems: FC<MailListEndItemsProps> = ({
             <DeleteOutlined fontSize={'small'} />
           </IconButton>
         </Tooltip>
-        <Tooltip title={t.mailsDeleteMarkAsRead}>
+        <Tooltip title={t.mailsSnoozeTooltip}>
           <IconButton>
             <AccessTimeOutlined fontSize={'small'} />
           </IconButton>
         </Tooltip>
-        <Tooltip title={t.mailsSnoozeTooltip}>
+        <Tooltip title={t.mailsDeleteMarkAsRead}>
           <IconButton>
             <EmailOutlined fontSize={'small'} />
           </IconButton>
