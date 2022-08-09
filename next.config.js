@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  i18n: {
+    locales: ['en-US', 'ru'],
+    defaultLocale: 'ru',
+  },
   reactStrictMode: true,
   async redirects() {
     return [

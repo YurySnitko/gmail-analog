@@ -17,6 +17,7 @@ export const theme = createTheme({
       headerFilterBorder: 'rgba(0, 0, 0, 0.2)',
       filterSelectHover: '#f2f2f2',
       createFilter: '#e5e5e5',
+      localizationSelectBorder: '#e3e4e8',
     },
     text: {
       headerIconButton: '#5f6368',

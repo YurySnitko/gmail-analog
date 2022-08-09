@@ -57,6 +57,7 @@ export const S = {
     flex-direction: column;
     align-items: center;
     overflow-y: auto;
+    padding-right: 7px;
 
     &::-webkit-scrollbar {
       width: 9px;

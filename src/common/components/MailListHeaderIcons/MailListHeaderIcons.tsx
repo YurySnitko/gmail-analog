@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import RefreshIcon from '@mui/icons-material/Refresh';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
@@ -16,6 +16,7 @@ import DriveFileMoveOutlinedIcon from '@mui/icons-material/DriveFileMoveOutlined
 import LabelOutlinedIcon from '@mui/icons-material/LabelOutlined';
 import { MenuItem, Tooltip } from '@mui/material';
 import { Menu } from '../../ui-kit/components/Menu/Menu.styles';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   selectedMailsIds,
@@ -28,6 +29,7 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
   const isCheckboxMenuOpen = Boolean(checkboxSelectedMenuItem);
   const isMoreMenuOpen = Boolean(moreMenuSelectedItem);
   const [checkboxChecked, setCheckboxChecked] = useState<boolean>(false);
+  const t = useContext(LocalizationContext);
 
   useEffect(() => {
     setCheckboxChecked(selectedMailsIds.length > 0);
@@ -64,51 +66,51 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
         {selectedMailsIds.length > 0 ? (
           <S.IconsWrapper>
             <S.MoreIconsWrapper>
-              <Tooltip title={'Архивировать'}>
+              <Tooltip title={t.mailsArchiveTooltip}>
                 <IconButton>
                   <ArchiveOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={'В спам!'}>
+              <Tooltip title={t.mailsSpamTooltip}>
                 <IconButton>
                   <ReportGmailerrorredOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={'Удалить'}>
+              <Tooltip title={t.mailsDeleteTooltip}>
                 <IconButton>
                   <DeleteOutlineOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
             </S.MoreIconsWrapper>
             <S.MoreIconsWrapper>
-              <Tooltip title={'Отметить как прочитанное'}>
+              <Tooltip title={t.mailsDeleteMarkAsRead}>
                 <IconButton>
                   <DraftsOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={'Отложить'}>
+              <Tooltip title={t.mailsSnoozeTooltip}>
                 <IconButton>
                   <AccessTimeOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={'Добавить в задачи'}>
+              <Tooltip title={t.mailsAddToTasksTooltip}>
                 <IconButton>
                   <AddTaskOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
             </S.MoreIconsWrapper>
             <S.MoreIconsWrapper>
-              <Tooltip title={'переместить в'}>
+              <Tooltip title={t.mailsMoveToTooltip}>
                 <IconButton>
                   <DriveFileMoveOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={'Ярлыки'}>
+              <Tooltip title={t.mailsLabelsTooltip}>
                 <IconButton>
                   <LabelOutlinedIcon fontSize={'small'} />
                 </IconButton>
               </Tooltip>
-              <Tooltip title={'Еще'}>
+              <Tooltip title={t.mailsMoreTooltip}>
                 <IconButton onClick={moreMenuHandleClick}>
                   <MoreVertIcon fontSize={'small'} />
                 </IconButton>
@@ -119,35 +121,37 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
                 onClose={moreMenuHandleClose}
               >
                 <MenuItem onClick={moreMenuHandleClose}>
-                  Отметить как прочитанное
+                  {t.mailsMoreItemMarkAsRead}
                 </MenuItem>
                 <MenuItem onClick={moreMenuHandleClose}>
-                  Отметить как непрочитанное
+                  {t.mailsMoreItemMarkUnRead}
                 </MenuItem>
                 <MenuItem onClick={moreMenuHandleClose}>
-                  Пометить как неважное
+                  {t.mailsMoreItemMarkAsNotImportant}
                 </MenuItem>
                 <MenuItem onClick={moreMenuHandleClose}>
-                  Добавить пометку
+                  {t.mailsMoreItemAddStar}
                 </MenuItem>
                 <MenuItem onClick={moreMenuHandleClose}>
-                  Фильтровать прохожие письма
+                  {t.mailsMoreItemFilter}
                 </MenuItem>
-                <MenuItem onClick={moreMenuHandleClose}>Игнорировать</MenuItem>
                 <MenuItem onClick={moreMenuHandleClose}>
-                  Переслать как прикрепленный файл
+                  {t.mailsMoreItemMute}
+                </MenuItem>
+                <MenuItem onClick={moreMenuHandleClose}>
+                  {t.mailsMoreItemForward}
                 </MenuItem>
               </Menu>
             </S.MoreIconsWrapper>
           </S.IconsWrapper>
         ) : (
           <>
-            <Tooltip title={'Обновить'}>
+            <Tooltip title={t.mailsRefreshTooltip}>
               <IconButton>
                 <RefreshIcon fontSize={'small'} />
               </IconButton>
             </Tooltip>
-            <Tooltip title={'Еще'}>
+            <Tooltip title={t.mailsMoreTooltip}>
               <IconButton onClick={moreMenuHandleClick}>
                 <MoreVertIcon fontSize={'small'} />
               </IconButton>
@@ -158,12 +162,11 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
               onClose={moreMenuHandleClose}
             >
               <MenuItem onClick={checkboxMenuHandleClose}>
-                Отметить все как прочитанные
+                {t.mailsMoreItemAllRead}
               </MenuItem>
               <S.MoreIconMenuItemWrapper>
                 <S.MoreIconMenuItem>
-                  Выберите несколько сообщений, чтобы увидеть дополнительные
-                  действия
+                  {t.mailsMoreItemMessage}
                 </S.MoreIconMenuItem>
               </S.MoreIconMenuItemWrapper>
             </Menu>
@@ -194,12 +197,24 @@ const MailListHeaderIcons: FC<MailListHeaderIconsProps> = ({
         open={isCheckboxMenuOpen}
         onClose={checkboxMenuHandleClose}
       >
-        <MenuItem onClick={checkboxMenuHandleClose}>Все</MenuItem>
-        <MenuItem onClick={checkboxMenuHandleClose}>Ни одного</MenuItem>
-        <MenuItem onClick={checkboxMenuHandleClose}>Прочитанные</MenuItem>
-        <MenuItem onClick={checkboxMenuHandleClose}>Непрочитанные</MenuItem>
-        <MenuItem onClick={checkboxMenuHandleClose}>Помеченные</MenuItem>
-        <MenuItem onClick={checkboxMenuHandleClose}>Без пометок</MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>
+          {t.mailsCheckboxMenuAll}
+        </MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>
+          {t.mailsCheckboxMenuNoOne}
+        </MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>
+          {t.mailsCheckboxMenuRead}
+        </MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>
+          {t.mailsCheckboxMenuUnread}
+        </MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>
+          {t.mailsCheckboxMenuStarred}
+        </MenuItem>
+        <MenuItem onClick={checkboxMenuHandleClose}>
+          {t.mailsCheckboxMenuUnstarred}
+        </MenuItem>
       </Menu>
       {moreIcons()}
     </S.MailListHeaderIconsWrapper>

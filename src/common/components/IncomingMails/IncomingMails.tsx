@@ -1,4 +1,4 @@
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useContext, useEffect, useState } from 'react';
 import MailListHeader from '../MailListHeader/MailListHeader';
 import MailList from '../MailList/MailList';
 import { getMailsFetch } from '../../../store/reducers/MailsSlice';
@@ -10,6 +10,7 @@ import { ReflexContainer, ReflexElement } from 'react-reflex';
 import 'react-reflex/styles.css';
 import { getSplit } from '../../../store/reducers/SettingsSlice';
 import { S } from './IncomingMails.styles';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 const IncomingMails: FC = () => {
   const [selectedMailsIds, setSelectedMailsIds] = useState<string[]>([]);
@@ -17,6 +18,7 @@ const IncomingMails: FC = () => {
   const { mails, isLoading } = useAppSelector((state) => state.mail);
   const split = useAppSelector((state) => state.settings.split);
   const dispatch = useAppDispatch();
+  const t = useContext(LocalizationContext);
 
   useEffect(() => {
     dispatch(getSplit());
@@ -66,7 +68,7 @@ const IncomingMails: FC = () => {
               <Mail mailData={clickedItem} />
             ) : (
               <S.SecondPanelWrapper>
-                <S.SecondPanelTitle>Цепочки не выбраны</S.SecondPanelTitle>
+                <S.SecondPanelTitle>{t.splitEmptyWindow}</S.SecondPanelTitle>
               </S.SecondPanelWrapper>
             )}
           </ReflexElement>

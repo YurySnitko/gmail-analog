@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useContext } from 'react';
 import { S } from './SettingsSection.styles';
 import {
   Checkbox,
@@ -28,10 +28,12 @@ import Image from 'next/image';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux.hook';
 import { changeSplit } from '../../../store/reducers/SettingsSlice';
+import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
 const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
   const { split } = useAppSelector((state) => state.settings);
   const dispatch = useAppDispatch();
+  const t = useContext(LocalizationContext);
 
   const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(changeSplit((event.target as HTMLInputElement).value));
@@ -41,13 +43,13 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
     <S.SettingsSectionWrapper>
       <S.SettingsSectionHeader>
         <S.SettingsSectionHeaderBarWrapper>
-          <Typography>Быстрые настройки</Typography>
+          <Typography>{t.settingsTitle}</Typography>
           <IconButton onClick={setIsSettingsOpen}>
             <CloseIcon fontSize={'small'} />
           </IconButton>
         </S.SettingsSectionHeaderBarWrapper>
         <S.AllSettingsButton variant={'outlined'}>
-          Все настройки
+          {t.settingsButton}
         </S.AllSettingsButton>
       </S.SettingsSectionHeader>
       <S.SettingsSectionContent>
@@ -55,10 +57,10 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
           <S.OriginalViewWrapper>
             <S.OriginalViewWrapperTextContent>
               <S.OriginalGmailText>
-                Включен оригинальный вид Gmail
+                {t.settingsOriginalView}
               </S.OriginalGmailText>
               <S.SettingsSectionButton variant={'outlined'}>
-                Попробовать новый вид
+                {t.settingsOriginViewButton}
               </S.SettingsSectionButton>
             </S.OriginalViewWrapperTextContent>
             <S.OriginalViewImageWrapper>
@@ -68,16 +70,18 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
         </S.SettingsSectionItem>
         <S.SettingsSectionItem>
           <S.InterfaceItemWrapper>
-            <S.SectionTitle>Интерфейс</S.SectionTitle>
+            <S.SectionTitle>{t.settingsDensity}</S.SectionTitle>
             <S.RadioGroupWrapper>
               <FormControlLabel
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>По умолчанию</S.SettingsItemText>
+                    <S.SettingsItemText>
+                      {t.settingsDestinyDefault}
+                    </S.SettingsItemText>
                     <Image
                       src={defaultInterfaceImage}
-                      alt={'интерфейс по умолчанию'}
+                      alt={'default interface'}
                     />
                   </S.SettingsLabelItem>
                 }
@@ -86,10 +90,12 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Обычный</S.SettingsItemText>
+                    <S.SettingsItemText>
+                      {t.settingsDestinyComfortable}
+                    </S.SettingsItemText>
                     <Image
                       src={normalInterfaceImage}
-                      alt={'обычный интерфейс'}
+                      alt={'comfortable interface'}
                     />
                   </S.SettingsLabelItem>
                 }
@@ -98,10 +104,12 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Компактный</S.SettingsItemText>
+                    <S.SettingsItemText>
+                      {t.settingsDestinyCompact}
+                    </S.SettingsItemText>
                     <Image
                       src={compactInterfaceImage}
-                      alt={'компактный интерфейс'}
+                      alt={'compact interface'}
                     />
                   </S.SettingsLabelItem>
                 }
@@ -112,40 +120,33 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
         <S.SettingsSectionItem>
           <S.ThemeItemWrapper>
             <S.ThemeTitleWrapper>
-              <S.SectionTitle>Тема</S.SectionTitle>
+              <S.SectionTitle>{t.settingsTheme}</S.SectionTitle>
               <S.SettingsSectionButton variant={'outlined'}>
-                Просмотреть все
+                {t.settingsThemeViewAll}
               </S.SettingsSectionButton>
             </S.ThemeTitleWrapper>
             <S.ThemeImageWrapper>
-              <Image src={themeImage} alt={'Изображение темы'} />
+              <Image src={themeImage} alt={'theme'} />
             </S.ThemeImageWrapper>
           </S.ThemeItemWrapper>
         </S.SettingsSectionItem>
         <S.SettingsSectionItem>
           <S.DefaultViewItemWrapper>
-            <S.SectionTitle>Вид по умолчанию</S.SectionTitle>
+            <S.SectionTitle>{t.settingsInboxType}</S.SectionTitle>
             <S.RadioGroupWrapper>
               <FormControlLabel
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemRadioLabelWrapper>
-                      <S.SettingsItemText>По умолчанию</S.SettingsItemText>
+                      <S.SettingsItemText>
+                        {t.settingsInboxTypeDefault}
+                      </S.SettingsItemText>
                       <S.SettingsLabelButton variant={'outlined'}>
-                        Настроить
+                        {t.settingsInboxTypeCustomize}
                       </S.SettingsLabelButton>
                     </S.SettingsItemRadioLabelWrapper>
-                    <Image src={defaultViewImage} alt={'Вид по умолчанию'} />
-                  </S.SettingsLabelItem>
-                }
-              />
-              <FormControlLabel
-                control={<Radio size={'small'} />}
-                label={
-                  <S.SettingsLabelItem>
-                    <S.SettingsItemText>Сначала важные</S.SettingsItemText>
-                    <Image src={importantViewImage} alt={'Сначала важные'} />
+                    <Image src={defaultViewImage} alt={'Default view'} />
                   </S.SettingsLabelItem>
                 }
               />
@@ -154,12 +155,9 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
-                      Сначала непрочитанные
+                      {t.settingsInboxTypeImportant}
                     </S.SettingsItemText>
-                    <Image
-                      src={unreadViewImage}
-                      alt={'Сначала непрочитанные'}
-                    />
+                    <Image src={importantViewImage} alt={'important first'} />
                   </S.SettingsLabelItem>
                 }
               />
@@ -167,8 +165,10 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Сначала помеченные</S.SettingsItemText>
-                    <Image src={starredViewImage} alt={'Сначала помеченные'} />
+                    <S.SettingsItemText>
+                      {t.settingsInboxTypeUnread}
+                    </S.SettingsItemText>
+                    <Image src={unreadViewImage} alt={'unread first'} />
                   </S.SettingsLabelItem>
                 }
               />
@@ -176,13 +176,10 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 control={<Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemRadioLabelWrapper>
-                      <S.SettingsItemText>Приоритетные</S.SettingsItemText>
-                      <S.SettingsLabelButton variant={'outlined'}>
-                        Настроить
-                      </S.SettingsLabelButton>
-                    </S.SettingsItemRadioLabelWrapper>
-                    <Image src={priorityViewImage} alt={'Приоритетные'} />
+                    <S.SettingsItemText>
+                      {t.settingsInboxTypeStarred}
+                    </S.SettingsItemText>
+                    <Image src={starredViewImage} alt={'starred first'} />
                   </S.SettingsLabelItem>
                 }
               />
@@ -192,16 +189,29 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                   <S.SettingsLabelItem>
                     <S.SettingsItemRadioLabelWrapper>
                       <S.SettingsItemText>
-                        Дополнительные папки
+                        {t.settingsInboxTypePriority}
                       </S.SettingsItemText>
                       <S.SettingsLabelButton variant={'outlined'}>
-                        Настроить
+                        {t.settingsInboxTypeCustomize}
                       </S.SettingsLabelButton>
                     </S.SettingsItemRadioLabelWrapper>
-                    <Image
-                      src={multipleViewImage}
-                      alt={'Дополнительные папки'}
-                    />
+                    <Image src={priorityViewImage} alt={'priority'} />
+                  </S.SettingsLabelItem>
+                }
+              />
+              <FormControlLabel
+                control={<Radio size={'small'} />}
+                label={
+                  <S.SettingsLabelItem>
+                    <S.SettingsItemRadioLabelWrapper>
+                      <S.SettingsItemText>
+                        {t.settingsInboxTypeMultiple}
+                      </S.SettingsItemText>
+                      <S.SettingsLabelButton variant={'outlined'}>
+                        {t.settingsInboxTypeCustomize}
+                      </S.SettingsLabelButton>
+                    </S.SettingsItemRadioLabelWrapper>
+                    <Image src={multipleViewImage} alt={'Multiple Inboxes'} />
                   </S.SettingsLabelItem>
                 }
               />
@@ -210,17 +220,16 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
         </S.SettingsSectionItem>
         <S.SettingsSectionItem>
           <S.DefaultViewItemWrapper>
-            <S.SectionTitle>Область просмотра</S.SectionTitle>
+            <S.SectionTitle>{t.settingsReadingPane}</S.SectionTitle>
             <S.RadioGroupWrapper value={split} onChange={changeHandler}>
               <FormControlLabel
                 control={<Radio size={'small'} value={'noSplit'} />}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Не разделять</S.SettingsItemText>
-                    <Image
-                      src={defaultViewAreaImage}
-                      alt={'Не разделять область просмотра'}
-                    />
+                    <S.SettingsItemText>
+                      {t.settingsReadingPaneNoSplit}
+                    </S.SettingsItemText>
+                    <Image src={defaultViewAreaImage} alt={'no split'} />
                   </S.SettingsLabelItem>
                 }
               />
@@ -229,10 +238,12 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 value={'splitRight'}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Справа</S.SettingsItemText>
+                    <S.SettingsItemText>
+                      {t.settingsReadingPaneRight}
+                    </S.SettingsItemText>
                     <Image
                       src={previewPanelRightImage}
-                      alt={'Область просмотра справа'}
+                      alt={'right of inbox'}
                     />
                   </S.SettingsLabelItem>
                 }
@@ -242,10 +253,12 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 value={'splitBottom'}
                 label={
                   <S.SettingsLabelItem>
-                    <S.SettingsItemText>Снизу</S.SettingsItemText>
+                    <S.SettingsItemText>
+                      {t.settingsReadingPaneBelow}
+                    </S.SettingsItemText>
                     <Image
                       src={previewPanelBottomImage}
-                      alt={'Обрасть просмотра снизу'}
+                      alt={'below of inbox'}
                     />
                   </S.SettingsLabelItem>
                 }
@@ -255,16 +268,13 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
         </S.SettingsSectionItem>
         <S.SettingsSectionItem>
           <S.DefaultViewItemWrapper>
-            <S.SectionTitle>Объединение писем в цепочки</S.SectionTitle>
+            <S.SectionTitle>{t.settingsEmailThreading}</S.SectionTitle>
             <S.ConcatMailsContent>
               <Checkbox size={'small'} />
               <S.ConcatMailsContentText>
-                Просмотр в виде цепочки
+                {t.settingsConversationView}
               </S.ConcatMailsContentText>
-              <Tooltip
-                title={'Групировать письма с одной темой в цепочки'}
-                placement={'top'}
-              >
+              <Tooltip title={t.settingsSupportTooltip} placement={'top'}>
                 <HelpOutlineOutlinedIcon fontSize={'small'} />
               </Tooltip>
             </S.ConcatMailsContent>
