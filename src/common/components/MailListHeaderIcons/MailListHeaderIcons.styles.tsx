@@ -6,6 +6,7 @@ export const S = {
   MailListHeaderIconsWrapper: styled(Grid)`
     display: flex;
     align-items: center;
+    color: ${({ theme }): string => theme.palette.text.headerIconButton};
   `,
 
   CheckBoxWrapper: styled(Grid)`
@@ -52,5 +53,6 @@ export const S = {
     white-space: pre-wrap;
     font-style: italic;
     font-size: 0.875rem;
+    color: ${({ theme }): string => theme.palette.text.menuMessage};
   `,
 };

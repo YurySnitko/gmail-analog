@@ -5,6 +5,7 @@ export const Menu = styled(MuiMenu)<MenuProps>(({ theme }) => ({
   '& .MuiPaper-root': {
     '& .MuiMenu-list': {
       padding: '6px 0',
+      backgroundColor: theme.palette.common.white,
     },
 
     '& .MuiMenuItem-root': {

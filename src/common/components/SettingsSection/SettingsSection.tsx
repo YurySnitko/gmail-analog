@@ -1,12 +1,6 @@
 import React, { FC, useContext } from 'react';
 import { S } from './SettingsSection.styles';
-import {
-  Checkbox,
-  FormControlLabel,
-  Radio,
-  Tooltip,
-  Typography,
-} from '@mui/material';
+import { FormControlLabel, Tooltip, Typography } from '@mui/material';
 import { SettingsSectionProps } from './SettingsSection.interfaces';
 import CloseIcon from '@mui/icons-material/Close';
 import originalGmail from '../../ui-kit/assets/originalGmail.png';
@@ -73,7 +67,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
             <S.SectionTitle>{t.settingsDensity}</S.SectionTitle>
             <S.RadioGroupWrapper>
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -87,7 +81,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -101,7 +95,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -135,7 +129,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
             <S.SectionTitle>{t.settingsInboxType}</S.SectionTitle>
             <S.RadioGroupWrapper>
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemRadioLabelWrapper>
@@ -151,7 +145,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -162,7 +156,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -173,7 +167,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -184,7 +178,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemRadioLabelWrapper>
@@ -200,7 +194,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemRadioLabelWrapper>
@@ -223,7 +217,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
             <S.SectionTitle>{t.settingsReadingPane}</S.SectionTitle>
             <S.RadioGroupWrapper value={split} onChange={changeHandler}>
               <FormControlLabel
-                control={<Radio size={'small'} value={'noSplit'} />}
+                control={<S.Radio size={'small'} value={'noSplit'} />}
                 label={
                   <S.SettingsLabelItem>
                     <S.SettingsItemText>
@@ -234,7 +228,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 value={'splitRight'}
                 label={
                   <S.SettingsLabelItem>
@@ -249,7 +243,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
                 }
               />
               <FormControlLabel
-                control={<Radio size={'small'} />}
+                control={<S.Radio size={'small'} />}
                 value={'splitBottom'}
                 label={
                   <S.SettingsLabelItem>
@@ -270,7 +264,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
           <S.DefaultViewItemWrapper>
             <S.SectionTitle>{t.settingsEmailThreading}</S.SectionTitle>
             <S.ConcatMailsContent>
-              <Checkbox size={'small'} />
+              <S.ConversationCheckbox size={'small'} />
               <S.ConcatMailsContentText>
                 {t.settingsConversationView}
               </S.ConcatMailsContentText>

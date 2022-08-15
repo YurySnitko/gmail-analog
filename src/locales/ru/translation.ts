@@ -120,4 +120,6 @@ export const ru: Locales = {
   settingsEmailThreading: 'Объединение писем в цепочки',
   settingsConversationView: 'Просмотр в виде цепочки',
   settingsSupportTooltip: 'Групировать письма с одной темой в цепочки',
+
+  darkMode: 'Темный режим',
 };

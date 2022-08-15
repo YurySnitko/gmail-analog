@@ -5,12 +5,14 @@ import { rootSaga } from './sagas/rootSaga';
 import paginationReducer from './reducers/PaginationSlice';
 import filterValueReducer from './reducers/FilterValuesSlice';
 import settingsReducer from './reducers/SettingsSlice';
+import themeReducer from './reducers/ThemeSlice';
 
 const rootReducer = combineReducers({
   mail: mailReducer,
   pagination: paginationReducer,
   filters: filterValueReducer,
   settings: settingsReducer,
+  theme: themeReducer,
 });
 
 const saga = createSagaMiddleware();

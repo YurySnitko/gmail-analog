@@ -18,6 +18,12 @@ declare module '@mui/material/styles' {
     filterSelectHover: string;
     createFilter: string;
     localizationSelectBorder: string;
+    settingsSection: string;
+    paginationButton: string;
+    paginationButtonHover: string;
+    settingsButton: string;
+    settingsControllerChecked: string;
+    settingsController: string;
   }
 
   interface TypeText {
@@ -25,6 +31,10 @@ declare module '@mui/material/styles' {
     mailTitle: string;
     createFilterDisabled: string;
     createFilter: string;
+    paginationButton: string;
+    menuMessage: string;
+    settingsText: string;
+    settingsButton: string;
   }
 
   interface Theme {

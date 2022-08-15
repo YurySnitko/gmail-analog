@@ -15,6 +15,10 @@ export const Input = styled('input')`
   background-color: transparent;
   font-size: 16px;
 
+  ::placeholder {
+    color: ${({ theme }): string => theme.palette.text.headerIconButton};
+  }
+
   &:focus {
     outline: none;
     background-color: transparent;

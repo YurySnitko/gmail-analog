@@ -4,8 +4,10 @@ import SettingsOutlinedIcon from '@mui/icons-material/Settings';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GoogleIcon from '@mui/icons-material/Google';
 import {
+  FormControlLabel,
   MenuItem,
   SelectChangeEvent,
+  Switch,
   Tooltip,
   Typography,
 } from '@mui/material';
@@ -16,16 +18,22 @@ import { HeaderProps } from './Header.interfaces';
 import LocalizationSelect from '../../ui-kit/components/LocalizationSelect/LocalizationSelect';
 import { useRouter } from 'next/router';
 import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
+import { useAppSelector } from '../../../hooks/redux.hook';
+import { useDispatch } from 'react-redux';
+import { changeTheme } from '../../../store/reducers/ThemeSlice';
 
 export const Header: FC<HeaderProps> = ({
   onHideButtonClick,
   setIsSettingsOpenHandler,
 }) => {
+  const { theme } = useAppSelector((state) => state.theme);
   const router = useRouter();
   const t = useContext(LocalizationContext);
+  const [themeState, setThemeState] = useState<boolean>(theme === 'dark');
   const [localization, setLocalization] = useState<string>(
     router.locale ? router.locale : 'ru'
   );
+  const dispatch = useDispatch();
 
   const localizationChangeHandler = (
     event: SelectChangeEvent<unknown>
@@ -34,6 +42,14 @@ export const Header: FC<HeaderProps> = ({
       locale: event.target.value as string,
     });
     setLocalization(event.target.value as string);
+  };
+
+  const themeChangeHandler = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    console.log(event.target.value);
+    dispatch(changeTheme(event.target.checked ? 'dark' : 'light'));
+    setThemeState((state) => !state);
   };
 
   return (
@@ -54,6 +70,12 @@ export const Header: FC<HeaderProps> = ({
           <SearchBar />
         </S.SearchBarWrapper>
         <S.Toolbar>
+          <FormControlLabel
+            control={
+              <Switch onChange={themeChangeHandler} checked={themeState} />
+            }
+            label={<Typography variant={'h6'}>{t.darkMode}</Typography>}
+          />
           <LocalizationSelect
             onChange={localizationChangeHandler}
             value={localization}

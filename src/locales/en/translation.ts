@@ -120,4 +120,6 @@ export const enUS: Locales = {
   settingsEmailThreading: 'Email threading',
   settingsConversationView: 'Conversation view',
   settingsSupportTooltip: 'Groups emails of the same topic together',
+
+  darkMode: 'Dark mode',
 };
