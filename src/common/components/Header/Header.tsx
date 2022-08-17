@@ -47,7 +47,6 @@ export const Header: FC<HeaderProps> = ({
   const themeChangeHandler = (
     event: React.ChangeEvent<HTMLInputElement>
   ): void => {
-    console.log(event.target.value);
     dispatch(changeTheme(event.target.checked ? 'dark' : 'light'));
     setThemeState((state) => !state);
   };
