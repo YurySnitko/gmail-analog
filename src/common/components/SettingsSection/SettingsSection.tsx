@@ -38,7 +38,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
       <S.SettingsSectionHeader>
         <S.SettingsSectionHeaderBarWrapper>
           <Typography>{t.settingsTitle}</Typography>
-          <IconButton onClick={setIsSettingsOpen}>
+          <IconButton hoverBackground={'light'} onClick={setIsSettingsOpen}>
             <CloseIcon fontSize={'small'} />
           </IconButton>
         </S.SettingsSectionHeaderBarWrapper>

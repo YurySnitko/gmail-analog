@@ -4,6 +4,7 @@ import { Input } from '@mui/material';
 export const S = {
   FilterItemInput: styled(Input)`
     font-size: 0.875rem;
+    color: ${({ theme }): string => theme.palette.text.controls};
 
     & .MuiInput-input {
       padding: 0;

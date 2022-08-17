@@ -3,7 +3,7 @@ import { styled } from '@mui/material';
 import { IconButton as MuiIconButton } from '@mui/material';
 
 export const IconButton = styled(MuiIconButton)<IconButtonProps>(
-  ({ theme, shape }) => ({
+  ({ theme, shape, hoverBackground }) => ({
     color: 'inherit',
     borderRadius: shape === 'square' ? '4px' : '50%',
     transition: theme.transitions.create(['background-color', 'color'], {
@@ -11,7 +11,10 @@ export const IconButton = styled(MuiIconButton)<IconButtonProps>(
     }),
 
     '&:hover': {
-      backgroundColor: theme.palette.background.iconButton,
+      backgroundColor:
+        theme.palette.mode === 'dark' && hoverBackground === 'light'
+          ? theme.palette.background.lightIconButton
+          : theme.palette.background.iconButton,
     },
   })
 );

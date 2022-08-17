@@ -25,6 +25,8 @@ declare module '@mui/material/styles' {
     settingsControllerChecked: string;
     settingsController: string;
     mailListItemDefault: string;
+    sendMailControl: string;
+    lightIconButton: string;
   }
 
   interface TypeText {
@@ -38,6 +40,8 @@ declare module '@mui/material/styles' {
     settingsButton: string;
     mailListItemChecked: string;
     mailListItem: string;
+    controls: string;
+    mailControls: string;
   }
 
   interface Theme {

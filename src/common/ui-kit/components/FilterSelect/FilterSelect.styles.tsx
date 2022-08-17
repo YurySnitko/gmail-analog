@@ -12,6 +12,11 @@ export const S = {
     font-size: 0.875rem;
     width: 100%;
     height: 100%;
+    color: ${({ theme }): string => theme.palette.text.controls};
+
+    & .MuiSelect-icon {
+      color: ${({ theme }): string => theme.palette.text.controls};
+    }
 
     & .MuiSelect-root {
       transition: 0.15s ease-out;

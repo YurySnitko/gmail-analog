@@ -3,6 +3,8 @@ import { styled } from '@mui/material/styles';
 export const MainContainer = styled('div')`
   overflow-y: auto;
   height: calc(100% - 40px);
+  background-color: ${({ theme }): string => theme.palette.common.white};
+  color: black;
 
   &::-webkit-scrollbar {
     width: 12px;

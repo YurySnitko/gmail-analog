@@ -29,6 +29,8 @@ const lightTheme: ThemeOptions = {
       settingsButton: 'transparent',
       settingsControllerChecked: '#1976d2',
       settingsController: '#202124',
+      sendMailControl: '#297be6',
+      lightIconButton: '#dcdcdc',
     },
     text: {
       headerIconButton: '#5f6368',
@@ -41,6 +43,8 @@ const lightTheme: ThemeOptions = {
       settingsButton: '#3483ea',
       mailListItemChecked: '#6a6c6e',
       mailListItem: '#202124',
+      controls: '#707070',
+      mailControls: '#202124',
     },
   },
 
@@ -151,6 +155,8 @@ const darkTheme: ThemeOptions = {
       settingsButton: 'transparent',
       settingsControllerChecked: '#1976d2',
       settingsController: '#202124',
+      sendMailControl: '#297be6',
+      lightIconButton: '#dcdcdc',
     },
     text: {
       headerIconButton: '#e0e0e0',
@@ -163,6 +169,8 @@ const darkTheme: ThemeOptions = {
       settingsButton: '#3483ea',
       mailListItemChecked: '#969696',
       mailListItem: '#fafafa',
+      controls: '#707070',
+      mailControls: '#202124',
     },
   },
 
@@ -181,7 +189,6 @@ const darkTheme: ThemeOptions = {
   typography: {
     h5: {
       fontSize: '1.375rem',
-      color: '#bdbdbd',
     },
     h6: {
       fontSize: '1rem',

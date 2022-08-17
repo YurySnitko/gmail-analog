@@ -5,7 +5,7 @@ export const Container = styled('div')(({ theme }) => ({
   paddingLeft: '72px',
   display: 'flex',
   gap: '12px',
-  color: `${theme.palette.text.headerIconButton}`,
+  color: `${theme.palette.text.mailControls}`,
 }));
 
 export const ShortcutOutlinedLeft = styled(ShortcutOutlined)`
