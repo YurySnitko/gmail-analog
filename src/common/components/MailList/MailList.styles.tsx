@@ -7,7 +7,6 @@ export const S = {
     height: 100%;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid ${({ theme }): string => theme.palette.common.white};
     overflow-y: auto;
 
     &::-webkit-scrollbar {

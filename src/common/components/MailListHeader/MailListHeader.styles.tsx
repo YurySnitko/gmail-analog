@@ -7,8 +7,6 @@ export const S = {
     display: flex;
     align-items: center;
     padding: 0 17px;
-    border-left: 1px solid
-      ${(props): string => props.theme.palette.common.white};
     border-bottom: 1px solid ${(props): string => props.theme.palette.divider};
     justify-content: space-between;
     box-sizing: border-box;

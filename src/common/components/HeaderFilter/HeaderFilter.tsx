@@ -1,6 +1,6 @@
 import React, { FC, useContext, useEffect, useState } from 'react';
 import { S } from './HeaderFilter.styles';
-import { Button, Checkbox, ClickAwayListener, MenuItem } from '@mui/material';
+import { Button, ClickAwayListener, MenuItem } from '@mui/material';
 import FilterInput from '../../ui-kit/components/FilterInput/FilterInput';
 import FilterSelect from '../../ui-kit/components/FilterSelect/FilterSelect';
 import FilterDatePicker from '../../ui-kit/components/FilterDatePicker/FilterDatePicker';
@@ -335,7 +335,7 @@ const HeaderFilter: FC<HeaderFilterProps> = ({
                 render={({
                   field: { onChange, value },
                 }): React.ReactElement => (
-                  <Checkbox
+                  <S.AttachedCheckbox
                     size={'small'}
                     checked={value}
                     onChange={onChange}

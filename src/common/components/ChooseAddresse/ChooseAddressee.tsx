@@ -38,7 +38,7 @@ export const ChooseAddressee: FC<ChooseAddresseeProps> = ({
           </Box>
         )}
         <Tooltip title="Развернуть ответ">
-          <S.OpenInNewButton>
+          <S.OpenInNewButton hoverBackground={'light'}>
             <OpenInNewOutlined fontSize="inherit" />
           </S.OpenInNewButton>
         </Tooltip>

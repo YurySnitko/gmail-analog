@@ -1,5 +1,12 @@
 import { styled } from '@mui/material/styles';
-import { Button, Grid, RadioGroup, Typography } from '@mui/material';
+import {
+  Button,
+  Checkbox,
+  Grid,
+  Radio,
+  RadioGroup,
+  Typography,
+} from '@mui/material';
 
 export const S = {
   SettingsSectionWrapper: styled(Grid)`
@@ -11,6 +18,9 @@ export const S = {
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
+    background-color: ${({ theme }): string =>
+      theme.palette.background.settingsSection};
+    color: ${({ theme }): string => theme.palette.text.settingsText};
   `,
 
   SettingsSectionHeader: styled(Grid)`
@@ -22,7 +32,6 @@ export const S = {
     justify-content: space-between;
     align-items: center;
     gap: 0.8rem;
-    background-color: ${({ theme }): string => theme.palette.common.white};
   `,
 
   SettingsSectionHeaderBarWrapper: styled(Grid)`
@@ -37,10 +46,12 @@ export const S = {
     text-transform: none;
     font-weight: 600;
     font-size: 0.875rem;
-    color: ${({ theme }): string => theme.palette.primary.light};
+    color: ${({ theme }): string => theme.palette.text.settingsButton};
     box-shadow: none;
     border: 1px solid
       ${({ theme }): string => theme.palette.background.settingsButtonBorder};
+    background-color: ${({ theme }): string =>
+      theme.palette.background.settingsButton};
 
     &:hover {
       box-shadow: none;
@@ -106,7 +117,7 @@ export const S = {
   SettingsSectionButton: styled(Button)`
     background-color: ${({ theme }): string => theme.palette.common.white};
     border: none;
-    color: ${({ theme }): string => theme.palette.primary.light};
+    color: ${({ theme }): string => theme.palette.text.settingsButton};
     box-shadow: none;
     text-transform: none;
     font-weight: 600;
@@ -115,6 +126,8 @@ export const S = {
     letter-spacing: 0.25px;
     line-height: 1.3rem;
     padding: 0 0 0 12px;
+    background-color: ${({ theme }): string =>
+      theme.palette.background.settingsButton};
 
     &:hover {
       border: none;
@@ -150,7 +163,8 @@ export const S = {
 
   SettingsLabelButton: styled(Button)`
     padding: 0;
-    background-color: ${({ theme }): string => theme.palette.common.white};
+    background-color: ${({ theme }): string =>
+      theme.palette.background.settingsButton};
     border: none;
     box-shadow: none;
     text-transform: none;
@@ -158,7 +172,7 @@ export const S = {
     letter-spacing: 0.25px;
     width: 60%;
     font-weight: 600;
-    color: ${({ theme }): string => theme.palette.primary.light};
+    color: ${({ theme }): string => theme.palette.text.settingsButton};
     margin-left: -3px;
 
     &:hover {
@@ -174,6 +188,7 @@ export const S = {
     font-weight: 500;
     letter-spacing: 0.8px;
     text-transform: uppercase;
+    color: ${({ theme }): string => theme.palette.text.settingsText};
   `,
 
   RadioGroupWrapper: styled(RadioGroup)`
@@ -228,5 +243,28 @@ export const S = {
 
   ConcatMailsContentText: styled(Typography)`
     font-size: 0.875rem;
+  `,
+
+  Radio: styled(Radio)`
+    &.MuiRadio-root {
+      color: ${({ theme }): string =>
+        theme.palette.background.settingsController};
+    }
+
+    &.Mui-checked {
+      color: ${({ theme }): string =>
+        theme.palette.background.settingsControllerChecked};
+    }
+  `,
+
+  ConversationCheckbox: styled(Checkbox)`
+    padding: 0;
+    color: ${({ theme }): string =>
+      theme.palette.background.settingsController};
+
+    &.Mui-checked {
+      color: ${({ theme }): string =>
+        theme.palette.background.settingsControllerChecked};
+    }
   `,
 };

@@ -28,54 +28,95 @@ export const MailAnswerControls: FC<MailAnswerControlsProps> = ({
       <ButtonWithOptions />
       <S.MainControls>
         <Tooltip title="Параметры форматирования">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <TextFormatRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Прикрепить файлы">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <AttachFileRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Вставить ссылку">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <InsertLinkRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Вставить смайлик">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <MoodRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Вставить ссылку на файлы в Google диске">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <AddToDriveRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Добавить фото">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <InsertPhotoOutlined fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Переключатель конфиденциального режима">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <LockClock fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Вставить подпись">
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <CreateRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
       </S.MainControls>
       <S.OtherControls>
         <Tooltip title="Дополнительно">
-          <S.IconButtonStld size="small" shape="square" sx={{ pr: 0, pl: 0 }}>
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+            sx={{ pr: 0, pl: 0 }}
+          >
             <MoreVertRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>
         <Tooltip title="Удалить черновик" onClick={onDeleteDraftsButtonClick}>
-          <S.IconButtonStld size="small" shape="square">
+          <S.IconButtonStld
+            hoverBackground={'light'}
+            size="small"
+            shape="square"
+          >
             <DeleteRounded fontSize="small" />
           </S.IconButtonStld>
         </Tooltip>

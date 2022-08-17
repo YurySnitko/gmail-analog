@@ -17,23 +17,24 @@ export const S = {
     width: 100%;
     align-items: center;
     border-bottom: 1px solid ${({ theme }): string => theme.palette.divider};
-    border-left: 1px solid ${({ theme }): string => theme.palette.common.white};
     cursor: pointer;
     padding: 0 0.5rem;
     user-select: none;
     position: relative;
+    color: ${(props): string =>
+      props.background === MailListItemGridBackgroundEnum.viewed
+        ? props.theme.palette.text.mailListItemChecked
+        : props.theme.palette.text.mailListItem};
     background-color: ${(props): string =>
       props.background === MailListItemGridBackgroundEnum.checked
         ? props.theme.palette.background.mailListItemChecked
         : props.background === MailListItemGridBackgroundEnum.viewed
         ? props.theme.palette.background.mailListItemViewed
-        : props.theme.palette.common.white};
+        : props.theme.palette.background.mailListItemDefault};
 
     &:hover {
       box-shadow: ${(props): string =>
         props.theme.customShadows.mailListItemHover};
-      border-left: 1px solid ${(props): string => props.theme.palette.divider};
-      border-right: 1px solid ${(props): string => props.theme.palette.divider};
     }
   `,
 

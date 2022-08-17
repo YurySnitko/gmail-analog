@@ -28,7 +28,7 @@ export const MailAnswerBody: FC<MailAnswerBodyProps> = ({
       {answerMode === 'reply' ? (
         !isMessageOpen ? (
           <Tooltip title="Показать скрытую часть" onClick={openMessageText}>
-            <S.IconButtonStld shape="square">
+            <S.IconButtonStld hoverBackground={'light'} shape="square">
               <MoreHorizRounded fontSize="small" />
             </S.IconButtonStld>
           </Tooltip>

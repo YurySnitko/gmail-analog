@@ -2,7 +2,7 @@ import { styled, ButtonBase as MuiButtonBase } from '@mui/material';
 
 export const Wrapper = styled('div')(({ theme }) => ({
   display: 'flex',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.background.sendMailControl,
   borderRadius: '4px',
   border: 'none',
   height: '36px',

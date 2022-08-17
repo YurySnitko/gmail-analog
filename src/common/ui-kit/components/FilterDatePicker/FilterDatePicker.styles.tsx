@@ -6,13 +6,19 @@ export const S = {
     width: 100%;
     display: flex;
     align-items: center;
+    color: ${({ theme }): string => theme.palette.text.controls};
   `,
 
   DatePickerTextField: styled(TextField)`
+    & .MuiIconButton-root {
+      color: ${({ theme }): string => theme.palette.text.controls};
+    }
+
     & .MuiInput-root,
     .MuiInput-input {
       font-size: 0.875rem;
       padding: 0;
+      color: ${({ theme }): string => theme.palette.text.controls};
     }
 
     & .MuiInput-root:hover:not(.Mui-disabled):before {

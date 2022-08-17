@@ -23,12 +23,12 @@ export const MailTitle: FC<MailTitleProps> = ({ title }) => {
       </S.TitleWithTagsWrapper>
       <S.Toolbar>
         <Tooltip title="Печатать все">
-          <IconButton>
+          <IconButton hoverBackground={'light'}>
             <LocalPrintshop fontSize="small" />
           </IconButton>
         </Tooltip>
         <Tooltip title="В новом окне">
-          <IconButton onClick={openInNewWindow}>
+          <IconButton hoverBackground={'light'} onClick={openInNewWindow}>
             <OpenInNewOutlined fontSize="small" />
           </IconButton>
         </Tooltip>

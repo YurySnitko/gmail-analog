@@ -51,7 +51,7 @@ export const SearchBarWrapper = styled('div')`
 export const Toolbar = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
-  height: '48px',
+  gap: '5px',
   color: `${theme.palette.text.headerIconButton}`,
 }));
 

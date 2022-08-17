@@ -1,5 +1,5 @@
 import { styled } from '@mui/material/styles';
-import { Button, Grid, MenuItem, Typography } from '@mui/material';
+import { Button, Grid, MenuItem, Typography, Checkbox } from '@mui/material';
 
 export const S = {
   HeaderFilterWrapper: styled(Grid)`
@@ -10,6 +10,7 @@ export const S = {
     padding: 24px;
     background-color: ${({ theme }): string => theme.palette.common.white};
     z-index: 2;
+    color: ${({ theme }): string => theme.palette.text.menuMessage};
     border: 1px solid
       ${({ theme }): string => theme.palette.background.headerFilterBorder};
     box-shadow: ${({ theme }): string => theme.customShadows.headerFilter};
@@ -104,5 +105,16 @@ export const S = {
 
   HeaderFilterItemText: styled(Typography)`
     font-size: 0.875rem;
+  `,
+
+  AttachedCheckbox: styled(Checkbox)`
+    padding: 0;
+    color: ${({ theme }): string =>
+      theme.palette.background.settingsController};
+
+    &.Mui-checked {
+      color: ${({ theme }): string =>
+        theme.palette.background.settingsControllerChecked};
+    }
   `,
 };
