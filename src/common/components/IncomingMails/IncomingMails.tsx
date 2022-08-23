@@ -42,39 +42,31 @@ const IncomingMails: FC = () => {
           setSelectedMailsIds={setSelectedMailsIdsHandler}
         />
       );
-    } else {
-      return (
-        <ReflexContainer
-          orientation={split === 'splitRight' ? 'vertical' : 'horizontal'}
-        >
-          <ReflexElement
-            flex={0.5}
-            minSize={split === 'splitRight' ? 400 : 100}
-          >
-            <MailList
-              mailList={mails}
-              selectedMailsIds={selectedMailsIds}
-              setSelectedMailsIds={setSelectedMailsIdsHandler}
-              setClickedItemHandler={setClickedItemHandler}
-            />
-          </ReflexElement>
-          <S.Splitter />
-          <ReflexElement
-            flex={0.5}
-            minSize={400}
-            style={{ overflowY: 'hidden' }}
-          >
-            {clickedItem ? (
-              <Mail mailData={clickedItem} />
-            ) : (
-              <S.SecondPanelWrapper>
-                <S.SecondPanelTitle>{t.splitEmptyWindow}</S.SecondPanelTitle>
-              </S.SecondPanelWrapper>
-            )}
-          </ReflexElement>
-        </ReflexContainer>
-      );
     }
+    return (
+      <ReflexContainer
+        orientation={split === 'splitRight' ? 'vertical' : 'horizontal'}
+      >
+        <ReflexElement flex={0.5} minSize={split === 'splitRight' ? 400 : 100}>
+          <MailList
+            mailList={mails}
+            selectedMailsIds={selectedMailsIds}
+            setSelectedMailsIds={setSelectedMailsIdsHandler}
+            setClickedItemHandler={setClickedItemHandler}
+          />
+        </ReflexElement>
+        <S.Splitter />
+        <ReflexElement flex={0.5} minSize={400} style={{ overflowY: 'hidden' }}>
+          {clickedItem ? (
+            <Mail mailData={clickedItem} />
+          ) : (
+            <S.SecondPanelWrapper>
+              <S.SecondPanelTitle>{t.splitEmptyWindow}</S.SecondPanelTitle>
+            </S.SecondPanelWrapper>
+          )}
+        </ReflexElement>
+      </ReflexContainer>
+    );
   };
 
   return (

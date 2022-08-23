@@ -1,7 +1,8 @@
 import { EditorState } from 'draft-js';
 
-export interface MailAnswerControlsProps {
+export interface RichTextEditorControlsProps {
+  open: boolean;
+  anchorEl: HTMLButtonElement | null;
   editorState: EditorState;
   onEditorStateChange: (state: EditorState) => void;
-  toggleAnswerContainerMode: (isOpen: boolean) => void;
 }

@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Header } from './Header';
-import Helper from './Helper';
+import Helper from '../../../hocs/TestHelper/Helper';
 import { useRouter } from 'next/router';
 import '@testing-library/jest-dom';
 

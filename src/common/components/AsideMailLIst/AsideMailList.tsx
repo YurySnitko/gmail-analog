@@ -4,7 +4,7 @@ import { S } from './AsideMailList.styles';
 import { Collapse } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
-import { defaultLinkItems, moreLinksItems } from '../../../mocked/routes';
+import { defaultLinkItems, moreLinksItems } from './AsideMailList.config';
 import { AsideMailListProps } from './AsideMailList.interfaces';
 import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
 
