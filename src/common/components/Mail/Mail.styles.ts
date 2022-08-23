@@ -1,8 +1,8 @@
 import { styled } from '@mui/material/styles';
 
 export const MainContainer = styled('div')`
-  overflow-y: auto;
-  height: calc(100% - 40px);
+  overflow-y: scroll;
+  height: calc(100vh - 64px);
   background-color: ${({ theme }): string => theme.palette.common.white};
   color: black;
 

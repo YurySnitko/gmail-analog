@@ -1,6 +1,5 @@
 import * as S from './Header.styles';
 import DehazeIcon from '@mui/icons-material/Dehaze';
-import SettingsOutlinedIcon from '@mui/icons-material/Settings';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import GoogleIcon from '@mui/icons-material/Google';
 import {
@@ -15,6 +14,7 @@ import { FC, useContext, useState } from 'react';
 import { IconButton } from '../../ui-kit/components/IconButton/IconButton';
 import { SearchBar } from '../SearchBar/SearchBar';
 import { HeaderProps } from './Header.interfaces';
+import { SettingsOutlined } from '@mui/icons-material';
 import LocalizationSelect from '../../ui-kit/components/LocalizationSelect/LocalizationSelect';
 import { useRouter } from 'next/router';
 import { LocalizationContext } from '../../ui-kit/LocalizationProvider/LocalizationProvider';
@@ -89,7 +89,7 @@ export const Header: FC<HeaderProps> = ({
           </Tooltip>
           <Tooltip title={t.headerSettingsTooltip}>
             <IconButton onClick={setIsSettingsOpenHandler}>
-              <SettingsOutlinedIcon />
+              <SettingsOutlined />
             </IconButton>
           </Tooltip>
         </S.Toolbar>

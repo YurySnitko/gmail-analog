@@ -4,9 +4,28 @@ import { FC, useState } from 'react';
 import { Tooltip } from '../../ui-kit/components/Tooltip/Tooltip';
 import { MailAnswerBodyProps } from './MailAnswerBody.interfaces';
 import * as S from './MailAnswerBody.styles';
+import { Editor } from 'draft-js';
+import 'draft-js/dist/Draft.css';
+
+export const fontStyleMap = {
+  FONT_SIZE_10: {
+    fontSize: '10px',
+  },
+  FONT_SIZE_13: {
+    fontSize: '13px',
+  },
+  FONT_SIZE_18: {
+    fontSize: '18px',
+  },
+  FONT_SIZE_32: {
+    fontSize: '32px',
+  },
+};
 
 export const MailAnswerBody: FC<MailAnswerBodyProps> = ({
   answerMode,
+  editorState,
+  onEditorStateChange,
   toggleChooseAddresseeEditMode,
 }) => {
   const [isMessageOpen, setIsMessageOpen] = useState<boolean>(false);
@@ -24,11 +43,17 @@ export const MailAnswerBody: FC<MailAnswerBodyProps> = ({
 
   return (
     <S.Container onClick={onContainerClick}>
-      <S.Input disableUnderline fullWidth multiline autoFocus />
+      <S.EditorContainer>
+        <Editor
+          editorState={editorState}
+          onChange={onEditorStateChange}
+          customStyleMap={fontStyleMap}
+        />
+      </S.EditorContainer>
       {answerMode === 'reply' ? (
         !isMessageOpen ? (
           <Tooltip title="Показать скрытую часть" onClick={openMessageText}>
-            <S.IconButtonStld hoverBackground={'light'} shape="square">
+            <S.IconButtonStld hoverbackground={'light'} shape="square">
               <MoreHorizRounded fontSize="small" />
             </S.IconButtonStld>
           </Tooltip>

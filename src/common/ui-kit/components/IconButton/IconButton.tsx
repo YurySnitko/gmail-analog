@@ -3,10 +3,10 @@ import { IconButtonProps } from './IconButton.interfaces';
 import * as S from './IconButton.styles';
 
 export const IconButton: FC<IconButtonProps> = forwardRef(
-  ({ children, hoverBackground = 'dark', shape = 'circle', ...props }, ref) => {
+  ({ children, hoverbackground = 'dark', shape = 'circle', ...props }, ref) => {
     return (
       <S.IconButton
-        hoverBackground={hoverBackground}
+        hoverbackground={hoverbackground}
         shape={shape}
         {...props}
         ref={ref}

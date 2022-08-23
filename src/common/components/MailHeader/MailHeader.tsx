@@ -32,17 +32,17 @@ export const MailHeader: FC<MailHeaderProps> = ({
             </S.DateTypography>
             <S.Toolbar>
               <Tooltip title="Не помечено">
-                <IconButton hoverBackground={'light'}>
+                <IconButton hoverbackground={'light'}>
                   <StarOutline fontSize="small" />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Ответить">
-                <IconButton hoverBackground={'light'}>
+                <IconButton hoverbackground={'light'}>
                   <S.ShortcutOutlinedLeft fontSize="small" />
                 </IconButton>
               </Tooltip>
               <Tooltip title="Ещё">
-                <IconButton hoverBackground={'light'}>
+                <IconButton hoverbackground={'light'}>
                   <MoreVertOutlined fontSize="small" />
                 </IconButton>
               </Tooltip>

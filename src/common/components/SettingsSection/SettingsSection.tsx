@@ -29,7 +29,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
   const dispatch = useAppDispatch();
   const t = useContext(LocalizationContext);
 
-  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const changeHandler = (event: React.ChangeEvent<HTMLInputElement>): void => {
     dispatch(changeSplit((event.target as HTMLInputElement).value));
   };
 
@@ -38,7 +38,7 @@ const SettingsSection: FC<SettingsSectionProps> = ({ setIsSettingsOpen }) => {
       <S.SettingsSectionHeader>
         <S.SettingsSectionHeaderBarWrapper>
           <Typography>{t.settingsTitle}</Typography>
-          <IconButton hoverBackground={'light'} onClick={setIsSettingsOpen}>
+          <IconButton hoverbackground={'light'} onClick={setIsSettingsOpen}>
             <CloseIcon fontSize={'small'} />
           </IconButton>
         </S.SettingsSectionHeaderBarWrapper>

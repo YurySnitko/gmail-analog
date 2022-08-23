@@ -10,6 +10,7 @@ export const Container = styled('div')(({ theme }) => ({
   backgroundColor: theme.palette.common.white,
   border: '1px solid transparent',
   borderRadius: ' 0 0 8px 8px',
+  zIndex: '1',
 }));
 
 export const MainControls = styled('div')`
