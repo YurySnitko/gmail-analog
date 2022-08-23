@@ -1,9 +1,5 @@
 import { ThemeOptions } from '@mui/material/styles';
 
-export const getTheme = (mode: string): ThemeOptions => {
-  return mode === 'light' ? lightTheme : darkTheme;
-};
-
 const lightTheme: ThemeOptions = {
   palette: {
     background: {
@@ -249,4 +245,8 @@ const darkTheme: ThemeOptions = {
       },
     },
   },
+};
+
+export const getTheme = (mode: string): ThemeOptions => {
+  return mode === 'light' ? lightTheme : darkTheme;
 };

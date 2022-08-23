@@ -5,14 +5,17 @@ import { Provider } from 'react-redux';
 import { store } from '../store/store';
 import { Layout } from '../common/components/Layout/Layout';
 import LocalizationProvider from '../common/ui-kit/LocalizationProvider/LocalizationProvider';
+import ThemeProvider from '../common/ui-kit/ThemeProvider/ThemeProvider';
 
 const MyApp: FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <Provider store={store}>
       <LocalizationProvider>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
+        <ThemeProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </ThemeProvider>
       </LocalizationProvider>
     </Provider>
   );
