@@ -7,9 +7,8 @@ export const Container = styled('div')`
 
 export const EditorContainer = styled('div')`
   padding: 5px 0;
-  width: calc(100%);
+  width: 100%;
   & div.DraftEditor-root {
-    overflow: none;
     width: 100%;
     word-break: break-all;
   }
